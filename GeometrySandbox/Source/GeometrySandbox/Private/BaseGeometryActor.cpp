@@ -51,12 +51,21 @@ void ABaseGeometryActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	
-	//FORMULA Z=Z0+APLITUDE * SIN (FREQ * T);
-	//BOUNCING START
-	FVector CurrentLocation = GetActorLocation();
-	float time = GetWorld()->GetTimeSeconds();
-	CurrentLocation.Z = InitialLocation.Z + Amplitude * FMath::Sin(Frequency * time);
-	SetActorLocation(CurrentLocation);
-	//BOUNCING END
+	switch (GeometryData.MoveType)
+	{
+	case EMovementType::Sin:
+		{
+			//FORMULA Z=Z0+APLITUDE * SIN (FREQ * T);
+			//BOUNCING START
+			FVector CurrentLocation = GetActorLocation();
+			float time = GetWorld()->GetTimeSeconds();
+			CurrentLocation.Z = InitialLocation.Z + GeometryData.Amplitude * FMath::Sin(GeometryData.Frequency * time);
+			SetActorLocation(CurrentLocation);
+			//BOUNCING END
+		}
+		break;
+		case EMovementType::Static: break;
+		default:break;
+	}
 }
 
