@@ -11,7 +11,7 @@ UENUM(BlueprintType)
 enum class EMovementType : uint8
 {
 	Sin,
-	Static
+	Static,
 };
 
 USTRUCT(BlueprintType)
@@ -27,6 +27,15 @@ struct FGeometryData
 
 	UPROPERTY(EditAnywhere, Category = "Movement")
 	EMovementType MoveType = EMovementType::Static;
+
+	UPROPERTY(EditAnywhere, Category = "Design")
+	FLinearColor ColorDefault = FLinearColor::Yellow;
+
+	UPROPERTY(EditAnywhere, Category = "Timer")
+	float TimerRate = 3.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Timer")
+	bool TimerEnable = false;
 };
 
 UCLASS()
@@ -70,6 +79,8 @@ protected:
 
 
 
+
+
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -77,5 +88,9 @@ public:
 private:
 	FVector InitialLocation;
 	void printTypes();
+	FTimerHandle TimerHandle;
+	void SetColor(const FLinearColor& Color);
+
+	void OnTimerFired();
 
 };

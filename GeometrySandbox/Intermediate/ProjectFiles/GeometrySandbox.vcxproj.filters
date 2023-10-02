@@ -45,10 +45,16 @@
     <ClCompile Include="..\..\Source\GeometrySandbox\Private\BaseGeometryActor.cpp">
       <Filter>Source\GeometrySandbox\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\GeometrySandbox\Private\GeometryHubActor.cpp">
+      <Filter>Source\GeometrySandbox\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\GeometrySandbox\Public">
       <UniqueIdentifier>{0E31652A-E7CF-3790-809E-D4ADB91B5D82}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\GeometrySandbox\Public\BaseGeometryActor.h">
+      <Filter>Source\GeometrySandbox\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GeometrySandbox\Public\GeometryHubActor.h">
       <Filter>Source\GeometrySandbox\Public</Filter>
     </ClInclude>
   </ItemGroup>

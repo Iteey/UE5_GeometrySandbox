@@ -2,7 +2,8 @@
 
 
 #include "BaseGeometryActor.h"
-
+#include "Materials/MaterialInstanceDynamic.h"
+#include "TimerManager.h"
 
 void ABaseGeometryActor::printTypes()
 {
@@ -12,6 +13,24 @@ void ABaseGeometryActor::printTypes()
 	UE_LOG(LogTemp, Warning, TEXT("IsDead:%d"), IsDead);
 	UE_LOG(LogTemp, Warning, TEXT("HasWeapon:%d"), HasWeapon);
 }
+
+void ABaseGeometryActor::SetColor(const FLinearColor& ColorDefault)
+{
+	UMaterialInstanceDynamic* DynMaterial = BaseMesh->CreateAndSetMaterialInstanceDynamic(0);
+	if (DynMaterial)
+	{
+		DynMaterial->SetVectorParameterValue("Color", ColorDefault);
+	}
+}
+
+void ABaseGeometryActor::OnTimerFired()
+{
+	const FLinearColor NewColor = FLinearColor::MakeRandomColor();
+	UE_LOG(LogTemp, Display, TEXT("Color to set up: %s"), *NewColor.ToString());
+	SetColor(NewColor);
+}
+
+
 
 // Sets default values
 ABaseGeometryActor::ABaseGeometryActor()
@@ -41,9 +60,9 @@ void ABaseGeometryActor::BeginPlay()
 	UE_LOG(LogTemp, Warning, TEXT("Rotation %s"), *Rotation.ToString());
 	UE_LOG(LogTemp, Warning, TEXT("Scale %s"), *Scale.ToString());
 
-
-
-
+	SetColor(GeometryData.ColorDefault);
+	if (GeometryData.TimerEnable)
+	{GetWorldTimerManager().SetTimer(TimerHandle, this, &ABaseGeometryActor::OnTimerFired, GeometryData.TimerRate, true);}
 }
 
 // Called every frame
