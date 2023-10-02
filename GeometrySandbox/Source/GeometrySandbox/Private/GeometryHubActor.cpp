@@ -21,7 +21,8 @@ void AGeometryHubActor::BeginPlay()
 	for (int i = 0; i < 20; i++)
 	{
 		if (World) {
-			World->SpawnActor(GeometryClass);
+			const FTransform GeometryTransform = FTransform(FRotator::ZeroRotator, FVector(0.0f, 300.0f * i, 300.0f));
+			ABaseGeometryActor* Geometry = World->SpawnActor<ABaseGeometryActor>(GeometryClass, GeometryTransform);
 		}
 	}
 	

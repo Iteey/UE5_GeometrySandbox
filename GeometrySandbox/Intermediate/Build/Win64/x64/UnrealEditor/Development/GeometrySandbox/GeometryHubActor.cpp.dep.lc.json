@@ -7,6 +7,8 @@
         "Includes": [
             "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\geometrysandbox\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\geometrysandbox\\definitions.geometrysandbox.h",
             "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\geometrysandbox\\source\\geometrysandbox\\public\\geometryhubactor.h",
+            "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\geometrysandbox\\source\\geometrysandbox\\public\\basegeometryactor.h",
+            "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\geometrysandbox\\intermediate\\build\\win64\\unrealeditor\\inc\\geometrysandbox\\uht\\basegeometryactor.generated.h",
             "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\geometrysandbox\\intermediate\\build\\win64\\unrealeditor\\inc\\geometrysandbox\\uht\\geometryhubactor.generated.h"
         ],
         "ImportedModules": [],
