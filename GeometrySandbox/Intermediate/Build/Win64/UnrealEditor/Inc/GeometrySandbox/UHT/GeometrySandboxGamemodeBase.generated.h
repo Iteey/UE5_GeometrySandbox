@@ -29,8 +29,6 @@ public: \
 
 
 #define FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_GeometrySandbox_Source_GeometrySandbox_Public_GeometrySandboxGamemodeBase_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AGeometrySandboxGamemodeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AGeometrySandboxGamemodeBase(AGeometrySandboxGamemodeBase&&); \
@@ -38,7 +36,7 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AGeometrySandboxGamemodeBase); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AGeometrySandboxGamemodeBase); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AGeometrySandboxGamemodeBase) \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AGeometrySandboxGamemodeBase) \
 	NO_API virtual ~AGeometrySandboxGamemodeBase();
 
 

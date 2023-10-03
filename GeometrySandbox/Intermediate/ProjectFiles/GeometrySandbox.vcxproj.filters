@@ -51,6 +51,9 @@
     <ClCompile Include="..\..\Source\GeometrySandbox\Private\GeometrySandboxGamemodeBase.cpp">
       <Filter>Source\GeometrySandbox\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\GeometrySandbox\Private\MyDefaultPawn.cpp">
+      <Filter>Source\GeometrySandbox\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\GeometrySandbox\Public">
       <UniqueIdentifier>{0E31652A-E7CF-3790-809E-D4ADB91B5D82}</UniqueIdentifier>
     </Filter>
@@ -61,6 +64,9 @@
       <Filter>Source\GeometrySandbox\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GeometrySandbox\Public\GeometrySandboxGamemodeBase.h">
+      <Filter>Source\GeometrySandbox\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GeometrySandbox\Public\MyDefaultPawn.h">
       <Filter>Source\GeometrySandbox\Public</Filter>
     </ClInclude>
   </ItemGroup>

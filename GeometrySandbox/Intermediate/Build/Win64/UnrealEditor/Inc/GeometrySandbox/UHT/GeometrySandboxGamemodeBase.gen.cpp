@@ -77,7 +77,6 @@ void EmptyLinkFunctionForGeneratedCodeGeometrySandboxGamemodeBase() {}
 	{
 		return AGeometrySandboxGamemodeBase::StaticClass();
 	}
-	AGeometrySandboxGamemodeBase::AGeometrySandboxGamemodeBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AGeometrySandboxGamemodeBase);
 	AGeometrySandboxGamemodeBase::~AGeometrySandboxGamemodeBase() {}
 	struct Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_GeometrySandbox_Source_GeometrySandbox_Public_GeometrySandboxGamemodeBase_h_Statics
