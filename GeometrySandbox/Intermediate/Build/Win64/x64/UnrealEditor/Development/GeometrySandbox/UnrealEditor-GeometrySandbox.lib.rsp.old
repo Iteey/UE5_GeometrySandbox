@@ -8,8 +8,10 @@
 /NODEFAULTLIB
 "C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\GeometrySandbox\Intermediate\Build\Win64\x64\GeometrySandboxEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
 "C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\GeometrySandbox\Intermediate\Build\Win64\x64\UnrealEditor\Development\GeometrySandbox\BaseGeometryActor.gen.cpp.obj"
+"C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\GeometrySandbox\Intermediate\Build\Win64\x64\UnrealEditor\Development\GeometrySandbox\GeometryHubActor.gen.cpp.obj"
 "C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\GeometrySandbox\Intermediate\Build\Win64\x64\UnrealEditor\Development\GeometrySandbox\GeometrySandbox.init.gen.cpp.obj"
 "C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\GeometrySandbox\Intermediate\Build\Win64\x64\UnrealEditor\Development\GeometrySandbox\GeometrySandbox.cpp.obj"
 "C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\GeometrySandbox\Intermediate\Build\Win64\x64\UnrealEditor\Development\GeometrySandbox\BaseGeometryActor.cpp.obj"
+"C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\GeometrySandbox\Intermediate\Build\Win64\x64\UnrealEditor\Development\GeometrySandbox\GeometryHubActor.cpp.obj"
 "C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\GeometrySandbox\Intermediate\Build\Win64\x64\UnrealEditor\Development\GeometrySandbox\Default.rc2.res"
 /OUT:"C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\GeometrySandbox\Intermediate\Build\Win64\x64\UnrealEditor\Development\GeometrySandbox\UnrealEditor-GeometrySandbox.lib"
