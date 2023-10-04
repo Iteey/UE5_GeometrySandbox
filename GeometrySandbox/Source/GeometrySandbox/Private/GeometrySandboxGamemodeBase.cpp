@@ -6,5 +6,6 @@
 
 AGeometrySandboxGamemodeBase::AGeometrySandboxGamemodeBase() {
 	DefaultPawnClass = AMyDefaultPawn::StaticClass();
+	PlayerControllerClass = AGeometryPlayerController::StaticClass();
 }
 

@@ -48,6 +48,9 @@
     <ClCompile Include="..\..\Source\GeometrySandbox\Private\GeometryHubActor.cpp">
       <Filter>Source\GeometrySandbox\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\GeometrySandbox\Private\GeometryPlayerController.cpp">
+      <Filter>Source\GeometrySandbox\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\GeometrySandbox\Private\GeometrySandboxGamemodeBase.cpp">
       <Filter>Source\GeometrySandbox\Private</Filter>
     </ClCompile>
@@ -61,6 +64,9 @@
       <Filter>Source\GeometrySandbox\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GeometrySandbox\Public\GeometryHubActor.h">
+      <Filter>Source\GeometrySandbox\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GeometrySandbox\Public\GeometryPlayerController.h">
       <Filter>Source\GeometrySandbox\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GeometrySandbox\Public\GeometrySandboxGamemodeBase.h">

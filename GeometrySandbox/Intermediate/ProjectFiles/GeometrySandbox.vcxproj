@@ -131,6 +131,11 @@
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <ClCompile Include="..\..\Source\GeometrySandbox\Private\GeometryPlayerController.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="..\..\Source\GeometrySandbox\Private\GeometrySandboxGamemodeBase.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
@@ -143,6 +148,7 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\GeometrySandbox\Public\BaseGeometryActor.h"/>
     <ClInclude Include="..\..\Source\GeometrySandbox\Public\GeometryHubActor.h"/>
+    <ClInclude Include="..\..\Source\GeometrySandbox\Public\GeometryPlayerController.h"/>
     <ClInclude Include="..\..\Source\GeometrySandbox\Public\GeometrySandboxGamemodeBase.h"/>
     <ClInclude Include="..\..\Source\GeometrySandbox\Public\MyDefaultPawn.h"/>
   </ItemGroup>

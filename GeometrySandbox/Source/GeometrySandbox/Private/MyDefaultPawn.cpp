@@ -23,6 +23,14 @@ AMyDefaultPawn::AMyDefaultPawn()
 
 }
 
+void AMyDefaultPawn::PossessedBy(AController* NewController)
+{
+}
+
+void AMyDefaultPawn::UnPossessed()
+{
+}
+
 // Called when the game starts or when spawned
 void AMyDefaultPawn::BeginPlay()
 {
@@ -55,13 +63,13 @@ void AMyDefaultPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 void AMyDefaultPawn::MoveForward(float Amount)
 {
-	UE_LOG(LogSandboxPawn, Warning, TEXT("MOVE FORWARD %f"), Amount);
+	//UE_LOG(LogSandboxPawn, Warning, TEXT("MOVE FORWARD %f"), Amount);
 	VelocityVector.X = Amount;
 }
 
 void AMyDefaultPawn::MoveRight(float Amount)
 {
-	UE_LOG(LogSandboxPawn, Warning, TEXT("MOVE RIGHT %f"), Amount);
+	//UE_LOG(LogSandboxPawn, Warning, TEXT("MOVE RIGHT %f"), Amount);
 	VelocityVector.Y = Amount;
 }
 

@@ -30,6 +30,9 @@ public:
 	UPROPERTY(VisibleAnywhere)
 	UCameraComponent* CameraComponent;
 
+	virtual void PossessedBy(AController* NewController) override;
+	virtual void UnPossessed() override;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
