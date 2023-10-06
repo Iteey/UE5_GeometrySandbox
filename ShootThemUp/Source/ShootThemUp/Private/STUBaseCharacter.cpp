@@ -5,18 +5,20 @@
 #include "Camera/CameraComponent.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/SpringArmComponent.h"
-
 // Sets default values
 ASTUBaseCharacter::ASTUBaseCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-    SpringArmComponent = CreateDefaultSubobject<USpringArmComponent>("SpringAramComponent");
-    SpringArmComponent->SetupAttachment(GetRootComponent());
-    SpringArmComponent->bUsePawnControlRotation=true;
+
+    //Uncomment for 3rd person
+    //SpringArmComponent = CreateDefaultSubobject<USpringArmComponent>("SpringAramComponent");
+    //SpringArmComponent->SetupAttachment(GetRootComponent());
+    //SpringArmComponent->bUsePawnControlRotation=true;
 
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>("CameraComponent");
-    CameraComponent->SetupAttachment(SpringArmComponent); //SpringArmComponent or GetRootComponent()
+    CameraComponent->SetupAttachment(GetRootComponent()); // SpringArmComponent or GetRootComponent()
+    
 
 }
 
@@ -31,6 +33,7 @@ void ASTUBaseCharacter::BeginPlay()
 void ASTUBaseCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
 
 }
 
@@ -49,12 +52,25 @@ void ASTUBaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 void ASTUBaseCharacter::MoveForward(float Amount)
 {
     AddMovementInput(GetActorForwardVector(), Amount);
-    
+    if (Amount > 0)
+    {
+        for (float i = 0; i < 30; i+=0.01)
+        {
+            CameraComponent->FieldOfView = 90+i;
+            UE_LOG(LogTemp, Warning, TEXT("%f"), Amount)
+        }
+        
+    }
+    else
+    {
+        CameraComponent->FieldOfView = 90.0f;
+    }
 }
 
 void ASTUBaseCharacter::MoveRight(float Amount)
 {
     AddMovementInput(GetActorRightVector(), Amount);
+    
 }
 
 void ASTUBaseCharacter::LookUp(float Amount)
@@ -67,3 +83,6 @@ void ASTUBaseCharacter::TurnAround(float Amount)
     AddControllerYawInput(Amount);
 }
 
+void ASTUBaseCharacter::FovForward(float Amount)
+{
+}
