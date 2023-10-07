@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"C:\\Users\\Dev\\Documents\\GitHub\\UE5_GeometrySandbox\\ShootThemUp\\Source\\ShootThemUp\\ShootThemUp.Build.cs",
-		"C:\\Users\\Dev\\Documents\\GitHub\\UE5_GeometrySandbox\\ShootThemUp\\Source\\ShootThemUp.Target.cs",
-		"C:\\Users\\Dev\\Documents\\GitHub\\UE5_GeometrySandbox\\ShootThemUp\\Source\\ShootThemUpEditor.Target.cs"
+		"C:\\Users\\User\\Documents\\GitHub\\UE5_GeometrySandbox\\ShootThemUp\\Source\\ShootThemUp\\ShootThemUp.Build.cs",
+		"C:\\Users\\User\\Documents\\GitHub\\UE5_GeometrySandbox\\ShootThemUp\\Source\\ShootThemUp.Target.cs",
+		"C:\\Users\\User\\Documents\\GitHub\\UE5_GeometrySandbox\\ShootThemUp\\Source\\ShootThemUpEditor.Target.cs"
 	],
 	"EngineVersion": "5.3.1"
 }

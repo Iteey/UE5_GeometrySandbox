@@ -35,6 +35,7 @@ void ASTUBaseCharacter::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 
+
 }
 
 // Called to bind functionality to input
@@ -54,16 +55,25 @@ void ASTUBaseCharacter::MoveForward(float Amount)
     AddMovementInput(GetActorForwardVector(), Amount);
     if (Amount > 0)
     {
-        for (float i = 0; i < 30; i+=0.01)
-        {
-            CameraComponent->FieldOfView = 90+i;
-            UE_LOG(LogTemp, Warning, TEXT("%f"), Amount)
-        }
         
+        if (Checker)
+        {
+            FovInterp(90, 30);
+            UE_LOG(LogTemp, Warning, TEXT("CHECKER WAS TRUE DONE, NOW FALSE"));
+            Checker = false;
+        }
+   
     }
     else
     {
-        CameraComponent->FieldOfView = 90.0f;
+        if (!Checker)
+        {
+            UE_LOG(LogTemp, Warning, TEXT("CHECKER WAS FALSE, NOW TRUE"));
+            CameraComponent->FieldOfView = 90;
+            Checker = true;
+        }
+
+        
     }
 }
 
@@ -85,4 +95,14 @@ void ASTUBaseCharacter::TurnAround(float Amount)
 
 void ASTUBaseCharacter::FovForward(float Amount)
 {
+}
+
+void ASTUBaseCharacter::FovInterp(float x, float y)
+{
+    for (int i = 0; i < y; i++)
+    {
+        float b = FMath::FInterpTo(x, i, -100, -500.f);
+        CameraComponent->FieldOfView = x+b;
+        UE_LOG(LogTemp, Warning, TEXT("%f = FOV"), 90+b);
+    }
 }

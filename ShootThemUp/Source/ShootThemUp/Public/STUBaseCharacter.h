@@ -23,7 +23,8 @@ protected:
   USpringArmComponent* SpringArmComponent;
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
   UCameraComponent* CameraComponent;
-
+  bool FovForwardb;
+  bool Checker = false;
 	virtual void BeginPlay() override;
 
 public:	
@@ -41,6 +42,7 @@ private:
     void TurnAround(float Amount);
 
     void FovForward(float Amount);
+    void FovInterp(float x, float y);
 
 };
 
