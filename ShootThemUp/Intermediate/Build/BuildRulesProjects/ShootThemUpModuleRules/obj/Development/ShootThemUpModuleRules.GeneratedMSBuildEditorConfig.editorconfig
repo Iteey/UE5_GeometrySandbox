@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ShootThemUpModuleRules
-build_property.ProjectDir = C:\Users\User\Documents\GitHub\UE5_GeometrySandbox\ShootThemUp\Intermediate\Build\BuildRulesProjects\ShootThemUpModuleRules\
+build_property.ProjectDir = C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\ShootThemUp\Intermediate\Build\BuildRulesProjects\ShootThemUpModuleRules\

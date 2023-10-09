@@ -5,6 +5,7 @@
 #include "Camera/CameraComponent.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include <Kismet/KismetMathLibrary.h>
 // Sets default values
 ASTUBaseCharacter::ASTUBaseCharacter()
 {
@@ -12,12 +13,12 @@ ASTUBaseCharacter::ASTUBaseCharacter()
 	PrimaryActorTick.bCanEverTick = true;
 
     //Uncomment for 3rd person
-    //SpringArmComponent = CreateDefaultSubobject<USpringArmComponent>("SpringAramComponent");
-    //SpringArmComponent->SetupAttachment(GetRootComponent());
-    //SpringArmComponent->bUsePawnControlRotation=true;
+    SpringArmComponent = CreateDefaultSubobject<USpringArmComponent>("SpringAramComponent");
+    SpringArmComponent->SetupAttachment(GetRootComponent());
+    SpringArmComponent->bUsePawnControlRotation=true;
 
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>("CameraComponent");
-    CameraComponent->SetupAttachment(GetRootComponent()); // SpringArmComponent or GetRootComponent()
+    CameraComponent->SetupAttachment(SpringArmComponent); // SpringArmComponent or GetRootComponent()
     
 
 }
@@ -53,28 +54,7 @@ void ASTUBaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 void ASTUBaseCharacter::MoveForward(float Amount)
 {
     AddMovementInput(GetActorForwardVector(), Amount);
-    if (Amount > 0)
-    {
-        
-        if (Checker)
-        {
-            FovInterp(90, 30);
-            UE_LOG(LogTemp, Warning, TEXT("CHECKER WAS TRUE DONE, NOW FALSE"));
-            Checker = false;
-        }
-   
-    }
-    else
-    {
-        if (!Checker)
-        {
-            UE_LOG(LogTemp, Warning, TEXT("CHECKER WAS FALSE, NOW TRUE"));
-            CameraComponent->FieldOfView = 90;
-            Checker = true;
-        }
-
-        
-    }
+ 
 }
 
 void ASTUBaseCharacter::MoveRight(float Amount)
@@ -99,10 +79,5 @@ void ASTUBaseCharacter::FovForward(float Amount)
 
 void ASTUBaseCharacter::FovInterp(float x, float y)
 {
-    for (int i = 0; i < y; i++)
-    {
-        float b = FMath::FInterpTo(x, i, -100, -500.f);
-        CameraComponent->FieldOfView = x+b;
-        UE_LOG(LogTemp, Warning, TEXT("%f = FOV"), 90+b);
-    }
+    //UKismetMathLibrary::InterpTo
 }
