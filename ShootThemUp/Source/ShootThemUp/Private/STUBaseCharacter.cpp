@@ -6,6 +6,8 @@
 #include "Components/InputComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include <Kismet/KismetMathLibrary.h>
+#include "GameFramework/CharacterMovementComponent.h"
+
 // Sets default values
 
 
@@ -28,6 +30,7 @@ ASTUBaseCharacter::ASTUBaseCharacter()
 void ASTUBaseCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+    DefaultSpeed = 800;
 	
 }
 
@@ -36,6 +39,27 @@ void ASTUBaseCharacter::BeginPlay()
 void ASTUBaseCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+    if (flag)
+    {
+        ChangeFov(110);//Sprint fov
+    }
+    else
+    {
+        ChangeFov(90);//Default fov
+    }
+    bool IsRunNow = IsRunning();
+    if (IsRunNow && !flag)
+    {
+        flag = true;
+        GetCharacterMovement()->MaxWalkSpeed *= SprintSpeedMultiplier;
+
+    }
+    else if (!IsRunNow)
+    {
+        flag = false;
+        GetCharacterMovement()->MaxWalkSpeed = DefaultSpeed;
+    }
+   
 
 }
 
@@ -49,13 +73,16 @@ void ASTUBaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
     PlayerInputComponent->BindAxis("LookUp", this, &ASTUBaseCharacter::LookUp);
     PlayerInputComponent->BindAxis("TurnAround", this, &ASTUBaseCharacter::TurnAround);
     PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ASTUBaseCharacter::Jump);
+    PlayerInputComponent->BindAction("Run", IE_Pressed, this, &ASTUBaseCharacter::RunStart);
+    PlayerInputComponent->BindAction("Run", IE_Released, this, &ASTUBaseCharacter::RunStop);
 
 }
 
 void ASTUBaseCharacter::MoveForward(float Amount)
 {
+    IsMovingForward = Amount > 0.0f;
+    
     AddMovementInput(GetActorForwardVector(), Amount);
- 
 }
 
 void ASTUBaseCharacter::MoveRight(float Amount)
@@ -74,11 +101,25 @@ void ASTUBaseCharacter::TurnAround(float Amount)
     AddControllerYawInput(Amount);
 }
 
-void ASTUBaseCharacter::FovForward(float Amount)
+void ASTUBaseCharacter::RunStart()
 {
+     WantsToRun = true;
 }
 
-void ASTUBaseCharacter::FovInterp(float x, float y)
+void ASTUBaseCharacter::RunStop()
 {
-    //UKismetMathLibrary::InterpTo
+    WantsToRun = false;
 }
+
+bool ASTUBaseCharacter::IsRunning() const
+{
+    return WantsToRun && IsMovingForward && !GetVelocity().IsZero();
+}
+
+void ASTUBaseCharacter::ChangeFov(float a)
+{
+    DefaultFOV = FMath::FInterpTo(DefaultFOV, a, GetWorld()->GetDeltaSeconds(), 3.5f);
+    CameraComponent->FieldOfView = DefaultFOV;
+}
+
+
