@@ -7,6 +7,8 @@
 #include "GameFramework/SpringArmComponent.h"
 #include <Kismet/KismetMathLibrary.h>
 // Sets default values
+
+
 ASTUBaseCharacter::ASTUBaseCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -22,7 +24,6 @@ ASTUBaseCharacter::ASTUBaseCharacter()
     
 
 }
-
 // Called when the game starts or when spawned
 void ASTUBaseCharacter::BeginPlay()
 {
@@ -30,12 +31,11 @@ void ASTUBaseCharacter::BeginPlay()
 	
 }
 
+
 // Called every frame
 void ASTUBaseCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-
 
 }
 
@@ -48,6 +48,7 @@ void ASTUBaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
     PlayerInputComponent->BindAxis("MoveRight", this, &ASTUBaseCharacter::MoveRight);
     PlayerInputComponent->BindAxis("LookUp", this, &ASTUBaseCharacter::LookUp);
     PlayerInputComponent->BindAxis("TurnAround", this, &ASTUBaseCharacter::TurnAround);
+    PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ASTUBaseCharacter::Jump);
 
 }
 
