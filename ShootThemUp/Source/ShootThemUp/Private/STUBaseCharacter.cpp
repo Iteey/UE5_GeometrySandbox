@@ -7,6 +7,8 @@
 #include "GameFramework/SpringArmComponent.h"
 #include <Kismet/KismetMathLibrary.h>
 #include "GameFramework/CharacterMovementComponent.h"
+#include "STUHealthComponent.h"
+#include "Components/TextRenderComponent.h"
 
 // Sets default values
 
@@ -24,7 +26,9 @@ ASTUBaseCharacter::ASTUBaseCharacter()
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>("CameraComponent");
     CameraComponent->SetupAttachment(SpringArmComponent); // SpringArmComponent or GetRootComponent()
     
-
+    HealthComponent = CreateDefaultSubobject<USTUHealthComponent>("HealthComponent");
+    HealthTextComponent = CreateDefaultSubobject<UTextRenderComponent>("HealthTextComponent");
+    HealthTextComponent->SetupAttachment(GetRootComponent());
 }
 // Called when the game starts or when spawned
 void ASTUBaseCharacter::BeginPlay()
@@ -39,6 +43,9 @@ void ASTUBaseCharacter::BeginPlay()
 void ASTUBaseCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+    const auto Health = HealthComponent->GetHealth();
+    HealthTextComponent->SetText(FText::FromString(FString::Printf(TEXT("%.f"), Health)));
+
     if (flag)
     {
         ChangeFov(110);//Sprint fov
@@ -75,6 +82,7 @@ void ASTUBaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
     PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ASTUBaseCharacter::Jump);
     PlayerInputComponent->BindAction("Run", IE_Pressed, this, &ASTUBaseCharacter::RunStart);
     PlayerInputComponent->BindAction("Run", IE_Released, this, &ASTUBaseCharacter::RunStop);
+    PlayerInputComponent->BindAction("TakeDamage", IE_Pressed, this, &ASTUBaseCharacter::DMG);
 
 }
 
@@ -84,11 +92,15 @@ void ASTUBaseCharacter::MoveForward(float Amount)
     
     AddMovementInput(GetActorForwardVector(), Amount);
 }
+void ASTUBaseCharacter::DMG()
+{
+    TakeDamage(5, FDamageEvent{}, Controller, this);
+    UE_LOG(LogTemp, Warning, TEXT("True dmg"));
+}
 
 void ASTUBaseCharacter::MoveRight(float Amount)
 {
     AddMovementInput(GetActorRightVector(), Amount);
-    
 }
 
 void ASTUBaseCharacter::LookUp(float Amount)

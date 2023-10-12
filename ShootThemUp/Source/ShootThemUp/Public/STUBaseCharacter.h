@@ -7,6 +7,8 @@
 #include "STUBaseCharacter.generated.h"
 class UCameraComponent;
 class USpringArmComponent;
+class USTUHealthComponent;
+class UTextRenderComponent;
 
 UCLASS()
 class SHOOTTHEMUP_API ASTUBaseCharacter : public ACharacter
@@ -23,11 +25,16 @@ protected:
   USpringArmComponent* SpringArmComponent;
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
   UCameraComponent* CameraComponent;
+  UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
+  USTUHealthComponent* HealthComponent;
+  UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+  UTextRenderComponent* HealthTextComponent;
   bool FovForwardb;
   bool Checker = false;
   bool IsMovingForward;
   bool WantsToRun = false;
   bool IsRunningForward;
+  UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
   float DefaultFOV=90.0f;
   bool flag = false;
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
@@ -53,6 +60,7 @@ private:
     UFUNCTION(BlueprintCallable, Category = "Movement")
     bool IsRunning() const;
     void ChangeFov(float a);
+    void DMG();
 
 };
 

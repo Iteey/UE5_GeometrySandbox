@@ -13,10 +13,14 @@
     </None>
     <None Include="..\..\.clang-format" />
     <None Include="..\..\.vsconfig" />
+    <None Include="..\..\EPMasterMaterials.png" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
       <Filter>Config</Filter>
     </None>
     <None Include="..\..\Config\DefaultEngine.ini">
@@ -43,10 +47,16 @@
     <Filter Include="Source\ShootThemUp\Private">
       <UniqueIdentifier>{A56CB85E-E036-3F11-A601-EFEE3FBF4593}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\ShootThemUp\Private\Elevator.cpp">
+      <Filter>Source\ShootThemUp\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ShootThemUp\Private\STUBaseCharacter.cpp">
       <Filter>Source\ShootThemUp\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\ShootThemUp\Private\STUGameModeBase.cpp">
+      <Filter>Source\ShootThemUp\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ShootThemUp\Private\STUHealthComponent.cpp">
       <Filter>Source\ShootThemUp\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\ShootThemUp\Private\STUPlayerController.cpp">
@@ -55,10 +65,16 @@
     <Filter Include="Source\ShootThemUp\Public">
       <UniqueIdentifier>{5160F4A4-581A-3D50-8080-6789BCCB3A5A}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\ShootThemUp\Public\Elevator.h">
+      <Filter>Source\ShootThemUp\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUBaseCharacter.h">
       <Filter>Source\ShootThemUp\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUGameModeBase.h">
+      <Filter>Source\ShootThemUp\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ShootThemUp\Public\STUHealthComponent.h">
       <Filter>Source\ShootThemUp\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUPlayerController.h">

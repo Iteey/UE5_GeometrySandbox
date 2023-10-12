@@ -1,0 +1,17 @@
+Log started at 10/11/2023 11:31:28 (2023-10-11T08:31:28Z)
+No config file at C:\Users\Dev\Documents\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+Configuration will be read from:
+  C:\Users\Dev\AppData\Roaming\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+Log file: C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\ShootThemUp\Saved\Logs\UnrealVersionSelector-2023.10.11-11.31.28.log
+
+Setting temp directory to 'C:\Users\Dev\AppData\Local\Temp\UnrealBuildTool\319625c3'
+A conflicting instance of UnrealBuildTool is already running.
+BuildException: A conflicting instance of UnrealBuildTool is already running.
+   at UnrealBuildTool.SingleInstanceMutex..ctor(String MutexName, Boolean bWaitMutex) in C:\Program Files\Epic Games\UE_5.3\Engine\Source\Programs\UnrealBuildTool\System\SingleInstanceMutex.cs:line 45
+   at UnrealBuildTool.UnrealBuildTool.Main(String[] ArgumentsArray) in C:\Program Files\Epic Games\UE_5.3\Engine\Source\Programs\UnrealBuildTool\UnrealBuildTool.cs:line 624
+WriteFileIfChanged() wrote 0 changed files of 0 requested writes.
+Timeline:
+
+[ 0.000]
+[ 0.000](+0.153) <unknown>
+[ 0.153]
