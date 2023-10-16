@@ -9,7 +9,7 @@ class UCameraComponent;
 class USpringArmComponent;
 class USTUHealthComponent;
 class UTextRenderComponent;
-
+class UBoxComponent;
 UCLASS()
 class SHOOTTHEMUP_API ASTUBaseCharacter : public ACharacter
 {
@@ -50,6 +50,8 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+
+
 private:
     void MoveForward(float Amount);
 	void MoveRight(float Amount);
@@ -61,6 +63,7 @@ private:
     bool IsRunning() const;
     void ChangeFov(float a);
     void DMG();
+
 
 };
 

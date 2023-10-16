@@ -1,6 +1,6 @@
 // Shoot Them Up Game, All Rights Reserved
 
-
+#include "Components/BoxComponent.h"
 #include "STUBaseCharacter.h"
 #include "Camera/CameraComponent.h"
 #include "Components/InputComponent.h"
@@ -29,6 +29,8 @@ ASTUBaseCharacter::ASTUBaseCharacter()
     HealthComponent = CreateDefaultSubobject<USTUHealthComponent>("HealthComponent");
     HealthTextComponent = CreateDefaultSubobject<UTextRenderComponent>("HealthTextComponent");
     HealthTextComponent->SetupAttachment(GetRootComponent());
+
+
 }
 // Called when the game starts or when spawned
 void ASTUBaseCharacter::BeginPlay()
@@ -36,6 +38,7 @@ void ASTUBaseCharacter::BeginPlay()
 	Super::BeginPlay();
     DefaultSpeed = 800;
 	
+    
 }
 
 
@@ -97,7 +100,7 @@ void ASTUBaseCharacter::DMG()
     TakeDamage(5, FDamageEvent{}, Controller, this);
     UE_LOG(LogTemp, Warning, TEXT("True dmg"));
 }
-
+ 
 void ASTUBaseCharacter::MoveRight(float Amount)
 {
     AddMovementInput(GetActorRightVector(), Amount);
