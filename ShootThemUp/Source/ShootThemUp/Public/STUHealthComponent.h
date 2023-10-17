@@ -6,6 +6,7 @@
 #include "Components/ActorComponent.h"
 #include "STUHealthComponent.generated.h"
 
+DECLARE_MULTICAST_DELEGATE(FOnDeath);
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class SHOOTTHEMUP_API USTUHealthComponent : public UActorComponent
@@ -20,14 +21,22 @@ public:
     {
         return Health;
     }
+    UFUNCTION(BlueprintCallable)
+    bool IsDead();
+    FOnDeath OnDeath;
 
-protected:
+  protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
   UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
-	float MaxHealth = 100.0f;
+	float MaxHealth = 120.0f;
+  UFUNCTION()
+  void OnTakeAnyDamage(AActor* DamagedActor, float Damage, const class UDamageType* DamageType,
+                             class AController* InstigatedBy, AActor* DamageCauser);
 
 private:
-    float Health = 100.0f;
+
+    float Health = 120.0f;
+
 		
 };

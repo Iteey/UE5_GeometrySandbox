@@ -30,6 +30,7 @@ protected:
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
   UTextRenderComponent* HealthTextComponent;
   bool FovForwardb;
+  bool Die;
   bool Checker = false;
   bool IsMovingForward;
   bool WantsToRun = false;
@@ -64,6 +65,7 @@ private:
     void ChangeFov(float a);
     void DMG();
 
+	
 
 };
 

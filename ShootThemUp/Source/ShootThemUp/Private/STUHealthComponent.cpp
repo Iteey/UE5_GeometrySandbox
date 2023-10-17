@@ -2,7 +2,7 @@
 
 
 #include "STUHealthComponent.h"
-
+#include "GameFramework/Actor.h"
 // Sets default values for this component's properties
 USTUHealthComponent::USTUHealthComponent()
 {
@@ -14,13 +14,47 @@ USTUHealthComponent::USTUHealthComponent()
 }
 
 
+bool USTUHealthComponent::IsDead()
+{
+    {
+        if (Health <= 0)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
 // Called when the game starts
 void USTUHealthComponent::BeginPlay()
 {
 	Super::BeginPlay();
-
+    
 	Health = MaxHealth;
+    AActor* ComponentOwner = GetOwner();
+	if (ComponentOwner)
+	{
+        ComponentOwner->OnTakeAnyDamage.AddDynamic(this, &USTUHealthComponent::OnTakeAnyDamage);
+        
+	}
 	
+}
+
+void USTUHealthComponent::OnTakeAnyDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType,
+                                              AController* InstigatedBy, AActor* DamageCauser)
+{
+    Health -= Damage;
+    if (IsDead())
+    {
+        OnDeath.Broadcast();
+        UE_LOG(LogTemp, Warning, TEXT("True"));
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("FALSE"));
+    }
+    //UE_LOG(LogTemp, Warning, TEXT("DAMAGE %f"), Damage);
+    //UE_LOG(LogTemp, Warning, TEXT("CURRENT CURRENT HEALTH %f"), Health);
 }
 
 

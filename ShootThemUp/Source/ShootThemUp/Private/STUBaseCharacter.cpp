@@ -37,8 +37,6 @@ void ASTUBaseCharacter::BeginPlay()
 {
 	Super::BeginPlay();
     DefaultSpeed = 800;
-	
-    
 }
 
 
@@ -46,7 +44,9 @@ void ASTUBaseCharacter::BeginPlay()
 void ASTUBaseCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+    
     const auto Health = HealthComponent->GetHealth();
+    //UE_LOG(LogTemp, Warning, TEXT("CURRENT HEALTH %f"), Health);
     HealthTextComponent->SetText(FText::FromString(FString::Printf(TEXT("%.f"), Health)));
 
     if (flag)
@@ -98,8 +98,9 @@ void ASTUBaseCharacter::MoveForward(float Amount)
 void ASTUBaseCharacter::DMG()
 {
     TakeDamage(5, FDamageEvent{}, Controller, this);
-    UE_LOG(LogTemp, Warning, TEXT("True dmg"));
 }
+
+
  
 void ASTUBaseCharacter::MoveRight(float Amount)
 {
