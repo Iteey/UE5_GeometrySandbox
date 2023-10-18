@@ -63,7 +63,8 @@ private:
     UFUNCTION(BlueprintCallable, Category = "Movement")
     bool IsRunning() const;
     void ChangeFov(float a);
-    void DMG();
+    UFUNCTION(BlueprintCallable, Category = "Enviroment")
+    void DMG(int Amount);
 
 	
 

@@ -85,7 +85,6 @@ void ASTUBaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
     PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ASTUBaseCharacter::Jump);
     PlayerInputComponent->BindAction("Run", IE_Pressed, this, &ASTUBaseCharacter::RunStart);
     PlayerInputComponent->BindAction("Run", IE_Released, this, &ASTUBaseCharacter::RunStop);
-    PlayerInputComponent->BindAction("TakeDamage", IE_Pressed, this, &ASTUBaseCharacter::DMG);
 
 }
 
@@ -95,9 +94,9 @@ void ASTUBaseCharacter::MoveForward(float Amount)
     
     AddMovementInput(GetActorForwardVector(), Amount);
 }
-void ASTUBaseCharacter::DMG()
+void ASTUBaseCharacter::DMG(int Amount)
 {
-    TakeDamage(5, FDamageEvent{}, Controller, this);
+    TakeDamage(Amount, FDamageEvent{}, Controller, this);
 }
 
 

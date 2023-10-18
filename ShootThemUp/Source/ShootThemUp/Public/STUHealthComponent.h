@@ -17,6 +17,7 @@ public:
 	// Sets default values for this component's properties
 	USTUHealthComponent();
 
+	UFUNCTION(BlueprintCallable)
 	float GetHealth() const
     {
         return Health;

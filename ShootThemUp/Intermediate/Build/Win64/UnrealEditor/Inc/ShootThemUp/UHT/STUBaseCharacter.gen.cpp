@@ -18,6 +18,14 @@ void EmptyLinkFunctionForGeneratedCodeSTUBaseCharacter() {}
 	SHOOTTHEMUP_API UClass* Z_Construct_UClass_USTUHealthComponent_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_ShootThemUp();
 // End Cross Module References
+	DEFINE_FUNCTION(ASTUBaseCharacter::execDMG)
+	{
+		P_GET_PROPERTY(FIntProperty,Z_Param_Amount);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->DMG(Z_Param_Amount);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ASTUBaseCharacter::execIsRunning)
 	{
 		P_FINISH;
@@ -29,9 +37,45 @@ void EmptyLinkFunctionForGeneratedCodeSTUBaseCharacter() {}
 	{
 		UClass* Class = ASTUBaseCharacter::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "DMG", &ASTUBaseCharacter::execDMG },
 			{ "IsRunning", &ASTUBaseCharacter::execIsRunning },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_ASTUBaseCharacter_DMG_Statics
+	{
+		struct STUBaseCharacter_eventDMG_Parms
+		{
+			int32 Amount;
+		};
+		static const UECodeGen_Private::FIntPropertyParams NewProp_Amount;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ASTUBaseCharacter_DMG_Statics::NewProp_Amount = { "Amount", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(STUBaseCharacter_eventDMG_Parms, Amount), METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASTUBaseCharacter_DMG_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASTUBaseCharacter_DMG_Statics::NewProp_Amount,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASTUBaseCharacter_DMG_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Enviroment" },
+		{ "ModuleRelativePath", "Public/STUBaseCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASTUBaseCharacter_DMG_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASTUBaseCharacter, nullptr, "DMG", nullptr, nullptr, Z_Construct_UFunction_ASTUBaseCharacter_DMG_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASTUBaseCharacter_DMG_Statics::PropPointers), sizeof(Z_Construct_UFunction_ASTUBaseCharacter_DMG_Statics::STUBaseCharacter_eventDMG_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASTUBaseCharacter_DMG_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASTUBaseCharacter_DMG_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ASTUBaseCharacter_DMG_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_ASTUBaseCharacter_DMG_Statics::STUBaseCharacter_eventDMG_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_ASTUBaseCharacter_DMG()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASTUBaseCharacter_DMG_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_ASTUBaseCharacter_IsRunning_Statics
 	{
@@ -123,6 +167,7 @@ void EmptyLinkFunctionForGeneratedCodeSTUBaseCharacter() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUBaseCharacter_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_ASTUBaseCharacter_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_ASTUBaseCharacter_DMG, "DMG" }, // 1793712624
 		{ &Z_Construct_UFunction_ASTUBaseCharacter_IsRunning, "IsRunning" }, // 1076871509
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUBaseCharacter_Statics::FuncInfo) < 2048);
@@ -239,9 +284,9 @@ void EmptyLinkFunctionForGeneratedCodeSTUBaseCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ASTUBaseCharacter, ASTUBaseCharacter::StaticClass, TEXT("ASTUBaseCharacter"), &Z_Registration_Info_UClass_ASTUBaseCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASTUBaseCharacter), 589506244U) },
+		{ Z_Construct_UClass_ASTUBaseCharacter, ASTUBaseCharacter::StaticClass, TEXT("ASTUBaseCharacter"), &Z_Registration_Info_UClass_ASTUBaseCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASTUBaseCharacter), 3724644359U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseCharacter_h_3257034026(TEXT("/Script/ShootThemUp"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseCharacter_h_3415890504(TEXT("/Script/ShootThemUp"),
 		Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
