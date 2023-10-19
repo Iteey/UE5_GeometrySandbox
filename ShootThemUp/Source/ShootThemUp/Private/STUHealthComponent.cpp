@@ -17,7 +17,7 @@ USTUHealthComponent::USTUHealthComponent()
 bool USTUHealthComponent::IsDead()
 {
     {
-        if (Health <= 0)
+        if (Health <= 0 && DieOnce != true)
         {
             return true;
         }
@@ -47,11 +47,10 @@ void USTUHealthComponent::OnTakeAnyDamage(AActor* DamagedActor, float Damage, co
     if (IsDead())
     {
         OnDeath.Broadcast();
-        UE_LOG(LogTemp, Warning, TEXT("True"));
     }
     else
     {
-        UE_LOG(LogTemp, Warning, TEXT("FALSE"));
+        
     }
     //UE_LOG(LogTemp, Warning, TEXT("DAMAGE %f"), Damage);
     //UE_LOG(LogTemp, Warning, TEXT("CURRENT CURRENT HEALTH %f"), Health);

@@ -7,8 +7,8 @@
 #include "STUHealthComponent.generated.h"
 
 DECLARE_MULTICAST_DELEGATE(FOnDeath);
-
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBpOnDeath);
+    UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class SHOOTTHEMUP_API USTUHealthComponent : public UActorComponent
 {
 	GENERATED_BODY()
@@ -24,7 +24,11 @@ public:
     }
     UFUNCTION(BlueprintCallable)
     bool IsDead();
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    bool DieOnce=false;
+    float HealthRegeneration=0.5;
     FOnDeath OnDeath;
+    FBpOnDeath BpOnDeath;
 
   protected:
 	// Called when the game starts
@@ -38,6 +42,6 @@ public:
 private:
 
     float Health = 120.0f;
-
+    
 		
 };

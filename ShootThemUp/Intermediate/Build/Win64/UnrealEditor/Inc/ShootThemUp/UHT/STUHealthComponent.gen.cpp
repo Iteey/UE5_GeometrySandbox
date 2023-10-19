@@ -15,8 +15,35 @@ void EmptyLinkFunctionForGeneratedCodeSTUHealthComponent() {}
 	ENGINE_API UClass* Z_Construct_UClass_UDamageType_NoRegister();
 	SHOOTTHEMUP_API UClass* Z_Construct_UClass_USTUHealthComponent();
 	SHOOTTHEMUP_API UClass* Z_Construct_UClass_USTUHealthComponent_NoRegister();
+	SHOOTTHEMUP_API UFunction* Z_Construct_UDelegateFunction_ShootThemUp_BpOnDeath__DelegateSignature();
 	UPackage* Z_Construct_UPackage__Script_ShootThemUp();
 // End Cross Module References
+	struct Z_Construct_UDelegateFunction_ShootThemUp_BpOnDeath__DelegateSignature_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_ShootThemUp_BpOnDeath__DelegateSignature_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/STUHealthComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_ShootThemUp_BpOnDeath__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_ShootThemUp, nullptr, "BpOnDeath__DelegateSignature", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_ShootThemUp_BpOnDeath__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_ShootThemUp_BpOnDeath__DelegateSignature_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UDelegateFunction_ShootThemUp_BpOnDeath__DelegateSignature()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_ShootThemUp_BpOnDeath__DelegateSignature_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+void FBpOnDeath_DelegateWrapper(const FMulticastScriptDelegate& BpOnDeath)
+{
+	BpOnDeath.ProcessMulticastDelegate<UObject>(NULL);
+}
 	DEFINE_FUNCTION(USTUHealthComponent::execOnTakeAnyDamage)
 	{
 		P_GET_OBJECT(AActor,Z_Param_DamagedActor);
@@ -36,14 +63,56 @@ void EmptyLinkFunctionForGeneratedCodeSTUHealthComponent() {}
 		*(bool*)Z_Param__Result=P_THIS->IsDead();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(USTUHealthComponent::execGetHealth)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(float*)Z_Param__Result=P_THIS->GetHealth();
+		P_NATIVE_END;
+	}
 	void USTUHealthComponent::StaticRegisterNativesUSTUHealthComponent()
 	{
 		UClass* Class = USTUHealthComponent::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "GetHealth", &USTUHealthComponent::execGetHealth },
 			{ "IsDead", &USTUHealthComponent::execIsDead },
 			{ "OnTakeAnyDamage", &USTUHealthComponent::execOnTakeAnyDamage },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_USTUHealthComponent_GetHealth_Statics
+	{
+		struct STUHealthComponent_eventGetHealth_Parms
+		{
+			float ReturnValue;
+		};
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USTUHealthComponent_GetHealth_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(STUHealthComponent_eventGetHealth_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USTUHealthComponent_GetHealth_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USTUHealthComponent_GetHealth_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USTUHealthComponent_GetHealth_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/STUHealthComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USTUHealthComponent_GetHealth_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USTUHealthComponent, nullptr, "GetHealth", nullptr, nullptr, Z_Construct_UFunction_USTUHealthComponent_GetHealth_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USTUHealthComponent_GetHealth_Statics::PropPointers), sizeof(Z_Construct_UFunction_USTUHealthComponent_GetHealth_Statics::STUHealthComponent_eventGetHealth_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_USTUHealthComponent_GetHealth_Statics::Function_MetaDataParams), Z_Construct_UFunction_USTUHealthComponent_GetHealth_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_USTUHealthComponent_GetHealth_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_USTUHealthComponent_GetHealth_Statics::STUHealthComponent_eventGetHealth_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_USTUHealthComponent_GetHealth()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USTUHealthComponent_GetHealth_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_USTUHealthComponent_IsDead_Statics
 	{
@@ -155,6 +224,11 @@ void EmptyLinkFunctionForGeneratedCodeSTUHealthComponent() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DieOnce_MetaData[];
+#endif
+		static void NewProp_DieOnce_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_DieOnce;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_MaxHealth_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_MaxHealth;
@@ -168,6 +242,7 @@ void EmptyLinkFunctionForGeneratedCodeSTUHealthComponent() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_USTUHealthComponent_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_USTUHealthComponent_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_USTUHealthComponent_GetHealth, "GetHealth" }, // 2557004278
 		{ &Z_Construct_UFunction_USTUHealthComponent_IsDead, "IsDead" }, // 2813418525
 		{ &Z_Construct_UFunction_USTUHealthComponent_OnTakeAnyDamage, "OnTakeAnyDamage" }, // 3924923336
 	};
@@ -181,6 +256,17 @@ void EmptyLinkFunctionForGeneratedCodeSTUHealthComponent() {}
 	};
 #endif
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USTUHealthComponent_Statics::NewProp_DieOnce_MetaData[] = {
+		{ "Category", "STUHealthComponent" },
+		{ "ModuleRelativePath", "Public/STUHealthComponent.h" },
+	};
+#endif
+	void Z_Construct_UClass_USTUHealthComponent_Statics::NewProp_DieOnce_SetBit(void* Obj)
+	{
+		((USTUHealthComponent*)Obj)->DieOnce = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_USTUHealthComponent_Statics::NewProp_DieOnce = { "DieOnce", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(USTUHealthComponent), &Z_Construct_UClass_USTUHealthComponent_Statics::NewProp_DieOnce_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USTUHealthComponent_Statics::NewProp_DieOnce_MetaData), Z_Construct_UClass_USTUHealthComponent_Statics::NewProp_DieOnce_MetaData) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USTUHealthComponent_Statics::NewProp_MaxHealth_MetaData[] = {
 		{ "Category", "STUHealthComponent" },
 		{ "ModuleRelativePath", "Public/STUHealthComponent.h" },
@@ -188,6 +274,7 @@ void EmptyLinkFunctionForGeneratedCodeSTUHealthComponent() {}
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_USTUHealthComponent_Statics::NewProp_MaxHealth = { "MaxHealth", nullptr, (EPropertyFlags)0x0020080000010005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USTUHealthComponent, MaxHealth), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USTUHealthComponent_Statics::NewProp_MaxHealth_MetaData), Z_Construct_UClass_USTUHealthComponent_Statics::NewProp_MaxHealth_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_USTUHealthComponent_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USTUHealthComponent_Statics::NewProp_DieOnce,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USTUHealthComponent_Statics::NewProp_MaxHealth,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_USTUHealthComponent_Statics::StaticCppClassTypeInfo = {
@@ -228,9 +315,9 @@ void EmptyLinkFunctionForGeneratedCodeSTUHealthComponent() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUHealthComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_USTUHealthComponent, USTUHealthComponent::StaticClass, TEXT("USTUHealthComponent"), &Z_Registration_Info_UClass_USTUHealthComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USTUHealthComponent), 2226082730U) },
+		{ Z_Construct_UClass_USTUHealthComponent, USTUHealthComponent::StaticClass, TEXT("USTUHealthComponent"), &Z_Registration_Info_UClass_USTUHealthComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USTUHealthComponent), 1281479U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUHealthComponent_h_2090467699(TEXT("/Script/ShootThemUp"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUHealthComponent_h_1715382633(TEXT("/Script/ShootThemUp"),
 		Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUHealthComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUHealthComponent_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

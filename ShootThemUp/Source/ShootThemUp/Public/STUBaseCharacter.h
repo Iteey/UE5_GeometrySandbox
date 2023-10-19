@@ -42,6 +42,8 @@ protected:
   float DefaultSpeed;
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
   float SprintSpeedMultiplier=1.5f;
+  UPROPERTY(EditDefaultsOnly, Category = "Animation")
+  UAnimMontage* Death_Montage;
 	virtual void BeginPlay() override;
 
 public:	
@@ -65,6 +67,7 @@ private:
     void ChangeFov(float a);
     UFUNCTION(BlueprintCallable, Category = "Enviroment")
     void DMG(int Amount);
+    void OnDeath();
 
 	
 

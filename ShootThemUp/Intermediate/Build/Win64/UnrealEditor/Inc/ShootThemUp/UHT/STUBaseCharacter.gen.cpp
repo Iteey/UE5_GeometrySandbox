@@ -10,6 +10,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSTUBaseCharacter() {}
 // Cross Module References
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
+	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UTextRenderComponent_NoRegister();
@@ -157,6 +158,10 @@ void EmptyLinkFunctionForGeneratedCodeSTUBaseCharacter() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_SprintSpeedMultiplier_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_SprintSpeedMultiplier;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Death_Montage_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Death_Montage;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -237,6 +242,13 @@ void EmptyLinkFunctionForGeneratedCodeSTUBaseCharacter() {}
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_SprintSpeedMultiplier = { "SprintSpeedMultiplier", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUBaseCharacter, SprintSpeedMultiplier), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_SprintSpeedMultiplier_MetaData), Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_SprintSpeedMultiplier_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_Death_Montage_MetaData[] = {
+		{ "Category", "Animation" },
+		{ "ModuleRelativePath", "Public/STUBaseCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_Death_Montage = { "Death_Montage", nullptr, (EPropertyFlags)0x0020080000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUBaseCharacter, Death_Montage), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_Death_Montage_MetaData), Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_Death_Montage_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASTUBaseCharacter_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_SpringArmComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_CameraComponent,
@@ -245,6 +257,7 @@ void EmptyLinkFunctionForGeneratedCodeSTUBaseCharacter() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_DefaultFOV,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_DefaultSpeed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_SprintSpeedMultiplier,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_Death_Montage,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ASTUBaseCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ASTUBaseCharacter>::IsAbstract,
@@ -284,9 +297,9 @@ void EmptyLinkFunctionForGeneratedCodeSTUBaseCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ASTUBaseCharacter, ASTUBaseCharacter::StaticClass, TEXT("ASTUBaseCharacter"), &Z_Registration_Info_UClass_ASTUBaseCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASTUBaseCharacter), 3724644359U) },
+		{ Z_Construct_UClass_ASTUBaseCharacter, ASTUBaseCharacter::StaticClass, TEXT("ASTUBaseCharacter"), &Z_Registration_Info_UClass_ASTUBaseCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASTUBaseCharacter), 1962172149U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseCharacter_h_3415890504(TEXT("/Script/ShootThemUp"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseCharacter_h_462473619(TEXT("/Script/ShootThemUp"),
 		Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

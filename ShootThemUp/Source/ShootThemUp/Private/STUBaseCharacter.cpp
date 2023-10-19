@@ -9,6 +9,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "STUHealthComponent.h"
 #include "Components/TextRenderComponent.h"
+#include "GameFramework/Controller.h"
 
 // Sets default values
 
@@ -37,6 +38,7 @@ void ASTUBaseCharacter::BeginPlay()
 {
 	Super::BeginPlay();
     DefaultSpeed = 800;
+    HealthComponent->OnDeath.AddUObject(this, &ASTUBaseCharacter::OnDeath);
 }
 
 
@@ -47,7 +49,14 @@ void ASTUBaseCharacter::Tick(float DeltaTime)
     
     const auto Health = HealthComponent->GetHealth();
     //UE_LOG(LogTemp, Warning, TEXT("CURRENT HEALTH %f"), Health);
-    HealthTextComponent->SetText(FText::FromString(FString::Printf(TEXT("%.f"), Health)));
+    if (HealthComponent->DieOnce == false)
+    {
+        HealthTextComponent->SetText(FText::FromString(FString::Printf(TEXT("%.f"), Health)));
+    }
+    else
+    {
+        HealthTextComponent->SetText(FText::FromString(FString::Printf(TEXT("0"))));
+    }
 
     if (flag)
     {
@@ -97,10 +106,7 @@ void ASTUBaseCharacter::MoveForward(float Amount)
 void ASTUBaseCharacter::DMG(int Amount)
 {
     TakeDamage(Amount, FDamageEvent{}, Controller, this);
-}
-
-
- 
+} 
 void ASTUBaseCharacter::MoveRight(float Amount)
 {
     AddMovementInput(GetActorRightVector(), Amount);
@@ -135,6 +141,22 @@ void ASTUBaseCharacter::ChangeFov(float a)
 {
     DefaultFOV = FMath::FInterpTo(DefaultFOV, a, GetWorld()->GetDeltaSeconds(), 3.5f);
     CameraComponent->FieldOfView = DefaultFOV;
+}
+void ASTUBaseCharacter::OnDeath()
+{
+    UE_LOG(LogTemp, Warning, TEXT("Death"));
+    PlayAnimMontage(Death_Montage);
+    HealthComponent->DieOnce = true;
+    GetCharacterMovement()->DisableMovement();
+    SetLifeSpan(15.5f);
+     CameraComponent->PostProcessSettings.ColorSaturation.Set(1, 1, 1, 0.46);
+    CameraComponent->PostProcessSettings.ColorContrast.Set(1.5, 1.5, 1.5, 1);
+    CameraComponent->PostProcessSettings.ColorGamma.Set(1, 0.8, 0.7, 1);
+    if (Controller)
+    {
+        Controller->ChangeState(NAME_Spectating);
+        
+    }
 }
 
 
