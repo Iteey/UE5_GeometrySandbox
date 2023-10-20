@@ -1,7 +1,6 @@
 // Shoot Them Up Game, All Rights Reserved
-
-#include "Components/BoxComponent.h"
 #include "STUBaseCharacter.h"
+#include "Components/BoxComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/SpringArmComponent.h"

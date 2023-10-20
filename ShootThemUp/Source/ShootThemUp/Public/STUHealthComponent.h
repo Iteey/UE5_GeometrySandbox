@@ -7,11 +7,21 @@
 #include "STUHealthComponent.generated.h"
 
 DECLARE_MULTICAST_DELEGATE(FOnDeath);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBpOnDeath);
     UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class SHOOTTHEMUP_API USTUHealthComponent : public UActorComponent
 {
 	GENERATED_BODY()
+  public:
+  protected:
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Health")
+    bool AutoHeal = true;
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Health")
+    float HealUpdateTime = 1.0f;
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Health")
+    float HealDelay = 3.0f;
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Health")
+    float HealModifier = 5.0f;
+    FTimerHandle HealTimerHandle;
 
 public:	
 	// Sets default values for this component's properties
@@ -28,7 +38,6 @@ public:
     bool DieOnce=false;
     float HealthRegeneration=0.5;
     FOnDeath OnDeath;
-    FBpOnDeath BpOnDeath;
 
   protected:
 	// Called when the game starts
@@ -40,8 +49,9 @@ public:
                              class AController* InstigatedBy, AActor* DamageCauser);
 
 private:
-
+ 
     float Health = 120.0f;
+  void HealUpdate();
     
 		
 };

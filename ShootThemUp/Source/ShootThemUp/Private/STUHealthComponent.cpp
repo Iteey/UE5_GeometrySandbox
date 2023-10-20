@@ -3,6 +3,8 @@
 
 #include "STUHealthComponent.h"
 #include "GameFramework/Actor.h"
+#include "Engine/World.h"
+#include "TimerManager.h"
 // Sets default values for this component's properties
 USTUHealthComponent::USTUHealthComponent()
 {
@@ -43,18 +45,31 @@ void USTUHealthComponent::BeginPlay()
 void USTUHealthComponent::OnTakeAnyDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType,
                                               AController* InstigatedBy, AActor* DamageCauser)
 {
+    if (Damage <= 0.0f || IsDead() || !GetWorld())
+        return;
+    GetWorld()->GetTimerManager().ClearTimer(HealTimerHandle);
     Health -= Damage;
     if (IsDead())
     {
         OnDeath.Broadcast();
     }
-    else
+    else if (AutoHeal && GetWorld())
     {
-        
+        UE_LOG(LogTemp, Warning, TEXT("DAMAGE %s"), GetWorld());
+        GetWorld()->GetTimerManager().SetTimer(HealTimerHandle, this, &USTUHealthComponent::HealUpdate, HealUpdateTime,true, HealDelay);
     }
-    //UE_LOG(LogTemp, Warning, TEXT("DAMAGE %f"), Damage);
+    
     //UE_LOG(LogTemp, Warning, TEXT("CURRENT CURRENT HEALTH %f"), Health);
 }
 
+void USTUHealthComponent::HealUpdate()
+{
+    Health = FMath::Min(Health + HealModifier, MaxHealth);
+
+    if (Health == MaxHealth && GetWorld())
+    {
+        GetWorld()->GetTimerManager().ClearTimer(HealTimerHandle);
+    }
+}
 
 
