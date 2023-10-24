@@ -9,7 +9,7 @@
 #include "STUHealthComponent.h"
 #include "Components/TextRenderComponent.h"
 #include "GameFramework/Controller.h"
-
+#include "STUWeaponComponent.h"
 // Sets default values
 
 
@@ -29,10 +29,11 @@ ASTUBaseCharacter::ASTUBaseCharacter()
     HealthComponent = CreateDefaultSubobject<USTUHealthComponent>("HealthComponent");
     HealthTextComponent = CreateDefaultSubobject<UTextRenderComponent>("HealthTextComponent");
     HealthTextComponent->SetupAttachment(GetRootComponent());
-
-
+    HealthTextComponent->SetOwnerNoSee(false);
+    WeaponComponent = CreateDefaultSubobject<ASTUWeaponComponent>("WeaponComponent");
 }
-// Called when the game starts or when spawned
+    
+    // Called when the game starts or when spawned
 void ASTUBaseCharacter::BeginPlay()
 {
 	Super::BeginPlay();
@@ -85,6 +86,8 @@ void ASTUBaseCharacter::Tick(float DeltaTime)
 void ASTUBaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+    check(PlayerInputComponent);
+    check(WeaponComponent);
 	
 	PlayerInputComponent->BindAxis("MoveForward", this, &ASTUBaseCharacter::MoveForward);
     PlayerInputComponent->BindAxis("MoveRight", this, &ASTUBaseCharacter::MoveRight);
@@ -93,6 +96,7 @@ void ASTUBaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
     PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ASTUBaseCharacter::Jump);
     PlayerInputComponent->BindAction("Run", IE_Pressed, this, &ASTUBaseCharacter::RunStart);
     PlayerInputComponent->BindAction("Run", IE_Released, this, &ASTUBaseCharacter::RunStop);
+    PlayerInputComponent->BindAction("Fire", IE_Pressed, WeaponComponent, &ASTUWeaponComponent::Fire);
 
 }
 
@@ -157,5 +161,6 @@ void ASTUBaseCharacter::OnDeath()
         
     }
 }
+
 
 

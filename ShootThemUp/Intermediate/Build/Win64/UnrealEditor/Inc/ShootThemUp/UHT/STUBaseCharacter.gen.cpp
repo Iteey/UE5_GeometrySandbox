@@ -16,6 +16,7 @@ void EmptyLinkFunctionForGeneratedCodeSTUBaseCharacter() {}
 	ENGINE_API UClass* Z_Construct_UClass_UTextRenderComponent_NoRegister();
 	SHOOTTHEMUP_API UClass* Z_Construct_UClass_ASTUBaseCharacter();
 	SHOOTTHEMUP_API UClass* Z_Construct_UClass_ASTUBaseCharacter_NoRegister();
+	SHOOTTHEMUP_API UClass* Z_Construct_UClass_ASTUWeaponComponent_NoRegister();
 	SHOOTTHEMUP_API UClass* Z_Construct_UClass_USTUHealthComponent_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_ShootThemUp();
 // End Cross Module References
@@ -147,6 +148,10 @@ void EmptyLinkFunctionForGeneratedCodeSTUBaseCharacter() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_HealthTextComponent;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_WeaponComponent_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_WeaponComponent;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_DefaultFOV_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_DefaultFOV;
@@ -222,6 +227,13 @@ void EmptyLinkFunctionForGeneratedCodeSTUBaseCharacter() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_HealthTextComponent = { "HealthTextComponent", nullptr, (EPropertyFlags)0x002008000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUBaseCharacter, HealthTextComponent), Z_Construct_UClass_UTextRenderComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_HealthTextComponent_MetaData), Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_HealthTextComponent_MetaData) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_WeaponComponent_MetaData[] = {
+		{ "Category", "Components" },
+		{ "ModuleRelativePath", "Public/STUBaseCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_WeaponComponent = { "WeaponComponent", nullptr, (EPropertyFlags)0x0020080000020005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUBaseCharacter, WeaponComponent), Z_Construct_UClass_ASTUWeaponComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_WeaponComponent_MetaData), Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_WeaponComponent_MetaData) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_DefaultFOV_MetaData[] = {
 		{ "Category", "Camera" },
 		{ "ModuleRelativePath", "Public/STUBaseCharacter.h" },
@@ -254,6 +266,7 @@ void EmptyLinkFunctionForGeneratedCodeSTUBaseCharacter() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_CameraComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_HealthComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_HealthTextComponent,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_WeaponComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_DefaultFOV,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_DefaultSpeed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseCharacter_Statics::NewProp_SprintSpeedMultiplier,
@@ -297,9 +310,9 @@ void EmptyLinkFunctionForGeneratedCodeSTUBaseCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ASTUBaseCharacter, ASTUBaseCharacter::StaticClass, TEXT("ASTUBaseCharacter"), &Z_Registration_Info_UClass_ASTUBaseCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASTUBaseCharacter), 1962172149U) },
+		{ Z_Construct_UClass_ASTUBaseCharacter, ASTUBaseCharacter::StaticClass, TEXT("ASTUBaseCharacter"), &Z_Registration_Info_UClass_ASTUBaseCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASTUBaseCharacter), 327867385U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseCharacter_h_462473619(TEXT("/Script/ShootThemUp"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseCharacter_h_4145436418(TEXT("/Script/ShootThemUp"),
 		Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

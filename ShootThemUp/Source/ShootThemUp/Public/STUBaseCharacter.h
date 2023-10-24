@@ -5,11 +5,15 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "STUBaseCharacter.generated.h"
+
 class UCameraComponent;
 class USpringArmComponent;
 class USTUHealthComponent;
 class UTextRenderComponent;
 class UBoxComponent;
+class ASTUWeaponComponent;
+class STUBaseWeapon;
+
 UCLASS()
 class SHOOTTHEMUP_API ASTUBaseCharacter : public ACharacter
 {
@@ -23,12 +27,18 @@ protected:
 	// Called when the game starts or when spawned
   UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
   USpringArmComponent* SpringArmComponent;
+
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
   UCameraComponent* CameraComponent;
+
   UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
   USTUHealthComponent* HealthComponent;
+
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
   UTextRenderComponent* HealthTextComponent;
+
+  UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
+  ASTUWeaponComponent* WeaponComponent;
   bool FovForwardb;
   bool Die;
   bool Checker = false;
@@ -42,6 +52,8 @@ protected:
   float DefaultSpeed;
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
   float SprintSpeedMultiplier=1.5f;
+
+
   UPROPERTY(EditDefaultsOnly, Category = "Animation")
   UAnimMontage* Death_Montage;
 	virtual void BeginPlay() override;
@@ -68,6 +80,7 @@ private:
     UFUNCTION(BlueprintCallable, Category = "Enviroment")
     void DMG(int Amount);
     void OnDeath();
+    
 
 	
 

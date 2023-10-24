@@ -50,6 +50,12 @@
     <ClCompile Include="..\..\Source\ShootThemUp\Private\STUBaseCharacter.cpp">
       <Filter>Source\ShootThemUp\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ShootThemUp\Private\STUBaseWeapon.cpp">
+      <Filter>Source\ShootThemUp\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ShootThemUp\Private\STUGameHUD.cpp">
+      <Filter>Source\ShootThemUp\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ShootThemUp\Private\STUGameModeBase.cpp">
       <Filter>Source\ShootThemUp\Private</Filter>
     </ClCompile>
@@ -59,10 +65,19 @@
     <ClCompile Include="..\..\Source\ShootThemUp\Private\STUPlayerController.cpp">
       <Filter>Source\ShootThemUp\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ShootThemUp\Private\STUWeaponComponent.cpp">
+      <Filter>Source\ShootThemUp\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\ShootThemUp\Public">
       <UniqueIdentifier>{5160F4A4-581A-3D50-8080-6789BCCB3A5A}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUBaseCharacter.h">
+      <Filter>Source\ShootThemUp\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ShootThemUp\Public\STUBaseWeapon.h">
+      <Filter>Source\ShootThemUp\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ShootThemUp\Public\STUGameHUD.h">
       <Filter>Source\ShootThemUp\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUGameModeBase.h">
@@ -72,6 +87,9 @@
       <Filter>Source\ShootThemUp\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUPlayerController.h">
+      <Filter>Source\ShootThemUp\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ShootThemUp\Public\STUWeaponComponent.h">
       <Filter>Source\ShootThemUp\Public</Filter>
     </ClInclude>
   </ItemGroup>
