@@ -1,6 +1,6 @@
 // Shoot Them Up Game, All Rights Reserved
-#include "STUBaseWeapon.h"
 #include "STUWeaponComponent.h"
+#include "STUBaseWeapon.h"
 #include "GameFramework/Character.h"
 
 ASTUWeaponComponent::ASTUWeaponComponent()
@@ -29,6 +29,7 @@ void ASTUWeaponComponent::SpawnWeapon()
 
     FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, false);
     CurrentWeapon->AttachToComponent(Character->GetMesh(), AttachmentRules, WeaponAttachPointName);
+    
 
 }
 void ASTUWeaponComponent::Fire()

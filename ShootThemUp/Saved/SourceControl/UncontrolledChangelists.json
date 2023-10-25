@@ -5,8 +5,19 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
-				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/Player/BP_STUBaseCharacter.uasset"
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/StarterContent/Particles/P_Ambient_Dust.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/Player/BP_STUBaseCharacter.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/__ExternalActors__/Levels/TestLevel/9/MD/4E4N5H0WWWP73SMIWDJESZ.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/Enviromanet/Turret/TurretBullet.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/__ExternalActors__/Levels/TestLevel/E/H9/FETVT6BVNLW4QGVBVBP7I6.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/Gun/Weapons/Weapons/Rifle.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/Gun/Weapons/Weapons/Rifle_Skeleton1.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/__ExternalActors__/Levels/TestLevel/A/HS/NU83Q1X3CMVGO0KKSAQXNO.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/Enviromanet/Turret/BP_Turret.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/__ExternalActors__/Levels/TestLevel/A/91/JBHLWR61W3JTKS0GSKPK7D.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/Enviromanet/Turret/mixkit-heavy-sword-hit-2794.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/Enviromanet/Turret/mixkit-explosion-hit-1704.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/__ExternalActors__/Levels/TestLevel/B/Z3/SAWFV548FFYTY0PSMSIOOW.uasset"
 			]
 		}
 	]

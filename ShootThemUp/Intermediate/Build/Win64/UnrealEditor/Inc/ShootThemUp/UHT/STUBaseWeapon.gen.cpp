@@ -33,6 +33,18 @@ void EmptyLinkFunctionForGeneratedCodeSTUBaseWeapon() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_WeaponMesh_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_WeaponMesh;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MuzzleSocketName_MetaData[];
+#endif
+		static const UECodeGen_Private::FNamePropertyParams NewProp_MuzzleSocketName;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_TraceMaxDistance_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_TraceMaxDistance;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DamageAmount_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_DamageAmount;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -56,8 +68,32 @@ void EmptyLinkFunctionForGeneratedCodeSTUBaseWeapon() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_WeaponMesh = { "WeaponMesh", nullptr, (EPropertyFlags)0x00200800000a000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUBaseWeapon, WeaponMesh), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_WeaponMesh_MetaData), Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_WeaponMesh_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_MuzzleSocketName_MetaData[] = {
+		{ "Category", "Components" },
+		{ "ModuleRelativePath", "Public/STUBaseWeapon.h" },
+	};
+#endif
+	const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_MuzzleSocketName = { "MuzzleSocketName", nullptr, (EPropertyFlags)0x0020080000020005, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUBaseWeapon, MuzzleSocketName), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_MuzzleSocketName_MetaData), Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_MuzzleSocketName_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_TraceMaxDistance_MetaData[] = {
+		{ "Category", "Components" },
+		{ "ModuleRelativePath", "Public/STUBaseWeapon.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_TraceMaxDistance = { "TraceMaxDistance", nullptr, (EPropertyFlags)0x0020080000020005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUBaseWeapon, TraceMaxDistance), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_TraceMaxDistance_MetaData), Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_TraceMaxDistance_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DamageAmount_MetaData[] = {
+		{ "Category", "Weapon" },
+		{ "ModuleRelativePath", "Public/STUBaseWeapon.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DamageAmount = { "DamageAmount", nullptr, (EPropertyFlags)0x0020080000020005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUBaseWeapon, DamageAmount), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DamageAmount_MetaData), Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DamageAmount_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASTUBaseWeapon_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_WeaponMesh,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_MuzzleSocketName,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_TraceMaxDistance,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DamageAmount,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ASTUBaseWeapon_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ASTUBaseWeapon>::IsAbstract,
@@ -97,9 +133,9 @@ void EmptyLinkFunctionForGeneratedCodeSTUBaseWeapon() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseWeapon_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ASTUBaseWeapon, ASTUBaseWeapon::StaticClass, TEXT("ASTUBaseWeapon"), &Z_Registration_Info_UClass_ASTUBaseWeapon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASTUBaseWeapon), 4084340330U) },
+		{ Z_Construct_UClass_ASTUBaseWeapon, ASTUBaseWeapon::StaticClass, TEXT("ASTUBaseWeapon"), &Z_Registration_Info_UClass_ASTUBaseWeapon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASTUBaseWeapon), 3211381211U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseWeapon_h_2875423816(TEXT("/Script/ShootThemUp"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseWeapon_h_2666583334(TEXT("/Script/ShootThemUp"),
 		Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseWeapon_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseWeapon_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

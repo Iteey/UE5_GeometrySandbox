@@ -49,8 +49,8 @@
             "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\shootthemup\\intermediate\\build\\win64\\unrealeditor\\inc\\shootthemup\\uht\\stuhealthcomponent.generated.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\textrendercomponent.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\textrendercomponent.generated.h",
-            "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\shootthemup\\source\\shootthemup\\public\\stuweaponcomponent.h",
-            "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\shootthemup\\intermediate\\build\\win64\\unrealeditor\\inc\\shootthemup\\uht\\stuweaponcomponent.generated.h"
+            "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\shootthemup\\source\\shootthemup\\public\\stuweaponcomponentv1.h",
+            "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\shootthemup\\intermediate\\build\\win64\\unrealeditor\\inc\\shootthemup\\uht\\stuweaponcomponentv1.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

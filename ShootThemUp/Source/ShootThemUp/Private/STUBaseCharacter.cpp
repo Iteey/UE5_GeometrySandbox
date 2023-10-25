@@ -9,7 +9,7 @@
 #include "STUHealthComponent.h"
 #include "Components/TextRenderComponent.h"
 #include "GameFramework/Controller.h"
-#include "STUWeaponComponent.h"
+#include "STUWeaponComponentv1.h"
 // Sets default values
 
 
@@ -30,7 +30,7 @@ ASTUBaseCharacter::ASTUBaseCharacter()
     HealthTextComponent = CreateDefaultSubobject<UTextRenderComponent>("HealthTextComponent");
     HealthTextComponent->SetupAttachment(GetRootComponent());
     HealthTextComponent->SetOwnerNoSee(false);
-    WeaponComponent = CreateDefaultSubobject<ASTUWeaponComponent>("WeaponComponent");
+    WeaponComponent = CreateDefaultSubobject<USTUWeaponComponentv1>("WeaponComponent");
 }
     
     // Called when the game starts or when spawned
@@ -96,7 +96,7 @@ void ASTUBaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
     PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ASTUBaseCharacter::Jump);
     PlayerInputComponent->BindAction("Run", IE_Pressed, this, &ASTUBaseCharacter::RunStart);
     PlayerInputComponent->BindAction("Run", IE_Released, this, &ASTUBaseCharacter::RunStop);
-    PlayerInputComponent->BindAction("Fire", IE_Pressed, WeaponComponent, &ASTUWeaponComponent::Fire);
+    PlayerInputComponent->BindAction("Fire", IE_Pressed, WeaponComponent, &USTUWeaponComponentv1::Fire);
 
 }
 

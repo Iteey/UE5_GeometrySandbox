@@ -11,7 +11,7 @@ class USpringArmComponent;
 class USTUHealthComponent;
 class UTextRenderComponent;
 class UBoxComponent;
-class ASTUWeaponComponent;
+class USTUWeaponComponentv1;
 class STUBaseWeapon;
 
 UCLASS()
@@ -38,7 +38,7 @@ protected:
   UTextRenderComponent* HealthTextComponent;
 
   UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
-  ASTUWeaponComponent* WeaponComponent;
+  USTUWeaponComponentv1* WeaponComponent;
   bool FovForwardb;
   bool Die;
   bool Checker = false;
