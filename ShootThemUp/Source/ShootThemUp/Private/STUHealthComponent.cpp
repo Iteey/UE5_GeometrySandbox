@@ -55,7 +55,6 @@ void USTUHealthComponent::OnTakeAnyDamage(AActor* DamagedActor, float Damage, co
     }
     else if (AutoHeal && GetWorld())
     {
-        UE_LOG(LogTemp, Warning, TEXT("DAMAGE %s"), GetWorld());
         GetWorld()->GetTimerManager().SetTimer(HealTimerHandle, this, &USTUHealthComponent::HealUpdate, HealUpdateTime,true, HealDelay);
     }
     

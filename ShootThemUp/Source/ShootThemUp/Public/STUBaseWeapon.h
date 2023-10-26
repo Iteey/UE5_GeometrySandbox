@@ -16,7 +16,8 @@ class SHOOTTHEMUP_API ASTUBaseWeapon : public AActor
 public:	
 	ASTUBaseWeapon();
 
- virtual void Fire();
+ virtual void StartFire();
+ virtual void StopFire();
 
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
@@ -26,12 +27,19 @@ protected:
     FName MuzzleSocketName = "MuzzleSocket";
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
-    float TraceMaxDistance = 4000.0f;
+    float TraceMaxDistance = 2000.0f;
 
     UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Weapon")
-	float DamageAmount = 20.0f;
+	float DamageAmount = 5.0f;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Weapon")
+    float TimeBetweenShots = 0.05f;
+    UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Weapon")
+    float BulletSpread = 1;
 	void MakeDamage(const FHitResult& HitResult, const auto Controller);
 	void MakeShot();
 
 	virtual void BeginPlay() override;
+
+  private:
+    FTimerHandle ShotTimerHandle;
 };

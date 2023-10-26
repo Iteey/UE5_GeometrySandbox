@@ -43,9 +43,16 @@ void USTUWeaponComponentv1::SpawnWeapon()
     CurrentWeapon->AttachToComponent(Character->GetMesh(), AttachmentRules, WeaponAttachPointName);
     CurrentWeapon->SetOwner(Character);
 }
-void USTUWeaponComponentv1::Fire()
+void USTUWeaponComponentv1::StartFire()
+{
+    if (!CurrentWeapon && CanShootNow)
+        return;
+    CurrentWeapon->StartFire();
+}
+
+void USTUWeaponComponentv1::StopFire()
 {
     if (!CurrentWeapon)
         return;
-    CurrentWeapon->Fire();
+    CurrentWeapon->StopFire();
 }

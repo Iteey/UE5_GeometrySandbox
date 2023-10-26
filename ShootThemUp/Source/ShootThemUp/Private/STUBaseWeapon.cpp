@@ -6,6 +6,7 @@
 #include "DrawDebugHelpers.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/Character.h"
+#include "STUBaseCharacter.h"
 
 ASTUBaseWeapon::ASTUBaseWeapon()
 {
@@ -16,10 +17,16 @@ ASTUBaseWeapon::ASTUBaseWeapon()
 
 }
 
-void ASTUBaseWeapon::Fire()
+void ASTUBaseWeapon::StartFire()
 {
+
     UE_LOG(LogTemp, Warning, TEXT("BAH"));
-    MakeShot();
+    GetWorldTimerManager().SetTimer(ShotTimerHandle, this, &ASTUBaseWeapon::MakeShot, TimeBetweenShots, true);
+}
+void ASTUBaseWeapon::StopFire()
+{
+    UE_LOG(LogTemp, Warning, TEXT("STOP BAH"));
+    GetWorldTimerManager().ClearTimer(ShotTimerHandle);
 }
 
 void ASTUBaseWeapon::MakeShot()
@@ -38,7 +45,8 @@ void ASTUBaseWeapon::MakeShot()
     Controller->GetPlayerViewPoint(ViewLocation, ViewRotation);
     const FTransform SocketTransform = WeaponMesh->GetSocketTransform(MuzzleSocketName);
     const FVector TraceStart = ViewLocation;     // SocketTransform.GetLocation();
-    const FVector ShootDirection = ViewRotation.Vector(); // SocketTransform.GetRotation().GetForwardVector();
+    const auto HalfRad = FMath::DegreesToRadians(BulletSpread);
+    const FVector ShootDirection = FMath::VRandCone(ViewRotation.Vector(), HalfRad); // SocketTransform.GetRotation().GetForwardVector();
     const FVector TraceEnd = TraceStart + ShootDirection * TraceMaxDistance;
 
     FCollisionQueryParams CollisionParams;
@@ -49,14 +57,14 @@ void ASTUBaseWeapon::MakeShot()
     if (HitResult.bBlockingHit)
     {
         MakeDamage(HitResult, Controller);
-        DrawDebugLine(GetWorld(), SocketTransform.GetLocation(), HitResult.ImpactPoint, FColor::Red, false, 3.0f, 0,3.0f);
-        DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, 10.0f, 24, FColor::Red, false, 5.0f);
+        DrawDebugLine(GetWorld(), SocketTransform.GetLocation(), HitResult.ImpactPoint, FColor::Red, false, 0.1f, 0,3.0f);
+        DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, 10.0f, 24, FColor::Red, false, 0.5f);
         UE_LOG(LogTemp, Warning, TEXT("Bone: %s"), *HitResult.BoneName.ToString());
         
     }
     else
     {
-        DrawDebugLine(GetWorld(), SocketTransform.GetLocation(), TraceEnd, FColor::Red, false, 3.0f, 0, 3.0f);
+        DrawDebugLine(GetWorld(), SocketTransform.GetLocation(), TraceEnd, FColor::Red, false, 0.1f, 0, 3.0f);
     }
 }
 void ASTUBaseWeapon::MakeDamage(const FHitResult& HitResult, const auto Controller)
