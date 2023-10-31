@@ -20,35 +20,16 @@ ASTUBaseWeapon::ASTUBaseWeapon()
 void ASTUBaseWeapon::StartFire()
 {
 
-    UE_LOG(LogTemp, Warning, TEXT("BAH"));
-    GetWorldTimerManager().SetTimer(ShotTimerHandle, this, &ASTUBaseWeapon::MakeShot, TimeBetweenShots, true);
+   
 }
 void ASTUBaseWeapon::StopFire()
 {
-    UE_LOG(LogTemp, Warning, TEXT("STOP BAH"));
-    GetWorldTimerManager().ClearTimer(ShotTimerHandle);
+    
 }
 
 void ASTUBaseWeapon::MakeShot()
 {
-    if (!GetWorld()) return;
-    FVector TraceStart, TraceEnd;
-    if (!GetTraceData(TraceStart, TraceEnd)) return;
-    FHitResult HitResult;
-    MakeHit(HitResult, TraceStart, TraceEnd);
 
-    if (HitResult.bBlockingHit)
-    {
-        //MakeDamage(HitResult, Controller);
-        DrawDebugLine(GetWorld(), GetMuzzleWorldLocation(), HitResult.ImpactPoint, FColor::Red, false, 0.1f, 0, 3.0f);
-        DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, 10.0f, 24, FColor::Red, false, 0.5f);
-        UE_LOG(LogTemp, Warning, TEXT("Bone: %s"), *HitResult.BoneName.ToString());
-        
-    }
-    else
-    {
-        DrawDebugLine(GetWorld(), GetMuzzleWorldLocation(), TraceEnd, FColor::Red, false, 0.1f, 0, 3.0f);
-    }
 }
 APlayerController* ASTUBaseWeapon::GetPlayerController() const
 {
@@ -65,12 +46,12 @@ bool ASTUBaseWeapon::GetPlayerViewPoint(FVector& ViewLocation, FRotator& ViewRot
         Controller->GetPlayerViewPoint(ViewLocation, ViewRotation);
         return true;
 }
-void ASTUBaseWeapon::MakeDamage(const FHitResult& HitResult, const auto Controller)
+void ASTUBaseWeapon::MakeDamage(const FHitResult& HitResult)
 {
     const auto DamagedActor = HitResult.GetActor();
     if (!DamagedActor)
         return;
-    DamagedActor->TakeDamage(DamageAmount, FDamageEvent(), Controller, this);
+    DamagedActor->TakeDamage(DamageAmount, FDamageEvent(), GetPlayerController(), this);
 }
 
 // Called when the game starts or when spawned
@@ -86,8 +67,7 @@ bool ASTUBaseWeapon::GetTraceData(FVector& TraceStart, FVector& TraceEnd) const
     if(!GetPlayerViewPoint(ViewLocation, ViewRotation)) return false;
 
     TraceStart = ViewLocation; // SocketTransform.GetLocation();
-    const auto HalfRad = FMath::DegreesToRadians(BulletSpread);
-    const FVector ShootDirection = FMath::VRandCone(ViewRotation.Vector(), HalfRad); // SocketTransform.GetRotation().GetForwardVector();
+    const FVector ShootDirection = ViewRotation.Vector(); // SocketTransform.GetRotation().GetForwardVector();
     TraceEnd = TraceStart + ShootDirection * TraceMaxDistance;
     return true;
 }
