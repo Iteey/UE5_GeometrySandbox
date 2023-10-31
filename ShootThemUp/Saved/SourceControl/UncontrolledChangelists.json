@@ -31,7 +31,6 @@
 				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/ExternalContent/Animations/TTP_Animations/AimOffsetRight.uasset",
 				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/__ExternalActors__/Levels/TestLevel/3/72/CHW99W1R4FKACTVSGT0HBQ.uasset",
 				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/__ExternalActors__/Levels/TestLevel/6/JO/D2YEVC9NXSYZJSCEUTFQO2.uasset",
-				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/BP_STURifleWeapon.uasset",
 				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/StarterContent/Materials/M_Brick_Clay_Beveled.uasset",
 				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/StarterContent/Materials/M_CobbleStone_Smooth.uasset",
 				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/StarterContent/Materials/M_Glass.uasset",
@@ -45,6 +44,16 @@
 				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/StarterContent/Materials/M_Rock_Basalt.uasset",
 				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/StarterContent/Props/Materials/M_Shelf.uasset",
 				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/StarterContent/Materials/M_Water_Lake.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/Weapons/BP_STURifleWeapon.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/Weapons/BP_STUBaseWeapon.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/Weapons/BP_STULauncherWeapon.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/StarterContent/Props/Materials/M_Chair.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/StarterContent/Materials/M_Concrete_Tiles.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/StarterContent/Particles/Materials/M_Spark.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/StarterContent/Props/Materials/M_StatueGlass.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/StarterContent/Materials/M_Tech_Hex_Tile_Pulse.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/BP_STURifleWeapon.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/BP_STUBaseWeapon.uasset",
 				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/__ExternalActors__/Levels/TestLevel/B/Z3/SAWFV548FFYTY0PSMSIOOW.uasset"
 			]
 		}
