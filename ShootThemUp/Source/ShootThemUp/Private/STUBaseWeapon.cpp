@@ -85,10 +85,9 @@ bool ASTUBaseWeapon::GetTraceData(FVector& TraceStart, FVector& TraceEnd) const
     FRotator ViewRotation;
     if(!GetPlayerViewPoint(ViewLocation, ViewRotation)) return false;
 
-    const FVector TraceStart = ViewLocation; // SocketTransform.GetLocation();
+    TraceStart = ViewLocation; // SocketTransform.GetLocation();
     const auto HalfRad = FMath::DegreesToRadians(BulletSpread);
-    const FVector ShootDirection =
-        FMath::VRandCone(ViewRotation.Vector(), HalfRad); // SocketTransform.GetRotation().GetForwardVector();
+    const FVector ShootDirection = FMath::VRandCone(ViewRotation.Vector(), HalfRad); // SocketTransform.GetRotation().GetForwardVector();
     TraceEnd = TraceStart + ShootDirection * TraceMaxDistance;
     return true;
 }

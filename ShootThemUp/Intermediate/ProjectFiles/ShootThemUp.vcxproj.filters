@@ -14,6 +14,7 @@
     <None Include="..\..\.clang-format" />
     <None Include="..\..\.vsconfig" />
     <None Include="..\..\EPMasterMaterials.png" />
+    <None Include="..\..\Temp.txt" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -68,9 +69,6 @@
     <ClCompile Include="..\..\Source\ShootThemUp\Private\STUPlayerController.cpp">
       <Filter>Source\ShootThemUp\Private</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\ShootThemUp\Private\STUWeaponComponent.cpp">
-      <Filter>Source\ShootThemUp\Private</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\ShootThemUp\Private\STUWeaponComponentv1.cpp">
       <Filter>Source\ShootThemUp\Private</Filter>
     </ClCompile>
@@ -96,9 +94,6 @@
       <Filter>Source\ShootThemUp\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUPlayerController.h">
-      <Filter>Source\ShootThemUp\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\ShootThemUp\Public\STUWeaponComponent.h">
       <Filter>Source\ShootThemUp\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUWeaponComponentv1.h">

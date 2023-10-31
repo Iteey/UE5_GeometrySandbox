@@ -112,6 +112,7 @@
     <None Include="..\..\.clang-format"/>
     <None Include="..\..\.vsconfig"/>
     <None Include="..\..\EPMasterMaterials.png"/>
+    <None Include="..\..\Temp.txt"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
@@ -159,11 +160,6 @@
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
-    <ClCompile Include="..\..\Source\ShootThemUp\Private\STUWeaponComponent.cpp">
-      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
-      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
-    </ClCompile>
     <ClCompile Include="..\..\Source\ShootThemUp\Private\STUWeaponComponentv1.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
@@ -176,7 +172,6 @@
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUGameModeBase.h"/>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUHealthComponent.h"/>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUPlayerController.h"/>
-    <ClInclude Include="..\..\Source\ShootThemUp\Public\STUWeaponComponent.h"/>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUWeaponComponentv1.h"/>
   </ItemGroup>
   <PropertyGroup>
