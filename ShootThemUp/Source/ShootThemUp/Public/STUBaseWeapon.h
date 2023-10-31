@@ -37,9 +37,12 @@ protected:
     float BulletSpread = 1;
 	void MakeDamage(const FHitResult& HitResult, const auto Controller);
 	void MakeShot();
-
+    APlayerController* GetPlayerController() const;
+    bool GetPlayerViewPoint(FVector& ViewLocation, FRotator& ViewRotation) const;
 	virtual void BeginPlay() override;
-
+    FVector GetMuzzleWorldLocation() const;
+    bool GetTraceData(FVector& TraceStart, FVector& TraceEnd) const;
+    void MakeHit(FHitResult& HitResult, const FVector& TraceStart, const FVector& TraceEnd);
   private:
     FTimerHandle ShotTimerHandle;
 };
