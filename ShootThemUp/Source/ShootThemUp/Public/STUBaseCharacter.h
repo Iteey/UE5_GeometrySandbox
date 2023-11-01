@@ -39,6 +39,7 @@ protected:
 
   UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
   USTUWeaponComponentv1* WeaponComponent;
+
   bool FovForwardb;
   bool Die;
   bool Checker = false;

@@ -165,6 +165,11 @@
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ShootThemUp\Private\STUProjectile.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ShootThemUp\Private\STURifleWeapon.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
@@ -183,6 +188,7 @@
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUHealthComponent.h"/>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STULauncherWeapon.h"/>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUPlayerController.h"/>
+    <ClInclude Include="..\..\Source\ShootThemUp\Public\STUProjectile.h"/>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STURifleWeapon.h"/>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUWeaponComponentv1.h"/>
   </ItemGroup>

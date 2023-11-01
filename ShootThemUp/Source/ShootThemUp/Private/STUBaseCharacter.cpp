@@ -31,6 +31,7 @@ ASTUBaseCharacter::ASTUBaseCharacter()
     HealthTextComponent->SetupAttachment(GetRootComponent());
     HealthTextComponent->SetOwnerNoSee(false);
     WeaponComponent = CreateDefaultSubobject<USTUWeaponComponentv1>("WeaponComponent");
+    
 }
     
     // Called when the game starts or when spawned

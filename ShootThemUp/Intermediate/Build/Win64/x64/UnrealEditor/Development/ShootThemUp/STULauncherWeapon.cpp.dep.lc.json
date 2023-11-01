@@ -9,7 +9,9 @@
             "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\shootthemup\\source\\shootthemup\\public\\stulauncherweapon.h",
             "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\shootthemup\\source\\shootthemup\\public\\stubaseweapon.h",
             "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\shootthemup\\intermediate\\build\\win64\\unrealeditor\\inc\\shootthemup\\uht\\stubaseweapon.generated.h",
-            "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\shootthemup\\intermediate\\build\\win64\\unrealeditor\\inc\\shootthemup\\uht\\stulauncherweapon.generated.h"
+            "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\shootthemup\\intermediate\\build\\win64\\unrealeditor\\inc\\shootthemup\\uht\\stulauncherweapon.generated.h",
+            "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\shootthemup\\source\\shootthemup\\public\\stuprojectile.h",
+            "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\shootthemup\\intermediate\\build\\win64\\unrealeditor\\inc\\shootthemup\\uht\\stuprojectile.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
