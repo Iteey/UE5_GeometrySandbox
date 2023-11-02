@@ -3,6 +3,7 @@
 
 #include "STULauncherWeapon.h"
 #include "STUProjectile.h"
+#include "STUBaseCharacter.h"
 void ASTULauncherWeapon::StartFire()
 {
     MakeShot();

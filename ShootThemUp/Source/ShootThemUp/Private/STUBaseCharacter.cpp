@@ -47,7 +47,8 @@ void ASTUBaseCharacter::BeginPlay()
 void ASTUBaseCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-    
+    IsRunNow = IsRunning();
+    UE_LOG(LogTemp, Warning, TEXT("%f"), IsRunning());
     const auto Health = HealthComponent->GetHealth();
     //UE_LOG(LogTemp, Warning, TEXT("CURRENT HEALTH %f"), Health);
     if (HealthComponent->DieOnce == false)
@@ -67,7 +68,6 @@ void ASTUBaseCharacter::Tick(float DeltaTime)
     {
         ChangeFov(90);//Default fov
     }
-    bool IsRunNow = IsRunning();
     if (IsRunNow && !flag)
     {
         flag = true;

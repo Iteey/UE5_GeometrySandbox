@@ -174,7 +174,7 @@ void EmptyLinkFunctionForGeneratedCodeSTUProjectile() {}
 		{ "ModuleRelativePath", "Public/STUProjectile.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASTUProjectile_Statics::NewProp_CollisionComponent = { "CollisionComponent", nullptr, (EPropertyFlags)0x00200800000b0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUProjectile, CollisionComponent), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUProjectile_Statics::NewProp_CollisionComponent_MetaData), Z_Construct_UClass_ASTUProjectile_Statics::NewProp_CollisionComponent_MetaData) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASTUProjectile_Statics::NewProp_CollisionComponent = { "CollisionComponent", nullptr, (EPropertyFlags)0x002008000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUProjectile, CollisionComponent), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUProjectile_Statics::NewProp_CollisionComponent_MetaData), Z_Construct_UClass_ASTUProjectile_Statics::NewProp_CollisionComponent_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTUProjectile_Statics::NewProp_MovementComponent_MetaData[] = {
 		{ "Category", "Weapon" },
@@ -189,14 +189,14 @@ void EmptyLinkFunctionForGeneratedCodeSTUProjectile() {}
 		{ "ModuleRelativePath", "Public/STUProjectile.h" },
 	};
 #endif
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DamageRadius = { "DamageRadius", nullptr, (EPropertyFlags)0x0020080000030001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUProjectile, DamageRadius), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DamageRadius_MetaData), Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DamageRadius_MetaData) };
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DamageRadius = { "DamageRadius", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUProjectile, DamageRadius), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DamageRadius_MetaData), Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DamageRadius_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DamageAmount_MetaData[] = {
 		{ "Category", "Weapon" },
 		{ "ModuleRelativePath", "Public/STUProjectile.h" },
 	};
 #endif
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DamageAmount = { "DamageAmount", nullptr, (EPropertyFlags)0x0020080000030001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUProjectile, DamageAmount), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DamageAmount_MetaData), Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DamageAmount_MetaData) };
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DamageAmount = { "DamageAmount", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUProjectile, DamageAmount), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DamageAmount_MetaData), Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DamageAmount_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DoFullDamage_MetaData[] = {
 		{ "Category", "Weapon" },
@@ -207,7 +207,7 @@ void EmptyLinkFunctionForGeneratedCodeSTUProjectile() {}
 	{
 		((ASTUProjectile*)Obj)->DoFullDamage = 1;
 	}
-	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DoFullDamage = { "DoFullDamage", nullptr, (EPropertyFlags)0x0020080000030001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ASTUProjectile), &Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DoFullDamage_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DoFullDamage_MetaData), Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DoFullDamage_MetaData) };
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DoFullDamage = { "DoFullDamage", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ASTUProjectile), &Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DoFullDamage_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DoFullDamage_MetaData), Z_Construct_UClass_ASTUProjectile_Statics::NewProp_DoFullDamage_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASTUProjectile_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUProjectile_Statics::NewProp_CollisionComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUProjectile_Statics::NewProp_MovementComponent,
@@ -253,9 +253,9 @@ void EmptyLinkFunctionForGeneratedCodeSTUProjectile() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUProjectile_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ASTUProjectile, ASTUProjectile::StaticClass, TEXT("ASTUProjectile"), &Z_Registration_Info_UClass_ASTUProjectile, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASTUProjectile), 1454570361U) },
+		{ Z_Construct_UClass_ASTUProjectile, ASTUProjectile::StaticClass, TEXT("ASTUProjectile"), &Z_Registration_Info_UClass_ASTUProjectile, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASTUProjectile), 3522142640U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUProjectile_h_3310598893(TEXT("/Script/ShootThemUp"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUProjectile_h_2716447501(TEXT("/Script/ShootThemUp"),
 		Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUProjectile_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUProjectile_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

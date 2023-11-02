@@ -23,19 +23,19 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-  UPROPERTY(VisibleDefaultsOnly, Category = "Weapon")
+  UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Weapon")
     USphereComponent* CollisionComponent;
 
 	UPROPERTY(VisibleDefaultsOnly, Category = "Weapon")
 	UProjectileMovementComponent* MovementComponent;
 
-    UPROPERTY(VisibleDefaultsOnly, Category = "Weapon")
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Weapon")
     float DamageRadius=500.0f;
 
-	UPROPERTY(VisibleDefaultsOnly, Category = "Weapon")
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Weapon")
     float DamageAmount = 99.0f;
 
-    UPROPERTY(VisibleDefaultsOnly, Category = "Weapon")
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Weapon")
 	bool DoFullDamage = false; 
 
 

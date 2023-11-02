@@ -46,6 +46,7 @@ protected:
   bool IsMovingForward;
   bool WantsToRun = false;
   bool IsRunningForward;
+  bool IsRunNow = false;
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
   float DefaultFOV=90.0f;
   bool flag = false;
@@ -65,7 +66,6 @@ public:
   
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
 
 
 private:

@@ -6,6 +6,7 @@
 #include "STUBaseWeapon.h"
 #include "STULauncherWeapon.generated.h"
 
+class ASTUBaseCharacter;
 class ASTUProjectile;
 /**
  * 
