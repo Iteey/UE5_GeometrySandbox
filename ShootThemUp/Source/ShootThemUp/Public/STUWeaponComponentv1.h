@@ -15,24 +15,41 @@ class SHOOTTHEMUP_API USTUWeaponComponentv1 : public UActorComponent
 
 public:
     USTUWeaponComponentv1();
-
+    void NextWeapon();
     virtual void StartFire();
     virtual void StopFire();
+    virtual void AimPressed();
+    virtual void AimReleased();
+    void WeaponFirst();
+    void WeaponSecond();
+    void WeaponThird();
     bool CanShootNow = true;
 
   protected:
     UPROPERTY(EditDefaultsOnly, Category = "Weapon")
-    TSubclassOf<ASTUBaseWeapon> WeaponClass;
+    TArray<TSubclassOf<ASTUBaseWeapon>> WeaponClasses;
 
     UPROPERTY(EditDefaultsOnly, Category = "Weapon")
-    FName WeaponAttachPointName = "WeaponSocket";
+    FName WeaponEquipSocketName = "WeaponSocket";
+
+    UPROPERTY(EditDefaultsOnly, Category = "Weapon")
+    FName WeaponArmorySocketName = "ArmorySocket";
   
     virtual void BeginPlay() override;
   private:
     UPROPERTY()
     ASTUBaseWeapon* CurrentWeapon = nullptr;
+    UPROPERTY()
+    TArray<ASTUBaseWeapon*> Weapons;
 
-    void SpawnWeapon();
+    int32 CurrentWeaponIndex = 0;
+
+    void SpawnWeapons();
+
+    void AttachWeaponToSocket(ASTUBaseWeapon* Weapon, USceneComponent* SceneComponent, const FName& SocketName);
+
+    void EquipWeapon(int32 WeaponIndex);
+
 
 		
 };

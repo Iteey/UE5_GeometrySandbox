@@ -99,6 +99,12 @@ void ASTUBaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
     PlayerInputComponent->BindAction("Run", IE_Released, this, &ASTUBaseCharacter::RunStop);
     PlayerInputComponent->BindAction("Fire", IE_Pressed, WeaponComponent, &USTUWeaponComponentv1::StartFire);
     PlayerInputComponent->BindAction("Fire", IE_Released, WeaponComponent, &USTUWeaponComponentv1::StopFire);
+    PlayerInputComponent->BindAction("NextWeapon", IE_Pressed, WeaponComponent, &USTUWeaponComponentv1::NextWeapon);
+    PlayerInputComponent->BindAction("WeaponFirst", IE_Pressed, WeaponComponent, &USTUWeaponComponentv1::WeaponFirst);
+    PlayerInputComponent->BindAction("WeaponSecond", IE_Pressed, WeaponComponent, &USTUWeaponComponentv1::WeaponSecond);
+    PlayerInputComponent->BindAction("AimSniper", IE_Pressed, WeaponComponent, &USTUWeaponComponentv1::AimPressed);
+    PlayerInputComponent->BindAction("AimSniper", IE_Released, WeaponComponent, &USTUWeaponComponentv1::AimReleased);
+    PlayerInputComponent->BindAction("WeaponThird", IE_Pressed, WeaponComponent, &USTUWeaponComponentv1::WeaponThird);
 
 }
 

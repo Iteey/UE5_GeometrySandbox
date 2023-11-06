@@ -78,6 +78,9 @@
     <ClCompile Include="..\..\Source\ShootThemUp\Private\STURifleWeapon.cpp">
       <Filter>Source\ShootThemUp\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ShootThemUp\Private\STUSniperWeapon.cpp">
+      <Filter>Source\ShootThemUp\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ShootThemUp\Private\STUWeaponComponentv1.cpp">
       <Filter>Source\ShootThemUp\Private</Filter>
     </ClCompile>
@@ -112,6 +115,9 @@
       <Filter>Source\ShootThemUp\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STURifleWeapon.h">
+      <Filter>Source\ShootThemUp\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ShootThemUp\Public\STUSniperWeapon.h">
       <Filter>Source\ShootThemUp\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUWeaponComponentv1.h">

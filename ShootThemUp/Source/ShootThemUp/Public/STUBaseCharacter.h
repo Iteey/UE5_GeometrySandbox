@@ -22,6 +22,7 @@ class SHOOTTHEMUP_API ASTUBaseCharacter : public ACharacter
 public:
 	// Sets default values for this character's properties
 	ASTUBaseCharacter();
+  void ChangeFov(float a);
 
 protected:
 	// Called when the game starts or when spawned
@@ -69,6 +70,7 @@ public:
 
 
 private:
+    
     void MoveForward(float Amount);
 	void MoveRight(float Amount);
 	void LookUp(float Amount);
@@ -77,11 +79,10 @@ private:
     void RunStop();
     UFUNCTION(BlueprintCallable, Category = "Movement")
     bool IsRunning() const;
-    void ChangeFov(float a);
     UFUNCTION(BlueprintCallable, Category = "Enviroment")
     void DMG(int Amount);
     void OnDeath();
-    
+ 
 
 	
 
