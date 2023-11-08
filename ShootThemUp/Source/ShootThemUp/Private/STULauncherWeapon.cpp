@@ -9,8 +9,33 @@ void ASTULauncherWeapon::StartFire()
     MakeShot();
 }
 
+float ASTULauncherWeapon::GetZoomMultiplier()
+{
+    return LauncherZoomPlus;
+}
+
+float ASTULauncherWeapon::SwitchCurrentAmmoType()
+{
+    UE_LOG(LogTemp, Warning, TEXT("SWITCH"));
+    CurrentAmmoType++;
+    if (CurrentAmmoType >= 2)
+    {
+        CurrentAmmoType=0;
+    }
+    return CurrentAmmoType;
+}
+
 void ASTULauncherWeapon::MakeShot()
 {
+    if (CurrentAmmoType == 0)
+    {
+        SpawnedProjectile = ProjectileClass;
+    }
+    else if (CurrentAmmoType == 1)
+    {
+        SpawnedProjectile = SecondProjectileClass;
+    }
+    
     if (!GetWorld()) return;
 
     FVector TraceStart, TraceEnd;
@@ -24,7 +49,7 @@ void ASTULauncherWeapon::MakeShot()
     const FVector Direction = (EndPoint - GetMuzzleWorldLocation()).GetSafeNormal();
     const auto GunRotation = GetActorRotation();
     const FTransform SpawnTransform(GunRotation, GetMuzzleWorldLocation());
-    ASTUProjectile* Projectile = GetWorld()->SpawnActorDeferred<ASTUProjectile>(ProjectileClass, SpawnTransform);
+    ASTUProjectile* Projectile = GetWorld()->SpawnActorDeferred<ASTUProjectile>(SpawnedProjectile, SpawnTransform);
     if (Projectile)
     {
         Projectile->SetShotDirection(Direction);

@@ -20,7 +20,29 @@
 				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/EPMasterMaterials/Materials/Instances/Examples/VertexPaint/MI_BurnedCoalExample01b.uasset",
 				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/EPMasterMaterials/Materials/Instances/Examples/Glass/MI_EP_GlassExample01a.uasset",
 				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/EPMasterMaterials/Materials/Masters/MM_EP_FullPBR+VertexPaintDefault.uasset",
-				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/EPMasterMaterials/Materials/Masters/MM_EP_GlassPBR.uasset"
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/EPMasterMaterials/Materials/Masters/MM_EP_GlassPBR.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/BP_STUSniperWeapon.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/Player/BP_STUBaseCharacter.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/StarterContent/Materials/M_Concrete_Tiles.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/StarterContent/Props/Materials/M_StatueGlass.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/Weapons/SniperModel/model.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/__ExternalActors__/Levels/TestLevel/1/BR/VRRMKN69F5P9UOVU7CDU56.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/__ExternalActors__/Levels/TestLevel/4/96/89Z9ZOXJAVVUWVWAUH87UZ.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/__ExternalActors__/Levels/TestLevel/3/JJ/LT0IPQM6HNWD7QTGEV63HS.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/__ExternalActors__/Levels/TestLevel/D/JL/TYR1LLC9QCRIFQ8G05RWKL.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/Weapons/SniperModel/model_Skeleton.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/__ExternalActors__/Levels/TestLevel/D/I2/6BCOZQSW3KQ75KDG67ZASO.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/StarterContent/Materials/M_CobbleStone_Rough.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/StarterContent/Props/Materials/M_Door.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/StarterContent/Materials/M_Glass.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/StarterContent/Materials/M_Metal_Steel.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/EPMasterMaterials/Materials/Masters/MM_EP_MinimumPBR+Parameters+3LayerNormal.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/EPMasterMaterials/Materials/Instances/Examples/Normal/MM_Example_Parameters+3LayerNormal01a.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/__ExternalActors__/Levels/TestLevel/A/91/JBHLWR61W3JTKS0GSKPK7D.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/BP_STUProjectileJump.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/Weapons/model.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/Weapons/model_Skeleton.uasset",
+				"C:/Users/Dev/Documents/GitHub/UE5_GeometrySandbox/ShootThemUp/Content/__ExternalActors__/Levels/TestLevel/9/KA/TWGYV8918TL3MMO3YYSYT0.uasset"
 			]
 		}
 	]

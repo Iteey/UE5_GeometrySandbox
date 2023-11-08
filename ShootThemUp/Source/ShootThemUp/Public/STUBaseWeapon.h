@@ -19,7 +19,12 @@ public:
  virtual void StartFire();
  virtual void StopFire();
 
-protected:
+ virtual void AimPressed();
+ virtual void AimReleased();
+ virtual float GetZoomMultiplier();
+
+ virtual float SwitchCurrentAmmoType();
+ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
 	USkeletalMeshComponent* WeaponMesh;
 
@@ -31,6 +36,10 @@ protected:
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
 	float DamageAmount = 5.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
+    float ZoomMultiplier = 1;
+
 
 	void MakeDamage(const FHitResult& HitResult);
 	virtual void MakeShot();

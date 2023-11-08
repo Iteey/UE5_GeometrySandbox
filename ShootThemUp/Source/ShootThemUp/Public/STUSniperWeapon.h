@@ -15,15 +15,26 @@ class SHOOTTHEMUP_API ASTUSniperWeapon : public ASTUBaseWeapon
 {
 	GENERATED_BODY()
   protected:
+   
+
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
     float TimeBetweenShots = 2;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
     float BulletSpread = 0;
 
-  public:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
+    float SniperZoomPlus = -20;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
+    float SniperTraceMaxDistance = 8000.0f;
 
+  public:
+    virtual void AimPressed() override;
+    virtual void AimReleased() override;
     virtual void StartFire() override;
+    bool GetZoom();
+    bool AimingNow = false;
+    virtual float GetZoomMultiplier() override;
 
 
   protected:

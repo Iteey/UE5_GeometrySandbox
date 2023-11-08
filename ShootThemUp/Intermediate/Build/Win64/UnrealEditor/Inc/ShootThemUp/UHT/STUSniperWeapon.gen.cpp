@@ -36,6 +36,14 @@ void EmptyLinkFunctionForGeneratedCodeSTUSniperWeapon() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_BulletSpread_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_BulletSpread;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SniperZoomPlus_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_SniperZoomPlus;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SniperTraceMaxDistance_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_SniperTraceMaxDistance;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -68,9 +76,25 @@ void EmptyLinkFunctionForGeneratedCodeSTUSniperWeapon() {}
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASTUSniperWeapon_Statics::NewProp_BulletSpread = { "BulletSpread", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUSniperWeapon, BulletSpread), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUSniperWeapon_Statics::NewProp_BulletSpread_MetaData), Z_Construct_UClass_ASTUSniperWeapon_Statics::NewProp_BulletSpread_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTUSniperWeapon_Statics::NewProp_SniperZoomPlus_MetaData[] = {
+		{ "Category", "Weapon" },
+		{ "ModuleRelativePath", "Public/STUSniperWeapon.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASTUSniperWeapon_Statics::NewProp_SniperZoomPlus = { "SniperZoomPlus", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUSniperWeapon, SniperZoomPlus), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUSniperWeapon_Statics::NewProp_SniperZoomPlus_MetaData), Z_Construct_UClass_ASTUSniperWeapon_Statics::NewProp_SniperZoomPlus_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTUSniperWeapon_Statics::NewProp_SniperTraceMaxDistance_MetaData[] = {
+		{ "Category", "Weapon" },
+		{ "ModuleRelativePath", "Public/STUSniperWeapon.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASTUSniperWeapon_Statics::NewProp_SniperTraceMaxDistance = { "SniperTraceMaxDistance", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUSniperWeapon, SniperTraceMaxDistance), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUSniperWeapon_Statics::NewProp_SniperTraceMaxDistance_MetaData), Z_Construct_UClass_ASTUSniperWeapon_Statics::NewProp_SniperTraceMaxDistance_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASTUSniperWeapon_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUSniperWeapon_Statics::NewProp_TimeBetweenShots,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUSniperWeapon_Statics::NewProp_BulletSpread,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUSniperWeapon_Statics::NewProp_SniperZoomPlus,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUSniperWeapon_Statics::NewProp_SniperTraceMaxDistance,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ASTUSniperWeapon_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ASTUSniperWeapon>::IsAbstract,
@@ -111,9 +135,9 @@ void EmptyLinkFunctionForGeneratedCodeSTUSniperWeapon() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUSniperWeapon_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ASTUSniperWeapon, ASTUSniperWeapon::StaticClass, TEXT("ASTUSniperWeapon"), &Z_Registration_Info_UClass_ASTUSniperWeapon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASTUSniperWeapon), 3943251865U) },
+		{ Z_Construct_UClass_ASTUSniperWeapon, ASTUSniperWeapon::StaticClass, TEXT("ASTUSniperWeapon"), &Z_Registration_Info_UClass_ASTUSniperWeapon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASTUSniperWeapon), 4050493001U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUSniperWeapon_h_2912998402(TEXT("/Script/ShootThemUp"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUSniperWeapon_h_2972433352(TEXT("/Script/ShootThemUp"),
 		Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUSniperWeapon_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUSniperWeapon_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -27,6 +27,26 @@ void ASTUBaseWeapon::StopFire()
     
 }
 
+
+
+void ASTUBaseWeapon::AimPressed()
+{
+}
+
+void ASTUBaseWeapon::AimReleased()
+{
+}
+
+float ASTUBaseWeapon::GetZoomMultiplier()
+{
+    return 0.0f;
+}
+
+float ASTUBaseWeapon::SwitchCurrentAmmoType()
+{
+    return 0.0f;
+}
+
 void ASTUBaseWeapon::MakeShot()
 {
 

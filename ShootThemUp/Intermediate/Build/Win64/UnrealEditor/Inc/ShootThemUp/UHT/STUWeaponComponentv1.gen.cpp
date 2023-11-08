@@ -30,6 +30,10 @@ void EmptyLinkFunctionForGeneratedCodeSTUWeaponComponentv1() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CurrentWeapon_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_CurrentWeapon;
 		static const UECodeGen_Private::FClassPropertyParams NewProp_WeaponClasses_Inner;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_WeaponClasses_MetaData[];
@@ -43,10 +47,6 @@ void EmptyLinkFunctionForGeneratedCodeSTUWeaponComponentv1() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_WeaponArmorySocketName_MetaData[];
 #endif
 		static const UECodeGen_Private::FNamePropertyParams NewProp_WeaponArmorySocketName;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_CurrentWeapon_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_CurrentWeapon;
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_Weapons_Inner;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Weapons_MetaData[];
@@ -69,6 +69,12 @@ void EmptyLinkFunctionForGeneratedCodeSTUWeaponComponentv1() {}
 		{ "ModuleRelativePath", "Public/STUWeaponComponentv1.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_CurrentWeapon_MetaData[] = {
+		{ "ModuleRelativePath", "Public/STUWeaponComponentv1.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_CurrentWeapon = { "CurrentWeapon", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USTUWeaponComponentv1, CurrentWeapon), Z_Construct_UClass_ASTUBaseWeapon_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_CurrentWeapon_MetaData), Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_CurrentWeapon_MetaData) };
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponClasses_Inner = { "WeaponClasses", nullptr, (EPropertyFlags)0x0004000000000000, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UClass, Z_Construct_UClass_ASTUBaseWeapon_NoRegister, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponClasses_MetaData[] = {
@@ -91,12 +97,6 @@ void EmptyLinkFunctionForGeneratedCodeSTUWeaponComponentv1() {}
 	};
 #endif
 	const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponArmorySocketName = { "WeaponArmorySocketName", nullptr, (EPropertyFlags)0x0020080000010001, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USTUWeaponComponentv1, WeaponArmorySocketName), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponArmorySocketName_MetaData), Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponArmorySocketName_MetaData) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_CurrentWeapon_MetaData[] = {
-		{ "ModuleRelativePath", "Public/STUWeaponComponentv1.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_CurrentWeapon = { "CurrentWeapon", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USTUWeaponComponentv1, CurrentWeapon), Z_Construct_UClass_ASTUBaseWeapon_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_CurrentWeapon_MetaData), Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_CurrentWeapon_MetaData) };
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_Weapons_Inner = { "Weapons", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_ASTUBaseWeapon_NoRegister, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_Weapons_MetaData[] = {
@@ -105,11 +105,11 @@ void EmptyLinkFunctionForGeneratedCodeSTUWeaponComponentv1() {}
 #endif
 	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_Weapons = { "Weapons", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USTUWeaponComponentv1, Weapons), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_Weapons_MetaData), Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_Weapons_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_USTUWeaponComponentv1_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_CurrentWeapon,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponClasses_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponClasses,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponEquipSocketName,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponArmorySocketName,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_CurrentWeapon,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_Weapons_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_Weapons,
 	};
@@ -151,9 +151,9 @@ void EmptyLinkFunctionForGeneratedCodeSTUWeaponComponentv1() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUWeaponComponentv1_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_USTUWeaponComponentv1, USTUWeaponComponentv1::StaticClass, TEXT("USTUWeaponComponentv1"), &Z_Registration_Info_UClass_USTUWeaponComponentv1, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USTUWeaponComponentv1), 3167485258U) },
+		{ Z_Construct_UClass_USTUWeaponComponentv1, USTUWeaponComponentv1::StaticClass, TEXT("USTUWeaponComponentv1"), &Z_Registration_Info_UClass_USTUWeaponComponentv1, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USTUWeaponComponentv1), 3918642326U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUWeaponComponentv1_h_2444786535(TEXT("/Script/ShootThemUp"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUWeaponComponentv1_h_844384889(TEXT("/Script/ShootThemUp"),
 		Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUWeaponComponentv1_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUWeaponComponentv1_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

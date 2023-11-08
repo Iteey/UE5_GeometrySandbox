@@ -24,6 +24,8 @@ public:
 	ASTUBaseCharacter();
   void ChangeFov(float a);
 
+   
+
 protected:
 	// Called when the game starts or when spawned
   UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
@@ -48,6 +50,7 @@ protected:
   bool WantsToRun = false;
   bool IsRunningForward;
   bool IsRunNow = false;
+  bool ZoomNow;
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
   float DefaultFOV=90.0f;
   bool flag = false;
@@ -70,7 +73,7 @@ public:
 
 
 private:
-    
+    void OnZoom();
     void MoveForward(float Amount);
 	void MoveRight(float Amount);
 	void LookUp(float Amount);
@@ -82,7 +85,9 @@ private:
     UFUNCTION(BlueprintCallable, Category = "Enviroment")
     void DMG(int Amount);
     void OnDeath();
- 
+    void AimPressed();
+    void AimReleased();
+    void ChangeFovFast(float a);
 
 	
 

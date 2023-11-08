@@ -10,6 +10,7 @@
 #include "Components/TextRenderComponent.h"
 #include "GameFramework/Controller.h"
 #include "STUWeaponComponentv1.h"
+#include "STUSniperWeapon.h"
 // Sets default values
 
 
@@ -34,7 +35,9 @@ ASTUBaseCharacter::ASTUBaseCharacter()
     
 }
     
-    // Called when the game starts or when spawned
+
+
+// Called when the game starts or when spawned
 void ASTUBaseCharacter::BeginPlay()
 {
 	Super::BeginPlay();
@@ -48,10 +51,11 @@ void ASTUBaseCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
     IsRunNow = IsRunning();
-    UE_LOG(LogTemp, Warning, TEXT("%f"), IsRunning());
     const auto Health = HealthComponent->GetHealth();
-    //UE_LOG(LogTemp, Warning, TEXT("CURRENT HEALTH %f"), Health);
-    if (HealthComponent->DieOnce == false)
+
+    const auto Zoom = WeaponComponent->CurrentWeapon->GetZoomMultiplier();
+    
+    if (HealthComponent->DieOnce == false) 
     {
         HealthTextComponent->SetText(FText::FromString(FString::Printf(TEXT("%.f"), Health)));
     }
@@ -64,7 +68,11 @@ void ASTUBaseCharacter::Tick(float DeltaTime)
     {
         ChangeFov(110);//Sprint fov
     }
-    else
+    else if (ZoomNow)
+    {
+        ChangeFovFast(30+Zoom);
+    }
+    else if (!flag && !ZoomNow)
     {
         ChangeFov(90);//Default fov
     }
@@ -102,10 +110,16 @@ void ASTUBaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
     PlayerInputComponent->BindAction("NextWeapon", IE_Pressed, WeaponComponent, &USTUWeaponComponentv1::NextWeapon);
     PlayerInputComponent->BindAction("WeaponFirst", IE_Pressed, WeaponComponent, &USTUWeaponComponentv1::WeaponFirst);
     PlayerInputComponent->BindAction("WeaponSecond", IE_Pressed, WeaponComponent, &USTUWeaponComponentv1::WeaponSecond);
-    PlayerInputComponent->BindAction("AimSniper", IE_Pressed, WeaponComponent, &USTUWeaponComponentv1::AimPressed);
-    PlayerInputComponent->BindAction("AimSniper", IE_Released, WeaponComponent, &USTUWeaponComponentv1::AimReleased);
+    PlayerInputComponent->BindAction("AimSniper", IE_Pressed, this, &ASTUBaseCharacter::AimPressed);
+    PlayerInputComponent->BindAction("AimSniper", IE_Released, this, &ASTUBaseCharacter::AimReleased);
     PlayerInputComponent->BindAction("WeaponThird", IE_Pressed, WeaponComponent, &USTUWeaponComponentv1::WeaponThird);
+    PlayerInputComponent->BindAction("SwitchAmmoType", IE_Pressed, WeaponComponent,&USTUWeaponComponentv1::SwitchCurrentAmmoType);
 
+}
+
+void ASTUBaseCharacter::OnZoom()
+{
+    UE_LOG(LogTemp, Warning, TEXT("ZDAROVA"));
 }
 
 void ASTUBaseCharacter::MoveForward(float Amount)
@@ -114,6 +128,7 @@ void ASTUBaseCharacter::MoveForward(float Amount)
     
     AddMovementInput(GetActorForwardVector(), Amount);
 }
+
 void ASTUBaseCharacter::DMG(int Amount)
 {
     TakeDamage(Amount, FDamageEvent{}, Controller, this);
@@ -152,7 +167,9 @@ void ASTUBaseCharacter::ChangeFov(float a)
 {
     DefaultFOV = FMath::FInterpTo(DefaultFOV, a, GetWorld()->GetDeltaSeconds(), 3.5f);
     CameraComponent->FieldOfView = DefaultFOV;
+
 }
+
 void ASTUBaseCharacter::OnDeath()
 {
     UE_LOG(LogTemp, Warning, TEXT("Death"));
@@ -168,6 +185,24 @@ void ASTUBaseCharacter::OnDeath()
         Controller->ChangeState(NAME_Spectating);
         
     }
+}
+
+void ASTUBaseCharacter::AimPressed()
+{
+    ZoomNow = true;
+    UE_LOG(LogTemp, Warning, TEXT("%d"), ZoomNow);
+}
+
+void ASTUBaseCharacter::AimReleased()
+{
+    ZoomNow = false;
+    UE_LOG(LogTemp, Warning, TEXT("%d"), ZoomNow);
+}
+
+void ASTUBaseCharacter::ChangeFovFast(float a)
+{
+    DefaultFOV = FMath::FInterpTo(DefaultFOV, a, GetWorld()->GetDeltaSeconds(), 6.0f);
+    CameraComponent->FieldOfView = DefaultFOV;
 }
 
 

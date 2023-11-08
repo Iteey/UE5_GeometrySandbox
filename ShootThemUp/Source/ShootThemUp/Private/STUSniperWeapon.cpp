@@ -4,11 +4,38 @@
 #include "STUSniperWeapon.h"
 
 
+
+
+void ASTUSniperWeapon::AimPressed()
+{
+    UE_LOG(LogTemp, Warning, TEXT("zoom"));
+    AimingNow = true;
+    GetZoom();
+}
+
+void ASTUSniperWeapon::AimReleased()
+{
+    AimingNow = false;
+    GetZoom();
+    
+}
+bool ASTUSniperWeapon::GetZoom()
+{
+    return AimingNow;
+
+    
+}
+float ASTUSniperWeapon::GetZoomMultiplier()
+{
+    return SniperZoomPlus;
+}
 void ASTUSniperWeapon::StartFire()
 {
     UE_LOG(LogTemp, Warning, TEXT("BAH"));
     MakeShot();
 }
+
+
 
 void ASTUSniperWeapon::MakeShot()
 {
@@ -45,6 +72,6 @@ bool ASTUSniperWeapon::GetTraceData(FVector& TraceStart, FVector& TraceEnd) cons
     const auto HalfRad = FMath::DegreesToRadians(BulletSpread);
     const FVector ShootDirection =
         FMath::VRandCone(ViewRotation.Vector(), HalfRad); // SocketTransform.GetRotation().GetForwardVector();
-    TraceEnd = TraceStart + ShootDirection * TraceMaxDistance;
+    TraceEnd = TraceStart + ShootDirection * SniperTraceMaxDistance;
     return true;
 }

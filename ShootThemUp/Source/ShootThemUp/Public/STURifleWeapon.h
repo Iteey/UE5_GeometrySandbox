@@ -20,7 +20,7 @@ class SHOOTTHEMUP_API ASTURifleWeapon : public ASTUBaseWeapon
     float TimeBetweenShots = 0.05f;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
-    float BulletSpread = 1;
+    float BulletSpread = 3;
 
 
   public:

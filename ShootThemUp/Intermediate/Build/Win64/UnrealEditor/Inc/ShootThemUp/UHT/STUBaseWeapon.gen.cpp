@@ -45,6 +45,10 @@ void EmptyLinkFunctionForGeneratedCodeSTUBaseWeapon() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_DamageAmount_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_DamageAmount;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ZoomMultiplier_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_ZoomMultiplier;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -89,11 +93,19 @@ void EmptyLinkFunctionForGeneratedCodeSTUBaseWeapon() {}
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DamageAmount = { "DamageAmount", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUBaseWeapon, DamageAmount), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DamageAmount_MetaData), Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DamageAmount_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_ZoomMultiplier_MetaData[] = {
+		{ "Category", "Weapon" },
+		{ "ModuleRelativePath", "Public/STUBaseWeapon.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_ZoomMultiplier = { "ZoomMultiplier", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUBaseWeapon, ZoomMultiplier), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_ZoomMultiplier_MetaData), Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_ZoomMultiplier_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASTUBaseWeapon_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_WeaponMesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_MuzzleSocketName,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_TraceMaxDistance,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DamageAmount,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_ZoomMultiplier,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ASTUBaseWeapon_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ASTUBaseWeapon>::IsAbstract,
@@ -133,9 +145,9 @@ void EmptyLinkFunctionForGeneratedCodeSTUBaseWeapon() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseWeapon_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ASTUBaseWeapon, ASTUBaseWeapon::StaticClass, TEXT("ASTUBaseWeapon"), &Z_Registration_Info_UClass_ASTUBaseWeapon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASTUBaseWeapon), 3507368865U) },
+		{ Z_Construct_UClass_ASTUBaseWeapon, ASTUBaseWeapon::StaticClass, TEXT("ASTUBaseWeapon"), &Z_Registration_Info_UClass_ASTUBaseWeapon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASTUBaseWeapon), 82280316U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseWeapon_h_1730799248(TEXT("/Script/ShootThemUp"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseWeapon_h_3357773525(TEXT("/Script/ShootThemUp"),
 		Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseWeapon_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseWeapon_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

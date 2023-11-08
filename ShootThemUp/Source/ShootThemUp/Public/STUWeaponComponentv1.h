@@ -18,14 +18,19 @@ public:
     void NextWeapon();
     virtual void StartFire();
     virtual void StopFire();
-    virtual void AimPressed();
-    virtual void AimReleased();
     void WeaponFirst();
     void WeaponSecond();
     void WeaponThird();
     bool CanShootNow = true;
-
+    virtual void AimPressed();
+    virtual void AimReleased();
+    virtual void SwitchCurrentAmmoType();
+    UPROPERTY()
+    ASTUBaseWeapon* CurrentWeapon = nullptr;
+    
   protected:
+    
+
     UPROPERTY(EditDefaultsOnly, Category = "Weapon")
     TArray<TSubclassOf<ASTUBaseWeapon>> WeaponClasses;
 
@@ -36,9 +41,9 @@ public:
     FName WeaponArmorySocketName = "ArmorySocket";
   
     virtual void BeginPlay() override;
+  
   private:
-    UPROPERTY()
-    ASTUBaseWeapon* CurrentWeapon = nullptr;
+
     UPROPERTY()
     TArray<ASTUBaseWeapon*> Weapons;
 

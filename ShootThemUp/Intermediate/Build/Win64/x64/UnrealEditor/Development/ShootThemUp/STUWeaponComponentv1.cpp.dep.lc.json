@@ -17,9 +17,7 @@
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\charactermovementreplication.generated.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\rootmotionsource.generated.h",
-            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\character.generated.h",
-            "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\shootthemup\\source\\shootthemup\\public\\stubasecharacter.h",
-            "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\shootthemup\\intermediate\\build\\win64\\unrealeditor\\inc\\shootthemup\\uht\\stubasecharacter.generated.h"
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\character.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

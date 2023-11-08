@@ -27,6 +27,7 @@ void USTUWeaponComponentv1::BeginPlay()
     EquipWeapon(CurrentWeaponIndex);
 }
 
+
 void USTUWeaponComponentv1::SpawnWeapons()
 {
     ACharacter* Character = Cast<ACharacter>(GetOwner());
@@ -80,15 +81,7 @@ void USTUWeaponComponentv1::StopFire()
         return;
     CurrentWeapon->StopFire();
 }
-void USTUWeaponComponentv1::AimPressed()
-{
-    
-    
-}
-void USTUWeaponComponentv1::AimReleased()
-{
-    
-}
+
 void USTUWeaponComponentv1::WeaponFirst()
 {
     StopFire();
@@ -107,6 +100,26 @@ void USTUWeaponComponentv1::WeaponThird()
     CurrentWeaponIndex = 2;
     EquipWeapon(CurrentWeaponIndex);
 }
+void USTUWeaponComponentv1::AimPressed()
+{
+    if (!CurrentWeapon)
+        return;
+    CurrentWeapon->AimPressed();
+}
+void USTUWeaponComponentv1::AimReleased()
+{
+    if (!CurrentWeapon)
+        return;
+    CurrentWeapon->AimReleased();
+}
+
+void USTUWeaponComponentv1::SwitchCurrentAmmoType()
+{
+    if (!CurrentWeapon)
+        return;
+    CurrentWeapon->SwitchCurrentAmmoType();
+}
+
 void USTUWeaponComponentv1::NextWeapon()
 {
     StopFire();
