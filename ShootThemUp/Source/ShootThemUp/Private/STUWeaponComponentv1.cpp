@@ -66,6 +66,15 @@ void USTUWeaponComponentv1::EquipWeapon(int32 WeaponIndex)
     }
     CurrentWeapon = Weapons[WeaponIndex]; 
     AttachWeaponToSocket(CurrentWeapon, Character->GetMesh(), WeaponEquipSocketName);
+    PlayAnimMontage(EquipAnimMontage);
+}
+
+void USTUWeaponComponentv1::PlayAnimMontage(UAnimMontage* Animation)
+{
+    ACharacter* Character = Cast<ACharacter>(GetOwner());
+    if (!Character)
+    return;
+    Character->PlayAnimMontage(Animation);
 }
 
 void USTUWeaponComponentv1::StartFire()
