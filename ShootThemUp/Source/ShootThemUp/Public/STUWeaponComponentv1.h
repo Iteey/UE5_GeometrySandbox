@@ -52,13 +52,14 @@ public:
 
     int32 CurrentWeaponIndex = 0;
 
-    void SpawnWeapons();
+   private:
+     void SpawnWeapons();
+     void AttachWeaponToSocket(ASTUBaseWeapon* Weapon, USceneComponent* SceneComponent, const FName& SocketName);
+     void EquipWeapon(int32 WeaponIndex);
 
-    void AttachWeaponToSocket(ASTUBaseWeapon* Weapon, USceneComponent* SceneComponent, const FName& SocketName);
-
-    void EquipWeapon(int32 WeaponIndex);
-    
-    void PlayAnimMontage(UAnimMontage* Animation);
+     void PlayAnimMontage(UAnimMontage* Animation);
+     void InitAnimations();
+     void OnEquipFinished(USkeletalMeshComponent* MeshComponent);
 
 
 		

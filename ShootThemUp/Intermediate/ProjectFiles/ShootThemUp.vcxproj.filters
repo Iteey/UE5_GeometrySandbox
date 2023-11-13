@@ -57,6 +57,9 @@
     <ClCompile Include="..\..\Source\ShootThemUp\Private\STUDevDamageActor.cpp">
       <Filter>Source\ShootThemUp\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ShootThemUp\Private\STUEquipFinishedAnimNotify.cpp">
+      <Filter>Source\ShootThemUp\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ShootThemUp\Private\STUGameHUD.cpp">
       <Filter>Source\ShootThemUp\Private</Filter>
     </ClCompile>
@@ -94,6 +97,9 @@
       <Filter>Source\ShootThemUp\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUDevDamageActor.h">
+      <Filter>Source\ShootThemUp\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ShootThemUp\Public\STUEquipFinishedAnimNotify.h">
       <Filter>Source\ShootThemUp\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUGameHUD.h">

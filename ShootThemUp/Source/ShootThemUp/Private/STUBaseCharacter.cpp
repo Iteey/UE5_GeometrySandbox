@@ -63,27 +63,33 @@ void ASTUBaseCharacter::Tick(float DeltaTime)
     {
         HealthTextComponent->SetText(FText::FromString(FString::Printf(TEXT("0"))));
     }
-
-    if (flag)
+    //States
+    if (flag)//Sprint
     {
-        ChangeFov(110);//Sprint fov
+        ChangeFov(110);
+        WeaponComponent->CanShootNow = false;
+        WeaponComponent->StopFire();
     }
-    else if (ZoomNow)
+    else if (ZoomNow)//Zoom
     {
         ChangeFovFast(30+Zoom);
+        
     }
-    else if (!flag && !ZoomNow)
+    else if (!flag && !ZoomNow)//default
     {
         ChangeFov(90);//Default fov
+        
     }
     if (IsRunNow && !flag)
     {
-        flag = true;
+        UE_LOG(LogTemp, Warning, TEXT("CanShoot false"));
         GetCharacterMovement()->MaxWalkSpeed *= SprintSpeedMultiplier;
+        flag = true;
 
     }
-    else if (!IsRunNow)
+    else if (!IsRunNow && flag)
     {
+        WeaponComponent->CanShootNow = true;
         flag = false;
         GetCharacterMovement()->MaxWalkSpeed = DefaultSpeed;
     }
@@ -155,6 +161,7 @@ void ASTUBaseCharacter::RunStart()
 
 void ASTUBaseCharacter::RunStop()
 {
+    
     WantsToRun = false;
 }
 

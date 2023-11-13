@@ -140,6 +140,11 @@
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ShootThemUp\Private\STUEquipFinishedAnimNotify.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ShootThemUp\Private\STUGameHUD.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
@@ -188,6 +193,7 @@
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUBaseCharacter.h"/>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUBaseWeapon.h"/>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUDevDamageActor.h"/>
+    <ClInclude Include="..\..\Source\ShootThemUp\Public\STUEquipFinishedAnimNotify.h"/>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUGameHUD.h"/>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUGameModeBase.h"/>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUHealthComponent.h"/>

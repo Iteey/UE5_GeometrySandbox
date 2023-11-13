@@ -2,7 +2,7 @@
 #include "STUWeaponComponentv1.h"
 #include "STUBaseWeapon.h"
 #include "GameFramework/Character.h"
-
+#include "STUEquipFinishedAnimNotify.h"
 
 
 // Sets default values for this component's properties
@@ -22,7 +22,7 @@ USTUWeaponComponentv1::USTUWeaponComponentv1()
 void USTUWeaponComponentv1::BeginPlay()
 {
     Super::BeginPlay();
-
+    InitAnimations();
     SpawnWeapons();
     EquipWeapon(CurrentWeaponIndex);
 }
@@ -74,12 +74,41 @@ void USTUWeaponComponentv1::PlayAnimMontage(UAnimMontage* Animation)
     ACharacter* Character = Cast<ACharacter>(GetOwner());
     if (!Character)
     return;
+    CanShootNow = false;
     Character->PlayAnimMontage(Animation);
+}
+
+void USTUWeaponComponentv1::InitAnimations()
+{
+    if (!EquipAnimMontage) return;
+    const auto NotifyEvents = EquipAnimMontage->Notifies;
+
+    for (auto NotifyEvent : NotifyEvents)
+    {
+    auto EquipFinishedNotify = Cast<USTUEquipFinishedAnimNotify>(NotifyEvent.Notify);
+    if (EquipFinishedNotify)
+        {
+            EquipFinishedNotify->OnNotified.AddUObject(this, &USTUWeaponComponentv1::OnEquipFinished);
+            break;
+        }
+    }
+}
+
+void USTUWeaponComponentv1::OnEquipFinished(USkeletalMeshComponent* MeshComponent)
+{
+    ACharacter* Character = Cast<ACharacter>(GetOwner());
+    if (!Character)
+        return;
+        if (Character->GetMesh() == MeshComponent)
+        {
+            CanShootNow = true;
+            UE_LOG(LogTemp, Warning, TEXT("Finish"));
+        }
 }
 
 void USTUWeaponComponentv1::StartFire()
 {
-    if (!CurrentWeapon && CanShootNow)
+    if (!CurrentWeapon || !CanShootNow)
         return;
     CurrentWeapon->StartFire();
 }
