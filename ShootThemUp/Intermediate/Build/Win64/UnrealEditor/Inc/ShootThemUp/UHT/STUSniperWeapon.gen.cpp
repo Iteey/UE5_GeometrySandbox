@@ -135,9 +135,9 @@ void EmptyLinkFunctionForGeneratedCodeSTUSniperWeapon() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUSniperWeapon_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ASTUSniperWeapon, ASTUSniperWeapon::StaticClass, TEXT("ASTUSniperWeapon"), &Z_Registration_Info_UClass_ASTUSniperWeapon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASTUSniperWeapon), 3669475283U) },
+		{ Z_Construct_UClass_ASTUSniperWeapon, ASTUSniperWeapon::StaticClass, TEXT("ASTUSniperWeapon"), &Z_Registration_Info_UClass_ASTUSniperWeapon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASTUSniperWeapon), 2675229559U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUSniperWeapon_h_3252779387(TEXT("/Script/ShootThemUp"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUSniperWeapon_h_3049324666(TEXT("/Script/ShootThemUp"),
 		Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUSniperWeapon_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUSniperWeapon_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

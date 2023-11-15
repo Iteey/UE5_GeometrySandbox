@@ -153,10 +153,6 @@ template<> SHOOTTHEMUP_API UScriptStruct* StaticStruct<FAmmoData>()
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_TraceMaxDistance;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_DefaultAmmo_MetaData[];
-#endif
-		static const UECodeGen_Private::FStructPropertyParams NewProp_DefaultAmmo;
-#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_DamageAmount_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_DamageAmount;
@@ -164,6 +160,10 @@ template<> SHOOTTHEMUP_API UScriptStruct* StaticStruct<FAmmoData>()
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_ZoomMultiplier_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_ZoomMultiplier;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DefaultAmmo_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_DefaultAmmo;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -202,13 +202,6 @@ template<> SHOOTTHEMUP_API UScriptStruct* StaticStruct<FAmmoData>()
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_TraceMaxDistance = { "TraceMaxDistance", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUBaseWeapon, TraceMaxDistance), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_TraceMaxDistance_MetaData), Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_TraceMaxDistance_MetaData) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DefaultAmmo_MetaData[] = {
-		{ "Category", "Weapon" },
-		{ "ModuleRelativePath", "Public/STUBaseWeapon.h" },
-	};
-#endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DefaultAmmo = { "DefaultAmmo", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUBaseWeapon, DefaultAmmo), Z_Construct_UScriptStruct_FAmmoData, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DefaultAmmo_MetaData), Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DefaultAmmo_MetaData) }; // 3673290527
-#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DamageAmount_MetaData[] = {
 		{ "Category", "Weapon" },
 		{ "ModuleRelativePath", "Public/STUBaseWeapon.h" },
@@ -222,13 +215,20 @@ template<> SHOOTTHEMUP_API UScriptStruct* StaticStruct<FAmmoData>()
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_ZoomMultiplier = { "ZoomMultiplier", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUBaseWeapon, ZoomMultiplier), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_ZoomMultiplier_MetaData), Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_ZoomMultiplier_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DefaultAmmo_MetaData[] = {
+		{ "Category", "Weapon" },
+		{ "ModuleRelativePath", "Public/STUBaseWeapon.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DefaultAmmo = { "DefaultAmmo", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASTUBaseWeapon, DefaultAmmo), Z_Construct_UScriptStruct_FAmmoData, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DefaultAmmo_MetaData), Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DefaultAmmo_MetaData) }; // 3673290527
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASTUBaseWeapon_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_WeaponMesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_MuzzleSocketName,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_TraceMaxDistance,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DefaultAmmo,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DamageAmount,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_ZoomMultiplier,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTUBaseWeapon_Statics::NewProp_DefaultAmmo,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ASTUBaseWeapon_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ASTUBaseWeapon>::IsAbstract,
@@ -272,9 +272,9 @@ template<> SHOOTTHEMUP_API UScriptStruct* StaticStruct<FAmmoData>()
 		{ FAmmoData::StaticStruct, Z_Construct_UScriptStruct_FAmmoData_Statics::NewStructOps, TEXT("AmmoData"), &Z_Registration_Info_UScriptStruct_AmmoData, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FAmmoData), 3673290527U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseWeapon_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ASTUBaseWeapon, ASTUBaseWeapon::StaticClass, TEXT("ASTUBaseWeapon"), &Z_Registration_Info_UClass_ASTUBaseWeapon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASTUBaseWeapon), 2211802718U) },
+		{ Z_Construct_UClass_ASTUBaseWeapon, ASTUBaseWeapon::StaticClass, TEXT("ASTUBaseWeapon"), &Z_Registration_Info_UClass_ASTUBaseWeapon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASTUBaseWeapon), 1907548150U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseWeapon_h_3364797161(TEXT("/Script/ShootThemUp"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseWeapon_h_159346441(TEXT("/Script/ShootThemUp"),
 		Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseWeapon_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseWeapon_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseWeapon_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUBaseWeapon_h_Statics::ScriptStructInfo),
 		nullptr, 0);

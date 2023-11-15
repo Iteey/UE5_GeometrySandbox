@@ -26,6 +26,7 @@ class SHOOTTHEMUP_API ASTURifleWeapon : public ASTUBaseWeapon
   public:
     virtual void StopFire() override;
     virtual void StartFire() override;
+    virtual void Tick(float DeltaTime) override;
 
   protected:
     virtual void MakeShot() override;

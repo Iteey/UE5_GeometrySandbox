@@ -21,7 +21,7 @@ struct FAmmoData
     int32 Clips; // Количество магазинов
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Weapon")
-    bool Infinite; // Бесконечноел и количество боеприпасов
+    bool Infinite; // Бесконечное ли количество боеприпасов
 
 };
 
@@ -43,7 +43,7 @@ public:
 
  virtual float SwitchCurrentAmmoType();
 
- private:
+ protected:
  FAmmoData CurrentAmmo;
  protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
@@ -55,14 +55,16 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
     float TraceMaxDistance = 2000.0f;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
-    FAmmoData DefaultAmmo{15,10,false};
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
 	float DamageAmount = 5.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
     float ZoomMultiplier = 1;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
+    FAmmoData DefaultAmmo = {15, 10, false};
+
 
     void DecreaseAmmo();
     bool IsAmmoEmpty() const;

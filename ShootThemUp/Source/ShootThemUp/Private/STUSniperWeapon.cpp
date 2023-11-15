@@ -39,7 +39,9 @@ void ASTUSniperWeapon::StartFire()
 
 void ASTUSniperWeapon::MakeShot()
 {
-
+    if (IsAmmoEmpty())
+        return;
+   
     const auto Controller = GetPlayerController();
 
     if (!GetWorld())
@@ -61,6 +63,7 @@ void ASTUSniperWeapon::MakeShot()
     {
         DrawDebugLine(GetWorld(), GetMuzzleWorldLocation(), TraceEnd, FColor::Red, false, 0.1f, 0, 3.0f);
     }
+    DecreaseAmmo();
 }
 bool ASTUSniperWeapon::GetTraceData(FVector& TraceStart, FVector& TraceEnd) const
 {

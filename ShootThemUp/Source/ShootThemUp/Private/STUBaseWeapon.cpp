@@ -10,12 +10,13 @@
 
 ASTUBaseWeapon::ASTUBaseWeapon()
 {
-	PrimaryActorTick.bCanEverTick = false;
+	PrimaryActorTick.bCanEverTick = true;
 
 	WeaponMesh = CreateDefaultSubobject<USkeletalMeshComponent>("WeaponMesh");
     SetRootComponent(WeaponMesh);
 
 }
+
 
 void ASTUBaseWeapon::StartFire()
 {
@@ -34,6 +35,7 @@ void ASTUBaseWeapon::DecreaseAmmo()
     {
         ChangeClip();
     }
+    
 }
 bool ASTUBaseWeapon::IsAmmoEmpty() const
 {
@@ -109,7 +111,13 @@ bool ASTUBaseWeapon::GetPlayerViewPoint(FVector& ViewLocation, FRotator& ViewRot
 void ASTUBaseWeapon::BeginPlay()
 {
 	Super::BeginPlay();
+    CurrentAmmo.Bullets = DefaultAmmo.Bullets;
+    CurrentAmmo.Clips = DefaultAmmo.Clips;
+    CurrentAmmo.Infinite = DefaultAmmo.Infinite;
     check(WeaponMesh);
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
+    
+   
 }
 bool ASTUBaseWeapon::GetTraceData(FVector& TraceStart, FVector& TraceEnd) const
 {
