@@ -1,4 +1,4 @@
-// Shoot Them Up Game, All Rights Reserved
+﻿// Shoot Them Up Game, All Rights Reserved
 
 #pragma once
 
@@ -8,7 +8,25 @@
 
 class USkeletalMeshComponent;
 
+
+USTRUCT(BlueprintType)
+struct FAmmoData
+{
+    GENERATED_USTRUCT_BODY();
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Weapon")
+    int32 Bullets; //Количество патрон в магазине
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Weapon", meta = (EditCondition = "!Infinite"))
+    int32 Clips; // Количество магазинов
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Weapon")
+    bool Infinite; // Бесконечноел и количество боеприпасов
+
+};
+
 UCLASS()
+
 class SHOOTTHEMUP_API ASTUBaseWeapon : public AActor
 {
 	GENERATED_BODY()
@@ -24,6 +42,9 @@ public:
  virtual float GetZoomMultiplier();
 
  virtual float SwitchCurrentAmmoType();
+
+ private:
+ FAmmoData CurrentAmmo;
  protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
 	USkeletalMeshComponent* WeaponMesh;
@@ -35,10 +56,21 @@ public:
     float TraceMaxDistance = 2000.0f;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
+    FAmmoData DefaultAmmo{15,10,false};
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
 	float DamageAmount = 5.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
     float ZoomMultiplier = 1;
+
+    void DecreaseAmmo();
+    bool IsAmmoEmpty() const;
+    bool IsClipEmpty() const;
+    void ChangeClip();
+    void LogAmmo();
+
+   
 
 
 	void MakeDamage(const FHitResult& HitResult);

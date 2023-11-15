@@ -39,6 +39,7 @@ void ASTUSniperWeapon::StartFire()
 
 void ASTUSniperWeapon::MakeShot()
 {
+
     const auto Controller = GetPlayerController();
 
     if (!GetWorld())

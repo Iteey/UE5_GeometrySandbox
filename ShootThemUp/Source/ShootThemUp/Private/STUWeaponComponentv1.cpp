@@ -74,6 +74,7 @@ void USTUWeaponComponentv1::PlayAnimMontage(UAnimMontage* Animation)
     ACharacter* Character = Cast<ACharacter>(GetOwner());
     if (!Character)
     return;
+    CanSwitchWeapon = true;
     CanShootNow = false;
     Character->PlayAnimMontage(Animation);
 }
@@ -102,6 +103,7 @@ void USTUWeaponComponentv1::OnEquipFinished(USkeletalMeshComponent* MeshComponen
         if (Character->GetMesh() == MeshComponent)
         {
             CanShootNow = true;
+            CanSwitchWeapon = true;
             UE_LOG(LogTemp, Warning, TEXT("Finish"));
         }
 }
@@ -122,18 +124,24 @@ void USTUWeaponComponentv1::StopFire()
 
 void USTUWeaponComponentv1::WeaponFirst()
 {
+    if (!CanSwitchWeapon)
+        return;
     StopFire();
     CurrentWeaponIndex = 0;
     EquipWeapon(CurrentWeaponIndex);
 }
 void USTUWeaponComponentv1::WeaponSecond()
 {
+    if (!CanSwitchWeapon)
+        return;
     StopFire();
     CurrentWeaponIndex = 1;
     EquipWeapon(CurrentWeaponIndex);
 }
 void USTUWeaponComponentv1::WeaponThird()
 {
+    if (!CanSwitchWeapon)
+        return;
     StopFire();
     CurrentWeaponIndex = 2;
     EquipWeapon(CurrentWeaponIndex);
@@ -160,6 +168,8 @@ void USTUWeaponComponentv1::SwitchCurrentAmmoType()
 
 void USTUWeaponComponentv1::NextWeapon()
 {
+    if (!CanSwitchWeapon)
+        return;
     StopFire();
     CurrentWeaponIndex = (CurrentWeaponIndex + 1) % Weapons.Num();
     EquipWeapon(CurrentWeaponIndex);

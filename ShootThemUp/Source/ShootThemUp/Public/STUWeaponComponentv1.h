@@ -22,6 +22,7 @@ public:
     void WeaponSecond();
     void WeaponThird();
     bool CanShootNow = true;
+    bool CanSwitchWeapon = true;
     virtual void AimPressed();
     virtual void AimReleased();
     virtual void SwitchCurrentAmmoType();
