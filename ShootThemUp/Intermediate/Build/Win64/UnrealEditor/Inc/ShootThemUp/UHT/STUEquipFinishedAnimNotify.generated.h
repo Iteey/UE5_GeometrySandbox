@@ -24,7 +24,7 @@ private: \
 	static void StaticRegisterNativesUSTUEquipFinishedAnimNotify(); \
 	friend struct Z_Construct_UClass_USTUEquipFinishedAnimNotify_Statics; \
 public: \
-	DECLARE_CLASS(USTUEquipFinishedAnimNotify, UAnimNotify, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/ShootThemUp"), NO_API) \
+	DECLARE_CLASS(USTUEquipFinishedAnimNotify, USTUAnimNotify, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/ShootThemUp"), NO_API) \
 	DECLARE_SERIALIZER(USTUEquipFinishedAnimNotify)
 
 

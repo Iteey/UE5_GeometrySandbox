@@ -15,8 +15,89 @@ void EmptyLinkFunctionForGeneratedCodeSTUWeaponComponentv1() {}
 	SHOOTTHEMUP_API UClass* Z_Construct_UClass_ASTUBaseWeapon_NoRegister();
 	SHOOTTHEMUP_API UClass* Z_Construct_UClass_USTUWeaponComponentv1();
 	SHOOTTHEMUP_API UClass* Z_Construct_UClass_USTUWeaponComponentv1_NoRegister();
+	SHOOTTHEMUP_API UScriptStruct* Z_Construct_UScriptStruct_FWeaponData();
 	UPackage* Z_Construct_UPackage__Script_ShootThemUp();
 // End Cross Module References
+	static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_WeaponData;
+class UScriptStruct* FWeaponData::StaticStruct()
+{
+	if (!Z_Registration_Info_UScriptStruct_WeaponData.OuterSingleton)
+	{
+		Z_Registration_Info_UScriptStruct_WeaponData.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FWeaponData, (UObject*)Z_Construct_UPackage__Script_ShootThemUp(), TEXT("WeaponData"));
+	}
+	return Z_Registration_Info_UScriptStruct_WeaponData.OuterSingleton;
+}
+template<> SHOOTTHEMUP_API UScriptStruct* StaticStruct<FWeaponData>()
+{
+	return FWeaponData::StaticStruct();
+}
+	struct Z_Construct_UScriptStruct_FWeaponData_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[];
+#endif
+		static void* NewStructOps();
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_WeaponClass_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_WeaponClass;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ReloadAnimMontage_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_ReloadAnimMontage;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+		static const UECodeGen_Private::FStructParams ReturnStructParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FWeaponData_Statics::Struct_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "ModuleRelativePath", "Public/STUWeaponComponentv1.h" },
+	};
+#endif
+	void* Z_Construct_UScriptStruct_FWeaponData_Statics::NewStructOps()
+	{
+		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FWeaponData>();
+	}
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FWeaponData_Statics::NewProp_WeaponClass_MetaData[] = {
+		{ "Category", "Weapon" },
+		{ "ModuleRelativePath", "Public/STUWeaponComponentv1.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UScriptStruct_FWeaponData_Statics::NewProp_WeaponClass = { "WeaponClass", nullptr, (EPropertyFlags)0x0014000000010005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FWeaponData, WeaponClass), Z_Construct_UClass_UClass, Z_Construct_UClass_ASTUBaseWeapon_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FWeaponData_Statics::NewProp_WeaponClass_MetaData), Z_Construct_UScriptStruct_FWeaponData_Statics::NewProp_WeaponClass_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FWeaponData_Statics::NewProp_ReloadAnimMontage_MetaData[] = {
+		{ "Category", "Weapon" },
+		{ "ModuleRelativePath", "Public/STUWeaponComponentv1.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FWeaponData_Statics::NewProp_ReloadAnimMontage = { "ReloadAnimMontage", nullptr, (EPropertyFlags)0x0010000000010005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FWeaponData, ReloadAnimMontage), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FWeaponData_Statics::NewProp_ReloadAnimMontage_MetaData), Z_Construct_UScriptStruct_FWeaponData_Statics::NewProp_ReloadAnimMontage_MetaData) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FWeaponData_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FWeaponData_Statics::NewProp_WeaponClass,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FWeaponData_Statics::NewProp_ReloadAnimMontage,
+	};
+	const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FWeaponData_Statics::ReturnStructParams = {
+		(UObject* (*)())Z_Construct_UPackage__Script_ShootThemUp,
+		nullptr,
+		&NewStructOps,
+		"WeaponData",
+		Z_Construct_UScriptStruct_FWeaponData_Statics::PropPointers,
+		UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FWeaponData_Statics::PropPointers),
+		sizeof(FWeaponData),
+		alignof(FWeaponData),
+		RF_Public|RF_Transient|RF_MarkAsNative,
+		EStructFlags(0x00000001),
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FWeaponData_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FWeaponData_Statics::Struct_MetaDataParams)
+	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FWeaponData_Statics::PropPointers) < 2048);
+	UScriptStruct* Z_Construct_UScriptStruct_FWeaponData()
+	{
+		if (!Z_Registration_Info_UScriptStruct_WeaponData.InnerSingleton)
+		{
+			UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_WeaponData.InnerSingleton, Z_Construct_UScriptStruct_FWeaponData_Statics::ReturnStructParams);
+		}
+		return Z_Registration_Info_UScriptStruct_WeaponData.InnerSingleton;
+	}
 	void USTUWeaponComponentv1::StaticRegisterNativesUSTUWeaponComponentv1()
 	{
 	}
@@ -35,11 +116,15 @@ void EmptyLinkFunctionForGeneratedCodeSTUWeaponComponentv1() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_CurrentWeapon_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_CurrentWeapon;
-		static const UECodeGen_Private::FClassPropertyParams NewProp_WeaponClasses_Inner;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_WeaponClasses_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CurrentReloadAnimMontage_MetaData[];
 #endif
-		static const UECodeGen_Private::FArrayPropertyParams NewProp_WeaponClasses;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_CurrentReloadAnimMontage;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_WeaponData_Inner;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_WeaponData_MetaData[];
+#endif
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_WeaponData;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_WeaponEquipSocketName_MetaData[];
 #endif
@@ -80,14 +165,20 @@ void EmptyLinkFunctionForGeneratedCodeSTUWeaponComponentv1() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_CurrentWeapon = { "CurrentWeapon", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USTUWeaponComponentv1, CurrentWeapon), Z_Construct_UClass_ASTUBaseWeapon_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_CurrentWeapon_MetaData), Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_CurrentWeapon_MetaData) };
-	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponClasses_Inner = { "WeaponClasses", nullptr, (EPropertyFlags)0x0004000000000000, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UClass, Z_Construct_UClass_ASTUBaseWeapon_NoRegister, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponClasses_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_CurrentReloadAnimMontage_MetaData[] = {
+		{ "ModuleRelativePath", "Public/STUWeaponComponentv1.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_CurrentReloadAnimMontage = { "CurrentReloadAnimMontage", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USTUWeaponComponentv1, CurrentReloadAnimMontage), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_CurrentReloadAnimMontage_MetaData), Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_CurrentReloadAnimMontage_MetaData) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponData_Inner = { "WeaponData", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FWeaponData, METADATA_PARAMS(0, nullptr) }; // 4254945085
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponData_MetaData[] = {
 		{ "Category", "Weapon" },
 		{ "ModuleRelativePath", "Public/STUWeaponComponentv1.h" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponClasses = { "WeaponClasses", nullptr, (EPropertyFlags)0x0024080000010001, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USTUWeaponComponentv1, WeaponClasses), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponClasses_MetaData), Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponClasses_MetaData) };
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponData = { "WeaponData", nullptr, (EPropertyFlags)0x0020080000010001, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USTUWeaponComponentv1, WeaponData), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponData_MetaData), Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponData_MetaData) }; // 4254945085
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponEquipSocketName_MetaData[] = {
 		{ "Category", "Weapon" },
@@ -118,8 +209,9 @@ void EmptyLinkFunctionForGeneratedCodeSTUWeaponComponentv1() {}
 	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_Weapons = { "Weapons", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USTUWeaponComponentv1, Weapons), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_Weapons_MetaData), Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_Weapons_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_USTUWeaponComponentv1_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_CurrentWeapon,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponClasses_Inner,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponClasses,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_CurrentReloadAnimMontage,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponData_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponData,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponEquipSocketName,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_WeaponArmorySocketName,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USTUWeaponComponentv1_Statics::NewProp_EquipAnimMontage,
@@ -161,13 +253,17 @@ void EmptyLinkFunctionForGeneratedCodeSTUWeaponComponentv1() {}
 	USTUWeaponComponentv1::~USTUWeaponComponentv1() {}
 	struct Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUWeaponComponentv1_h_Statics
 	{
+		static const FStructRegisterCompiledInInfo ScriptStructInfo[];
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUWeaponComponentv1_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_USTUWeaponComponentv1, USTUWeaponComponentv1::StaticClass, TEXT("USTUWeaponComponentv1"), &Z_Registration_Info_UClass_USTUWeaponComponentv1, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USTUWeaponComponentv1), 1146184842U) },
+	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUWeaponComponentv1_h_Statics::ScriptStructInfo[] = {
+		{ FWeaponData::StaticStruct, Z_Construct_UScriptStruct_FWeaponData_Statics::NewStructOps, TEXT("WeaponData"), &Z_Registration_Info_UScriptStruct_WeaponData, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FWeaponData), 4254945085U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUWeaponComponentv1_h_1943414426(TEXT("/Script/ShootThemUp"),
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUWeaponComponentv1_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_USTUWeaponComponentv1, USTUWeaponComponentv1::StaticClass, TEXT("USTUWeaponComponentv1"), &Z_Registration_Info_UClass_USTUWeaponComponentv1, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USTUWeaponComponentv1), 2803597159U) },
+	};
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUWeaponComponentv1_h_2449635474(TEXT("/Script/ShootThemUp"),
 		Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUWeaponComponentv1_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUWeaponComponentv1_h_Statics::ClassInfo),
-		nullptr, 0,
+		Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUWeaponComponentv1_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUWeaponComponentv1_h_Statics::ScriptStructInfo),
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

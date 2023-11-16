@@ -50,6 +50,7 @@ protected:
   bool WantsToRun = false;
   bool IsRunningForward;
   bool IsRunNow = false;
+  float Zoom = 0;
   bool ZoomNow;
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
   float DefaultFOV=90.0f;

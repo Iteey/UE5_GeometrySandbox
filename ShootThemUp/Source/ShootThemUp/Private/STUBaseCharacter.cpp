@@ -52,8 +52,8 @@ void ASTUBaseCharacter::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
     IsRunNow = IsRunning();
     const auto Health = HealthComponent->GetHealth();
-
-    const auto Zoom = WeaponComponent->CurrentWeapon->GetZoomMultiplier();
+    Zoom = WeaponComponent->CurrentWeapon->GetZoomMultiplier();
+   
     
     if (HealthComponent->DieOnce == false) 
     {
@@ -120,6 +120,7 @@ void ASTUBaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
     PlayerInputComponent->BindAction("AimSniper", IE_Released, this, &ASTUBaseCharacter::AimReleased);
     PlayerInputComponent->BindAction("WeaponThird", IE_Pressed, WeaponComponent, &USTUWeaponComponentv1::WeaponThird);
     PlayerInputComponent->BindAction("SwitchAmmoType", IE_Pressed, WeaponComponent,&USTUWeaponComponentv1::SwitchCurrentAmmoType);
+    PlayerInputComponent->BindAction("Reload", IE_Pressed, WeaponComponent,&USTUWeaponComponentv1::Reload);
 
 }
 

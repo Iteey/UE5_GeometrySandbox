@@ -9,7 +9,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSTUEquipFinishedAnimNotify() {}
 // Cross Module References
-	ENGINE_API UClass* Z_Construct_UClass_UAnimNotify();
+	SHOOTTHEMUP_API UClass* Z_Construct_UClass_USTUAnimNotify();
 	SHOOTTHEMUP_API UClass* Z_Construct_UClass_USTUEquipFinishedAnimNotify();
 	SHOOTTHEMUP_API UClass* Z_Construct_UClass_USTUEquipFinishedAnimNotify_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_ShootThemUp();
@@ -32,7 +32,7 @@ void EmptyLinkFunctionForGeneratedCodeSTUEquipFinishedAnimNotify() {}
 		static const UECodeGen_Private::FClassParams ClassParams;
 	};
 	UObject* (*const Z_Construct_UClass_USTUEquipFinishedAnimNotify_Statics::DependentSingletons[])() = {
-		(UObject* (*)())Z_Construct_UClass_UAnimNotify,
+		(UObject* (*)())Z_Construct_UClass_USTUAnimNotify,
 		(UObject* (*)())Z_Construct_UPackage__Script_ShootThemUp,
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_USTUEquipFinishedAnimNotify_Statics::DependentSingletons) < 16);
@@ -84,9 +84,9 @@ void EmptyLinkFunctionForGeneratedCodeSTUEquipFinishedAnimNotify() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUEquipFinishedAnimNotify_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_USTUEquipFinishedAnimNotify, USTUEquipFinishedAnimNotify::StaticClass, TEXT("USTUEquipFinishedAnimNotify"), &Z_Registration_Info_UClass_USTUEquipFinishedAnimNotify, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USTUEquipFinishedAnimNotify), 2253901916U) },
+		{ Z_Construct_UClass_USTUEquipFinishedAnimNotify, USTUEquipFinishedAnimNotify::StaticClass, TEXT("USTUEquipFinishedAnimNotify"), &Z_Registration_Info_UClass_USTUEquipFinishedAnimNotify, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USTUEquipFinishedAnimNotify), 1537484487U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUEquipFinishedAnimNotify_h_1671408786(TEXT("/Script/ShootThemUp"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUEquipFinishedAnimNotify_h_157591724(TEXT("/Script/ShootThemUp"),
 		Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUEquipFinishedAnimNotify_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUEquipFinishedAnimNotify_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

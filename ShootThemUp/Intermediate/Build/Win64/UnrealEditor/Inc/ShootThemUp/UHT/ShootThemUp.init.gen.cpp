@@ -17,13 +17,13 @@ void EmptyLinkFunctionForGeneratedCodeShootThemUp_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xFB945E45,
-				0x3F591650,
+				0x059AE89B,
+				0x8DB24C87,
 				METADATA_PARAMS(0, nullptr)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_ShootThemUp.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_ShootThemUp.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_ShootThemUp(Z_Construct_UPackage__Script_ShootThemUp, TEXT("/Script/ShootThemUp"), Z_Registration_Info_UPackage__Script_ShootThemUp, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xFB945E45, 0x3F591650));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_ShootThemUp(Z_Construct_UPackage__Script_ShootThemUp, TEXT("/Script/ShootThemUp"), Z_Registration_Info_UPackage__Script_ShootThemUp, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x059AE89B, 0x8DB24C87));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -33,9 +33,9 @@ void USTUWeaponComponentv1::SpawnWeapons()
     ACharacter* Character = Cast<ACharacter>(GetOwner());
     if (!Character || !GetWorld())
         return;
-    for (auto WeaponClass : WeaponClasses)
+    for (auto OneWeaponData : WeaponData)
     {
-        auto Weapon = GetWorld()->SpawnActor<ASTUBaseWeapon>(WeaponClass);
+        auto Weapon = GetWorld()->SpawnActor<ASTUBaseWeapon>(OneWeaponData.WeaponClass);
         if (!Weapon)
             continue;
 
@@ -65,6 +65,8 @@ void USTUWeaponComponentv1::EquipWeapon(int32 WeaponIndex)
     AttachWeaponToSocket(CurrentWeapon, Character->GetMesh(), WeaponArmorySocketName);
     }
     CurrentWeapon = Weapons[WeaponIndex]; 
+    CurrentReloadAnimMontage = WeaponData[WeaponIndex].ReloadAnimMontage;
+    const auto CurrentWeaponData = WeaponData.FindByPredicate([&](const FWeaponData& Data){ return Data.WeaponClass == CurrentWeapon->GetClass();});
     AttachWeaponToSocket(CurrentWeapon, Character->GetMesh(), WeaponEquipSocketName);
     PlayAnimMontage(EquipAnimMontage);
 }
@@ -164,6 +166,11 @@ void USTUWeaponComponentv1::SwitchCurrentAmmoType()
     if (!CurrentWeapon)
         return;
     CurrentWeapon->SwitchCurrentAmmoType();
+}
+
+void USTUWeaponComponentv1::Reload()
+{
+    PlayAnimMontage(CurrentReloadAnimMontage);
 }
 
 void USTUWeaponComponentv1::NextWeapon()
