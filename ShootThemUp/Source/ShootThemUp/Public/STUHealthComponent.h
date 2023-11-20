@@ -33,6 +33,12 @@ public:
         return Health;
     }
     UFUNCTION(BlueprintCallable)
+    float GetHealthPercent() const
+    {
+        return Health / MaxHealth;
+    }
+
+    UFUNCTION(BlueprintCallable)
     bool IsDead();
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     bool DieOnce=false;

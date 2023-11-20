@@ -36,6 +36,13 @@ void EmptyLinkFunctionForGeneratedCodeSTUHealthComponent() {}
 		*(bool*)Z_Param__Result=P_THIS->IsDead();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(USTUHealthComponent::execGetHealthPercent)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(float*)Z_Param__Result=P_THIS->GetHealthPercent();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(USTUHealthComponent::execGetHealth)
 	{
 		P_FINISH;
@@ -48,6 +55,7 @@ void EmptyLinkFunctionForGeneratedCodeSTUHealthComponent() {}
 		UClass* Class = USTUHealthComponent::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "GetHealth", &USTUHealthComponent::execGetHealth },
+			{ "GetHealthPercent", &USTUHealthComponent::execGetHealthPercent },
 			{ "IsDead", &USTUHealthComponent::execIsDead },
 			{ "OnTakeAnyDamage", &USTUHealthComponent::execOnTakeAnyDamage },
 		};
@@ -84,6 +92,40 @@ void EmptyLinkFunctionForGeneratedCodeSTUHealthComponent() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USTUHealthComponent_GetHealth_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_USTUHealthComponent_GetHealthPercent_Statics
+	{
+		struct STUHealthComponent_eventGetHealthPercent_Parms
+		{
+			float ReturnValue;
+		};
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USTUHealthComponent_GetHealthPercent_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(STUHealthComponent_eventGetHealthPercent_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USTUHealthComponent_GetHealthPercent_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USTUHealthComponent_GetHealthPercent_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USTUHealthComponent_GetHealthPercent_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/STUHealthComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USTUHealthComponent_GetHealthPercent_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USTUHealthComponent, nullptr, "GetHealthPercent", nullptr, nullptr, Z_Construct_UFunction_USTUHealthComponent_GetHealthPercent_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USTUHealthComponent_GetHealthPercent_Statics::PropPointers), sizeof(Z_Construct_UFunction_USTUHealthComponent_GetHealthPercent_Statics::STUHealthComponent_eventGetHealthPercent_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_USTUHealthComponent_GetHealthPercent_Statics::Function_MetaDataParams), Z_Construct_UFunction_USTUHealthComponent_GetHealthPercent_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_USTUHealthComponent_GetHealthPercent_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_USTUHealthComponent_GetHealthPercent_Statics::STUHealthComponent_eventGetHealthPercent_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_USTUHealthComponent_GetHealthPercent()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USTUHealthComponent_GetHealthPercent_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -233,6 +275,7 @@ void EmptyLinkFunctionForGeneratedCodeSTUHealthComponent() {}
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_USTUHealthComponent_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_USTUHealthComponent_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_USTUHealthComponent_GetHealth, "GetHealth" }, // 2557004278
+		{ &Z_Construct_UFunction_USTUHealthComponent_GetHealthPercent, "GetHealthPercent" }, // 1678138281
 		{ &Z_Construct_UFunction_USTUHealthComponent_IsDead, "IsDead" }, // 2813418525
 		{ &Z_Construct_UFunction_USTUHealthComponent_OnTakeAnyDamage, "OnTakeAnyDamage" }, // 3924923336
 	};
@@ -341,9 +384,9 @@ void EmptyLinkFunctionForGeneratedCodeSTUHealthComponent() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUHealthComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_USTUHealthComponent, USTUHealthComponent::StaticClass, TEXT("USTUHealthComponent"), &Z_Registration_Info_UClass_USTUHealthComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USTUHealthComponent), 4225417930U) },
+		{ Z_Construct_UClass_USTUHealthComponent, USTUHealthComponent::StaticClass, TEXT("USTUHealthComponent"), &Z_Registration_Info_UClass_USTUHealthComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USTUHealthComponent), 2343541151U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUHealthComponent_h_767738273(TEXT("/Script/ShootThemUp"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUHealthComponent_h_4060876900(TEXT("/Script/ShootThemUp"),
 		Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUHealthComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Dev_Documents_GitHub_UE5_GeometrySandbox_ShootThemUp_Source_ShootThemUp_Public_STUHealthComponent_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

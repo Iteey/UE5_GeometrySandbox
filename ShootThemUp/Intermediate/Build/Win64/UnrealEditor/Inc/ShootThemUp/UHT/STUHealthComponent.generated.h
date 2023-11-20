@@ -24,6 +24,7 @@ class UDamageType;
  \
 	DECLARE_FUNCTION(execOnTakeAnyDamage); \
 	DECLARE_FUNCTION(execIsDead); \
+	DECLARE_FUNCTION(execGetHealthPercent); \
 	DECLARE_FUNCTION(execGetHealth);
 
 
