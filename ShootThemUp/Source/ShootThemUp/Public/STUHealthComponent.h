@@ -35,6 +35,7 @@ public:
     UFUNCTION(BlueprintCallable)
     float GetHealthPercent() const
     {
+        UE_LOG(LogTemp, Warning, TEXT("Current Health %f"),Health)
         return Health / MaxHealth;
     }
 
@@ -49,14 +50,14 @@ public:
 	// Called when the game starts
 	virtual void BeginPlay() override;
   UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
-	float MaxHealth = 120.0f;
+	float MaxHealth;
   UFUNCTION()
   void OnTakeAnyDamage(AActor* DamagedActor, float Damage, const class UDamageType* DamageType,
                              class AController* InstigatedBy, AActor* DamageCauser);
 
 private:
  
-    float Health = 120.0f;
+    float Health = 0.0f;
   void HealUpdate();
     
 		

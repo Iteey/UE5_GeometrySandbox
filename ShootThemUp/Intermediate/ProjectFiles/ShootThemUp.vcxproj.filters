@@ -12,6 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <None Include="..\..\.clang-format" />
+    <None Include="..\..\.gitignore" />
     <None Include="..\..\.vsconfig" />
     <None Include="..\..\EPMasterMaterials.png" />
     <None Include="..\..\Temp.txt" />
@@ -48,6 +49,9 @@
     <Filter Include="Source\ShootThemUp\Private">
       <UniqueIdentifier>{A56CB85E-E036-3F11-A601-EFEE3FBF4593}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\ShootThemUp\Private\STI_PlayerHUDWidget.cpp">
+      <Filter>Source\ShootThemUp\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ShootThemUp\Private\STUAnimNotify.cpp">
       <Filter>Source\ShootThemUp\Private</Filter>
     </ClCompile>
@@ -96,6 +100,9 @@
     <Filter Include="Source\ShootThemUp\Public">
       <UniqueIdentifier>{5160F4A4-581A-3D50-8080-6789BCCB3A5A}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\ShootThemUp\Public\STI_PlayerHUDWidget.h">
+      <Filter>Source\ShootThemUp\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\ShootThemUp\Public\STUAnimNotify.h">
       <Filter>Source\ShootThemUp\Public</Filter>
     </ClInclude>
