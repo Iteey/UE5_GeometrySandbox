@@ -36,8 +36,11 @@
 /FUNCTIONPADMIN:6
 "C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\ShootThemUp\Intermediate\Build\Win64\x64\ShootThemUpEditor\Development\Engine\SharedPCH.Engine.Cpp20.InclOrderUnreal5_0.h.obj"
 "C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\ShootThemUp\Intermediate\Build\Win64\x64\UnrealEditor\Development\ShootThemUp\Module.ShootThemUp.cpp.obj"
+"C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\ShootThemUp\Intermediate\Build\Win64\x64\UnrealEditor\Development\ShootThemUp\STI_PlayerHUDWidget.cpp.obj"
+"C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\ShootThemUp\Intermediate\Build\Win64\x64\UnrealEditor\Development\ShootThemUp\ShootThemUp.init.gen.cpp.obj"
 "C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\ShootThemUp\Intermediate\Build\Win64\x64\UnrealEditor\Development\ShootThemUp\Default.rc2.res"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Engine\UnrealEditor-Engine.lib"
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UMG\UnrealEditor-UMG.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Core\UnrealEditor-Core.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\CoreUObject\UnrealEditor-CoreUObject.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\InputCore\UnrealEditor-InputCore.lib"

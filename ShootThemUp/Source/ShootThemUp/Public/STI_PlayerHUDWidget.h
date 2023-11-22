@@ -10,6 +10,9 @@
 /**
  * 
  */
+
+class USTUWeaponComponent;
+class USTUHealthComponent;
 UCLASS()
 class SHOOTTHEMUP_API USTI_PlayerHUDWidget : public UUserWidget
 {
@@ -18,5 +21,16 @@ class SHOOTTHEMUP_API USTI_PlayerHUDWidget : public UUserWidget
 	public:
     UFUNCTION(BlueprintCallable, Category = "UI")
       float GetHealthPercent() const;
+
+	UFUNCTION(BlueprintCallable, Category = "UI")
+      bool IsPlayerAlive() const;
+
+	UFUNCTION(BlueprintCallable, Category = "UI")
+      bool IsPlayerSpectating() const;
+
+  private:
+    USTUWeaponComponent* GetWeaponComponent() const;
+    USTUHealthComponent* GetHealthComponent() const;
+
 	
 };

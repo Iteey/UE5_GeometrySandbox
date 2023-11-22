@@ -8,5 +8,8 @@
 /NODEFAULTLIB
 "C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\ShootThemUp\Intermediate\Build\Win64\x64\ShootThemUpEditor\Development\Engine\SharedPCH.Engine.Cpp20.InclOrderUnreal5_0.h.obj"
 "C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\ShootThemUp\Intermediate\Build\Win64\x64\UnrealEditor\Development\ShootThemUp\Module.ShootThemUp.cpp.obj"
+"C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\ShootThemUp\Intermediate\Build\Win64\x64\UnrealEditor\Development\ShootThemUp\STI_PlayerHUDWidget.cpp.obj"
+"C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\ShootThemUp\Intermediate\Build\Win64\x64\UnrealEditor\Development\ShootThemUp\STUHealthComponent.cpp.obj"
+"C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\ShootThemUp\Intermediate\Build\Win64\x64\UnrealEditor\Development\ShootThemUp\ShootThemUp.init.gen.cpp.obj"
 "C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\ShootThemUp\Intermediate\Build\Win64\x64\UnrealEditor\Development\ShootThemUp\Default.rc2.res"
 /OUT:"C:\Users\Dev\Documents\GitHub\UE5_GeometrySandbox\ShootThemUp\Intermediate\Build\Win64\x64\UnrealEditor\Development\ShootThemUp\UnrealEditor-ShootThemUp.lib"

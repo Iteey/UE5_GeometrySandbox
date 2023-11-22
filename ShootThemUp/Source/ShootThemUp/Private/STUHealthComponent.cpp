@@ -19,7 +19,7 @@ USTUHealthComponent::USTUHealthComponent()
 bool USTUHealthComponent::IsDead()
 {
     {
-        if (Health <= 0 && DieOnce != true)
+        if (Health <= 1 && DieOnce != true)
         {
             return true;
         }
