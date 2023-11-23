@@ -7,6 +7,8 @@
         "Includes": [
             "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\shootthemup\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\shootthemup\\definitions.shootthemup.h",
             "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\shootthemup\\source\\shootthemup\\public\\stuequipfinishedanimnotify.h",
+            "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\shootthemup\\source\\shootthemup\\public\\stuanimnotify.h",
+            "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\shootthemup\\intermediate\\build\\win64\\unrealeditor\\inc\\shootthemup\\uht\\stuanimnotify.generated.h",
             "c:\\users\\dev\\documents\\github\\ue5_geometrysandbox\\shootthemup\\intermediate\\build\\win64\\unrealeditor\\inc\\shootthemup\\uht\\stuequipfinishedanimnotify.generated.h"
         ],
         "ImportedModules": [],

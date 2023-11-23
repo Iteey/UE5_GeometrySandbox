@@ -27,12 +27,16 @@ class SHOOTTHEMUP_API ASTUSniperWeapon : public ASTUBaseWeapon
     float SniperZoomPlus = -20;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
     float SniperTraceMaxDistance = 8000.0f;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
+    bool SniperAimingNow = false;
 
   public:
     virtual void AimPressed() override;
     virtual void AimReleased() override;
     virtual void StartFire() override;
     bool GetZoom();
+    UFUNCTION(BlueprintCallable, Category = "Weapon")
+    bool GetSniperAiming();
     bool AimingNow = false;
     virtual float GetZoomMultiplier() override;
 

@@ -3,6 +3,7 @@
 #include "STUBaseWeapon.h"
 #include "GameFramework/Character.h"
 #include "STUEquipFinishedAnimNotify.h"
+#include "STUReloadFinishAnimNotify.h"
 
 
 // Sets default values for this component's properties
@@ -38,7 +39,7 @@ void USTUWeaponComponentv1::SpawnWeapons()
         auto Weapon = GetWorld()->SpawnActor<ASTUBaseWeapon>(OneWeaponData.WeaponClass);
         if (!Weapon)
             continue;
-
+        Weapon->OnClipEmpty.AddUObject(this,&USTUWeaponComponentv1::OnEmptyClip);
         Weapon->SetOwner(Character);
         Weapons.Add(Weapon);
         AttachWeaponToSocket(Weapon, Character->GetMesh(), WeaponArmorySocketName);
@@ -83,16 +84,21 @@ void USTUWeaponComponentv1::PlayAnimMontage(UAnimMontage* Animation)
 
 void USTUWeaponComponentv1::InitAnimations()
 {
-    if (!EquipAnimMontage) return;
-    const auto NotifyEvents = EquipAnimMontage->Notifies;
+ 
 
-    for (auto NotifyEvent : NotifyEvents)
-    {
-    auto EquipFinishedNotify = Cast<USTUEquipFinishedAnimNotify>(NotifyEvent.Notify);
+    auto EquipFinishedNotify = FindNotifyByClass<USTUEquipFinishedAnimNotify>(EquipAnimMontage);
     if (EquipFinishedNotify)
+    {
+        EquipFinishedNotify->OnNotified.AddUObject(this, &USTUWeaponComponentv1::OnEquipFinished);
+    }
+    for (auto OneWeaponData : WeaponData)
+    {
+        auto ReloadFinishedNotify = FindNotifyByClass<USTUReloadFinishAnimNotify>(OneWeaponData.ReloadAnimMontage);
+        if (!ReloadFinishedNotify)
+            continue;
+        if (ReloadFinishedNotify)
         {
-            EquipFinishedNotify->OnNotified.AddUObject(this, &USTUWeaponComponentv1::OnEquipFinished);
-            break;
+            ReloadFinishedNotify->OnNotified.AddUObject(this, &USTUWeaponComponentv1::OnReloadFinished);
         }
     }
 }
@@ -105,14 +111,38 @@ void USTUWeaponComponentv1::OnEquipFinished(USkeletalMeshComponent* MeshComponen
         if (Character->GetMesh() == MeshComponent)
         {
             CanShootNow = true;
+            ReloadAnimInProgress = false;
             CanSwitchWeapon = true;
             UE_LOG(LogTemp, Warning, TEXT("Finish"));
         }
+        CanShootNow = true;
+        ReloadAnimInProgress = false;
 }
+void USTUWeaponComponentv1::OnEmptyClip()
+{
+        UE_LOG(LogTemp, Warning, TEXT("OnEmpty"));
+        ChangeClip();
+}
+void USTUWeaponComponentv1::ChangeClip()
+{
+        //CurrentWeapon->StopFire();
+        //CurrentWeapon->ChangeClip();
+        ReloadAnimInProgress = true;
+        PlayAnimMontage(CurrentReloadAnimMontage);
+}
+void USTUWeaponComponentv1::OnReloadFinished(USkeletalMeshComponent* MeshComponent)
+{
+        ACharacter* Character = Cast<ACharacter>(GetOwner());
+        if (!Character)
+            return;
+        CanShootNow = true;
+        ReloadAnimInProgress = false;
+}
+
 
 void USTUWeaponComponentv1::StartFire()
 {
-    if (!CurrentWeapon || !CanShootNow)
+        if (!CurrentWeapon || !CanShootNow || ReloadAnimInProgress)
         return;
     CurrentWeapon->StartFire();
 }
@@ -170,7 +200,8 @@ void USTUWeaponComponentv1::SwitchCurrentAmmoType()
 
 void USTUWeaponComponentv1::Reload()
 {
-    PlayAnimMontage(CurrentReloadAnimMontage);
+    ChangeClip();
+   
 }
 
 void USTUWeaponComponentv1::NextWeapon()

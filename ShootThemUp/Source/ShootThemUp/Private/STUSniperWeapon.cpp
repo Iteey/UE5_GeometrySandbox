@@ -10,20 +10,27 @@ void ASTUSniperWeapon::AimPressed()
 {
     UE_LOG(LogTemp, Warning, TEXT("zoom"));
     AimingNow = true;
+    SniperAimingNow = true;
     GetZoom();
 }
 
 void ASTUSniperWeapon::AimReleased()
 {
     AimingNow = false;
+    SniperAimingNow = false;
     GetZoom();
     
 }
+
 bool ASTUSniperWeapon::GetZoom()
 {
     return AimingNow;
 
     
+}
+bool ASTUSniperWeapon::GetSniperAiming()
+{
+    return SniperAimingNow;
 }
 float ASTUSniperWeapon::GetZoomMultiplier()
 {

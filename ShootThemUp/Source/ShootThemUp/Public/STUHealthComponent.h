@@ -35,7 +35,7 @@ public:
     UFUNCTION(BlueprintCallable)
     float GetHealthPercent() const
     {
-        UE_LOG(LogTemp, Warning, TEXT("Current Health %f"),Health)
+        //UE_LOG(LogTemp, Warning, TEXT("Current Health %f"),Health)
         return Health / MaxHealth;
     }
 

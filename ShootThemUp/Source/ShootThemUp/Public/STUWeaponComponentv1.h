@@ -24,6 +24,7 @@ class SHOOTTHEMUP_API USTUWeaponComponentv1 : public UActorComponent
 	GENERATED_BODY()
 
 public:
+    bool ReloadAnimInProgress = false;
     USTUWeaponComponentv1();
     void NextWeapon();
     virtual void StartFire();
@@ -35,6 +36,8 @@ public:
     bool CanSwitchWeapon = true;
     virtual void AimPressed();
     virtual void AimReleased();
+    void OnReloadFinished(USkeletalMeshComponent* MeshComp);
+    bool CanReload();
     virtual void SwitchCurrentAmmoType();
     void Reload();
     UPROPERTY()
@@ -74,6 +77,24 @@ public:
      void PlayAnimMontage(UAnimMontage* Animation);
      void InitAnimations();
      void OnEquipFinished(USkeletalMeshComponent* MeshComponent);
+     void OnEmptyClip();
+     void ChangeClip();
+     template <typename T> T* FindNotifyByClass(UAnimSequenceBase* Animation)
+     {
+         if (!Animation)
+             return nullptr;
+         const auto NotifyEvents = Animation->Notifies;
+
+         for (auto NotifyEvent : NotifyEvents)
+         {
+             auto AnimNotify = Cast<T>(NotifyEvent.Notify);
+             if (AnimNotify)
+             {
+                 return AnimNotify;
+             }
+         }
+         return nullptr;
+     }
 
 
 		

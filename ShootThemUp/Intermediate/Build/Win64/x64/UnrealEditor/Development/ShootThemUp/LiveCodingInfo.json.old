@@ -2,6 +2,7 @@
 	"RemapUnityFiles": 
 	{
 		"Module.ShootThemUp.cpp.obj": [
+			"ShootThemUp.init.gen.cpp.obj",
 			"STI_PlayerHUDWidget.gen.cpp.obj",
 			"STUAnimNotify.gen.cpp.obj",
 			"STUBaseCharacter.gen.cpp.obj",
@@ -18,24 +19,23 @@
 			"STURifleWeapon.gen.cpp.obj",
 			"STUSniperWeapon.gen.cpp.obj",
 			"STUWeaponComponentv1.gen.cpp.obj",
-			"STUAnimNotify.cpp.obj",
+			"STI_PlayerHUDWidget.cpp.obj",
 			"STUBaseCharacter.cpp.obj",
-			"STUBaseWeapon.cpp.obj",
 			"STUDevDamageActor.cpp.obj",
-			"STUEquipFinishedAnimNotify.cpp.obj",
 			"STUGameHUD.cpp.obj",
 			"STUGameModeBase.cpp.obj",
-			"STUHealthComponent.cpp.obj",
 			"STULauncherWeapon.cpp.obj",
 			"STUPlayerController.cpp.obj",
 			"STUProjectile.cpp.obj",
 			"STUReloadFinishAnimNotify.cpp.obj",
 			"STURifleWeapon.cpp.obj",
-			"STUSniperWeapon.cpp.obj",
-			"STUWeaponComponentv1.cpp.obj",
 			"ShootThemUp.cpp.obj",
-			"ShootThemUp.init.gen.cpp.obj",
-			"STI_PlayerHUDWidget.cpp.obj"
+			"STUAnimNotify.cpp.obj",
+			"STUBaseWeapon.cpp.obj",
+			"STUEquipFinishedAnimNotify.cpp.obj",
+			"STUHealthComponent.cpp.obj",
+			"STUSniperWeapon.cpp.obj",
+			"STUWeaponComponentv1.cpp.obj"
 		]
 	}
 }

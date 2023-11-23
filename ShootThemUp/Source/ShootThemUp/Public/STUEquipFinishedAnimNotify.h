@@ -6,7 +6,6 @@
 #include "STUAnimNotify.h"
 #include "STUEquipFinishedAnimNotify.generated.h"
 
-DECLARE_MULTICAST_DELEGATE_OneParam(FOnNotifiedSignature, USkeletalMeshComponent*);
 /**
  * 
  */
@@ -15,8 +14,4 @@ class SHOOTTHEMUP_API USTUEquipFinishedAnimNotify : public USTUAnimNotify
 {
 	GENERATED_BODY()
 	
-public:
-    virtual void Notify(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation) override;
-
-	FOnNotifiedSignature OnNotified;
 };

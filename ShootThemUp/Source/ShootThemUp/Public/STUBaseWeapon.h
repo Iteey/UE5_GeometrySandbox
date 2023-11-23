@@ -6,6 +6,8 @@
 #include "GameFramework/Actor.h"
 #include "STUBaseWeapon.generated.h"
 
+DECLARE_MULTICAST_DELEGATE(FOnClipEmptySignature);
+
 class USkeletalMeshComponent;
 
 
@@ -33,7 +35,7 @@ class SHOOTTHEMUP_API ASTUBaseWeapon : public AActor
 	
 public:	
 	ASTUBaseWeapon();
-
+  FOnClipEmptySignature OnClipEmpty;
  virtual void StartFire();
  virtual void StopFire();
 
@@ -43,6 +45,9 @@ public:
 
  virtual float SwitchCurrentAmmoType();
 
+
+ void ChangeClip();
+ bool CanReload() const;
  protected:
  FAmmoData CurrentAmmo;
  protected:
@@ -69,7 +74,7 @@ public:
     void DecreaseAmmo();
     bool IsAmmoEmpty() const;
     bool IsClipEmpty() const;
-    void ChangeClip();
+    
     void LogAmmo();
 
    
