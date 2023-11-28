@@ -36,6 +36,7 @@ public:
     UPROPERTY()
     UAnimMontage* CurrentReloadAnimMontage = nullptr;
     
+    bool GetWeaponAmmoData(FAmmoData& AmmoData) const;
   protected:
     
 
@@ -70,7 +71,6 @@ public:
      void OnEquipFinished(USkeletalMeshComponent* MeshComponent);
      void OnEmptyClip();
      void ChangeClip();
-
 
 
 		

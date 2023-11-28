@@ -10,10 +10,6 @@
 
 
 class USkeletalMeshComponent;
-
-
-
-
 UCLASS()
 
 class SHOOTTHEMUP_API ASTUBaseWeapon : public AActor
@@ -32,7 +28,7 @@ public:
  void ChangeCurrentClip();
  virtual float SwitchCurrentAmmoType();
 
-
+ FAmmoData GetAmmoData() const {return CurrentAmmo;};
  void ChangeClip();
  bool CanReload() const;
  protected:

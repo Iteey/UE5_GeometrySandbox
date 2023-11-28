@@ -108,6 +108,16 @@ void USTUWeaponComponentv1::InitAnimations()
         }
     }
 }
+bool USTUWeaponComponentv1::GetWeaponAmmoData(FAmmoData& AmmoData) const
+{
+
+    if (CurrentWeapon)
+    {
+        AmmoData = CurrentWeapon->GetAmmoData();
+        return true;
+    }
+    return false;
+}
 
 void USTUWeaponComponentv1::OnEquipFinished(USkeletalMeshComponent* MeshComponent)
 {

@@ -3,6 +3,8 @@
 
 #include "STI_PlayerHUDWidget.h"
 #include "STUHealthComponent.h"
+#include "STUWeaponComponentv1.h"
+
 float USTI_PlayerHUDWidget::GetHealthPercent() const
 {
 
@@ -25,10 +27,24 @@ bool USTI_PlayerHUDWidget::IsPlayerSpectating() const
     const auto Controller = GetOwningPlayer();
     return Controller && Controller ->GetStateName()==NAME_Spectating;
 }
-
-USTUWeaponComponent* USTI_PlayerHUDWidget::GetWeaponComponent() const
+bool USTI_PlayerHUDWidget::GetWeaponUIData(FAmmoData& UIData) const
 {
-    return nullptr;
+    const auto WeaponComponent = GetWeaponComponent();
+    if (!WeaponComponent)
+        return false;
+    return WeaponComponent->GetWeaponAmmoData(UIData);
+}
+
+
+USTUWeaponComponentv1* USTI_PlayerHUDWidget::GetWeaponComponent() const
+{
+    const auto Player = GetOwningPlayerPawn();
+    if (!Player)
+        return nullptr;
+
+    const auto Component = Player->GetComponentByClass(USTUWeaponComponentv1::StaticClass());
+    const auto WeaponComponent = Cast<USTUWeaponComponentv1>(Component);
+    return WeaponComponent;
 }
 
 USTUHealthComponent* USTI_PlayerHUDWidget::GetHealthComponent() const
@@ -39,5 +55,13 @@ USTUHealthComponent* USTI_PlayerHUDWidget::GetHealthComponent() const
     const auto Component = Player-> GetComponentByClass(USTUHealthComponent::StaticClass());
     const auto HealthComponent = Cast<USTUHealthComponent>(Component);
     return HealthComponent;
+}
+bool USTI_PlayerHUDWidget::GetWeaponAmmoData(FAmmoData& AmmoData) const
+{
+    const auto WeaponComponent = GetWeaponComponent();
+    if (!WeaponComponent)
+        return false;
+
+    return WeaponComponent->GetWeaponAmmoData(AmmoData);
 }
 
