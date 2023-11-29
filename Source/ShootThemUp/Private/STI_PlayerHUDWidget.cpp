@@ -27,12 +27,17 @@ bool USTI_PlayerHUDWidget::IsPlayerSpectating() const
     const auto Controller = GetOwningPlayer();
     return Controller && Controller ->GetStateName()==NAME_Spectating;
 }
-bool USTI_PlayerHUDWidget::GetWeaponUIData(FAmmoData& UIData) const
+bool USTI_PlayerHUDWidget::GetWeaponUIData(FWeaponUIData& UIData) const
 {
-    const auto WeaponComponent = GetWeaponComponent();
+    const auto Player = GetOwningPlayerPawn();
+    if (!Player)
+        return false;
+    const auto Component = Player->GetComponentByClass(USTUWeaponComponentv1::StaticClass());
+    const auto WeaponComponent = Cast<USTUWeaponComponentv1>(Component);
     if (!WeaponComponent)
         return false;
-    return WeaponComponent->GetWeaponAmmoData(UIData);
+
+    return WeaponComponent->GetWeaponUIData(UIData);
 }
 
 

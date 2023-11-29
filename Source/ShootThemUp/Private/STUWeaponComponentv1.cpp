@@ -119,6 +119,16 @@ bool USTUWeaponComponentv1::GetWeaponAmmoData(FAmmoData& AmmoData) const
     return false;
 }
 
+bool USTUWeaponComponentv1::GetWeaponUIData(FWeaponUIData& UIData) const
+{
+    if (CurrentWeapon)
+    {
+        UIData = CurrentWeapon->GetUIData();
+        return true;
+    }
+    return false;
+}
+
 void USTUWeaponComponentv1::OnEquipFinished(USkeletalMeshComponent* MeshComponent)
 {
     ACharacter* Character = Cast<ACharacter>(GetOwner());
@@ -132,6 +142,7 @@ void USTUWeaponComponentv1::OnEquipFinished(USkeletalMeshComponent* MeshComponen
             UE_LOG(LogTemp, Warning, TEXT("Finish"));
         }
         CanShootNow = true;
+        
         ReloadAnimInProgress = false;
 }
 void USTUWeaponComponentv1::OnEmptyClip()
@@ -145,11 +156,14 @@ void USTUWeaponComponentv1::ChangeClip()
   
         //CurrentWeapon->StopFire();
         //CurrentWeapon->ChangeCurrentClip();
+        CurrentWeapon->StopFire();
         ReloadAnimInProgress = true;
+        
         PlayAnimMontage(CurrentReloadAnimMontage);
 }
 void USTUWeaponComponentv1::OnReloadFinished(USkeletalMeshComponent* MeshComponent)
 {
+        CurrentWeapon->ReloadAmmo();
         ACharacter* Character = Cast<ACharacter>(GetOwner());
         if (!Character)
             return;
@@ -160,8 +174,9 @@ void USTUWeaponComponentv1::OnReloadFinished(USkeletalMeshComponent* MeshCompone
 
 void USTUWeaponComponentv1::StartFire()
 {
-        if (!CurrentWeapon || !CanShootNow || ReloadAnimInProgress)
+        if (!CurrentWeapon || !CanShootNow || ReloadAnimInProgress || CurrentWeapon->GetNumBullets()<=0)
         return;
+        
     CurrentWeapon->StartFire();
 }
 
@@ -218,6 +233,13 @@ void USTUWeaponComponentv1::SwitchCurrentAmmoType()
 
 void USTUWeaponComponentv1::Reload()
 {
+    if (ReloadAnimInProgress)
+        return;
+    if (CurrentWeapon->GetNumClips() <= 0)
+        {
+        UE_LOG(LogTemp, Warning, TEXT("No more clips"))
+        return;
+        }
     CurrentWeapon->ChangeCurrentClip();
     ChangeClip();
    

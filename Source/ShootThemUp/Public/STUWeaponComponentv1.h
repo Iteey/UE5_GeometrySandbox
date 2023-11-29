@@ -37,6 +37,8 @@ public:
     UAnimMontage* CurrentReloadAnimMontage = nullptr;
     
     bool GetWeaponAmmoData(FAmmoData& AmmoData) const;
+
+    bool GetWeaponUIData(FWeaponUIData& UIData) const;
   protected:
     
 

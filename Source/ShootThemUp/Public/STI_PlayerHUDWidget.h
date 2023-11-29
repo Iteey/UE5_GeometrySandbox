@@ -30,7 +30,7 @@ class SHOOTTHEMUP_API USTI_PlayerHUDWidget : public UUserWidget
       bool IsPlayerSpectating() const;
 
     UFUNCTION(BlueprintCallable, Category = "UI")
-    bool GetWeaponUIData(FAmmoData& AmmoData) const;
+      bool GetWeaponUIData(FWeaponUIData& AmmoData) const;
 
     UFUNCTION(BlueprintCallable, Category = "UI")
       bool GetWeaponAmmoData(FAmmoData& AmmoData) const;

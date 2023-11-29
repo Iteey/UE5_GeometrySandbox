@@ -24,6 +24,9 @@ void ASTURifleWeapon::MakeShot()
 {
     if (IsAmmoEmpty())
         return;
+    if (!GetNumBullets())
+        ChangeCurrentClip();
+        
     
     const auto Controller = GetPlayerController();
 

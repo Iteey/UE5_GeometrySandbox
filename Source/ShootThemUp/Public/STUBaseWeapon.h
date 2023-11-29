@@ -21,7 +21,10 @@ public:
   FOnClipEmptySignature OnClipEmpty;
  virtual void StartFire();
  virtual void StopFire();
-
+ bool IsAmmoEmpty() const;
+ float GetNumBullets();
+ float GetNumClips();
+ void ReloadAmmo();
  virtual void AimPressed();
  virtual void AimReleased();
  virtual float GetZoomMultiplier();
@@ -31,9 +34,16 @@ public:
  FAmmoData GetAmmoData() const {return CurrentAmmo;};
  void ChangeClip();
  bool CanReload() const;
+
+ FWeaponUIData GetUIData() const
+ {
+     return UIData;
+ }
  protected:
  FAmmoData CurrentAmmo;
- protected:
+
+ UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "UI")
+ FWeaponUIData UIData;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
 	USkeletalMeshComponent* WeaponMesh;
 
@@ -55,7 +65,7 @@ public:
 
 
     void DecreaseAmmo();
-    bool IsAmmoEmpty() const;
+
     bool IsClipEmpty() const;
     
     void LogAmmo();
