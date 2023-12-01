@@ -35,9 +35,5 @@ class SHOOTTHEMUP_API USTI_PlayerHUDWidget : public UUserWidget
     UFUNCTION(BlueprintCallable, Category = "UI")
       bool GetWeaponAmmoData(FAmmoData& AmmoData) const;
 
-  private:
-    USTUWeaponComponentv1* GetWeaponComponent() const;
-    USTUHealthComponent* GetHealthComponent() const;
-
 	
 };
