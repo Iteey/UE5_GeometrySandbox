@@ -4,7 +4,6 @@
 #include "STUBasePickup.h"
 #include "Components/SphereComponent.h"
 
-DEFINE_LOG_CATEGORY_STATIC(LogBasePickup, All, All);
     // Sets default values
 ASTUBasePickup::ASTUBasePickup()
 {
