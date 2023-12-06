@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "STUBasePickup.generated.h"
 
+class ASTUBaseWeapon;
 class USphereComponent;
 UCLASS()
 class SHOOTTHEMUP_API ASTUBasePickup : public AActor

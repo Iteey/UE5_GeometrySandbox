@@ -28,7 +28,7 @@ public:
     virtual void AimPressed();
     virtual void AimReleased();
     void OnReloadFinished(USkeletalMeshComponent* MeshComp);
-    bool CanReload();
+    bool TryToAddAmmo(TSubclassOf<ASTUBaseWeapon> WeaponType, int32 ClipsAmount);
     virtual void SwitchCurrentAmmoType();
     void Reload();
     UPROPERTY()
@@ -71,7 +71,7 @@ public:
      void PlayAnimMontage(UAnimMontage* Animation);
      void InitAnimations();
      void OnEquipFinished(USkeletalMeshComponent* MeshComponent);
-     void OnEmptyClip();
+     void OnEmptyClip(ASTUBaseWeapon* AmmoEmptyWeapon);
      void ChangeClip();
 
 

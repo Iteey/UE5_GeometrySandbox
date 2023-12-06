@@ -5,6 +5,13 @@
 #include "GameFramework/Actor.h"
 #include "Engine/World.h"
 #include "TimerManager.h"
+
+void USTUHealthComponent::SetHealth(float NewHealth)
+{
+    Health = FMath::Clamp(NewHealth, 0.0f, MaxHealth);
+    UE_LOG(LogTemp, Warning, TEXT(" %f"), Health);
+}
+
 // Sets default values for this component's properties
 USTUHealthComponent::USTUHealthComponent()
 {

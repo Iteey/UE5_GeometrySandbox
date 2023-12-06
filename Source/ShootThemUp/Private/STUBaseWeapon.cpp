@@ -43,7 +43,8 @@ void ASTUBaseWeapon::DecreaseAmmo()
     LogAmmo();
     if (IsClipEmpty() && !IsAmmoEmpty())
     {
-        ChangeClip();
+        StopFire();
+        OnClipEmpty.Broadcast(this);
     }
     
 }
@@ -81,8 +82,11 @@ void ASTUBaseWeapon::ChangeClip()
             UE_LOG(LogTemp, Warning, TEXT("NO MORE CLIPS"));
             return;
         }
-        CurrentAmmo.Clips--;
-        OnClipEmpty.Broadcast();
+        else
+        {
+         CurrentAmmo.Clips--;
+        }
+        OnClipEmpty.Broadcast(this);
     }
     UE_LOG(LogTemp, Warning, TEXT("---Change clip---"));
 }
@@ -92,10 +96,46 @@ void ASTUBaseWeapon::LogAmmo()
     AmmoInfo += CurrentAmmo.Infinite ? "Infinite" : FString::FromInt(CurrentAmmo.Clips);
     UE_LOG(LogTemp, Warning, TEXT("%s"), *AmmoInfo);
 }
+bool ASTUBaseWeapon::IsAmmoFull() const
+{
+    return CurrentAmmo.Clips == DefaultAmmo.Clips &&
+    CurrentAmmo.Bullets == DefaultAmmo.Bullets;
+}
 bool ASTUBaseWeapon::CanReload() const
 {
 
     return CurrentAmmo.Bullets < DefaultAmmo.Bullets && CurrentAmmo.Clips>0;
+}
+bool ASTUBaseWeapon::TryToAddAmmo(int32 ClipsAmount)
+{
+    if (CurrentAmmo.Infinite || IsAmmoFull() || ClipsAmount <= 0)
+        return false;
+    if (IsAmmoEmpty())
+    {
+        CurrentAmmo.Clips = FMath::Clamp(CurrentAmmo.Clips + ClipsAmount, 0, DefaultAmmo.Clips = 1);
+        OnClipEmpty.Broadcast(this);
+    }
+    else if (CurrentAmmo.Clips<DefaultAmmo.Clips)
+    {
+        const auto NextClipsAmount = CurrentAmmo.Clips + ClipsAmount;
+        if (DefaultAmmo.Clips - NextClipsAmount >= 0)
+        {
+            CurrentAmmo.Clips = NextClipsAmount;
+            UE_LOG(LogTemp, Warning, TEXT("Clips were added"));
+        }
+        else
+        {
+            CurrentAmmo.Clips = DefaultAmmo.Clips;
+            CurrentAmmo.Bullets = DefaultAmmo.Bullets;
+            UE_LOG(LogTemp, Warning, TEXT("Ammo is full now"));
+        }
+    }
+    else
+    {
+        CurrentAmmo.Bullets = DefaultAmmo.Bullets;
+        UE_LOG(LogTemp, Warning, TEXT("Bullets were added"));
+    }
+    return true;
 }
 void ASTUBaseWeapon::MakeDamage(const FHitResult& HitResult)
 {

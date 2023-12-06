@@ -19,9 +19,10 @@ class SHOOTTHEMUP_API USTUHealthComponent : public UActorComponent
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Health")
     float HealUpdateTime = 1.0f;
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Health")
-    float HealDelay = 3.0f;
+    float HealDelay = 9.0f;
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Health")
     float HealModifier = 5.0f;
+    void SetHealth(float NewHealth);
     FTimerHandle HealTimerHandle;
 
 public:	
@@ -39,7 +40,22 @@ public:
         //UE_LOG(LogTemp, Warning, TEXT("Current Health %f"),Health)
         return Health / MaxHealth;
     }
-
+    bool HealthIsMaxHealth()
+    {
+        if (Health == MaxHealth)
+            return true;
+        else
+            return false;
+    }
+    void AddHealth(float AddedHealth)
+    {
+        if (IsDead())
+            return;
+        if (HealthIsMaxHealth())
+            return;
+        Health = Health + AddedHealth;
+        SetHealth(Health);
+    }
     UFUNCTION(BlueprintCallable)
     bool IsDead();
     UPROPERTY(EditAnywhere, BlueprintReadWrite)

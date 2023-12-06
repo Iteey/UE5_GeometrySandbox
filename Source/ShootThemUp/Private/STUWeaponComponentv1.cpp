@@ -145,10 +145,24 @@ void USTUWeaponComponentv1::OnEquipFinished(USkeletalMeshComponent* MeshComponen
         
         ReloadAnimInProgress = false;
 }
-void USTUWeaponComponentv1::OnEmptyClip()
+void USTUWeaponComponentv1::OnEmptyClip(ASTUBaseWeapon* AmmoEmptyWeapon)
 {
+        if (!AmmoEmptyWeapon) return;
+    if (CurrentWeapon == AmmoEmptyWeapon)
+    {
         UE_LOG(LogTemp, Warning, TEXT("OnEmpty"));
         ChangeClip();
+    }
+    else
+    {
+        for (const auto Weapon : Weapons)
+        {
+            if (Weapon == AmmoEmptyWeapon)
+            {
+                Weapon->ChangeClip();
+            }
+        }
+    }
 }
 void USTUWeaponComponentv1::ChangeClip()
 {
@@ -158,7 +172,7 @@ void USTUWeaponComponentv1::ChangeClip()
         //CurrentWeapon->ChangeCurrentClip();
         CurrentWeapon->StopFire();
         ReloadAnimInProgress = true;
-        
+        CurrentWeapon->ChangeClip();
         PlayAnimMontage(CurrentReloadAnimMontage);
 }
 void USTUWeaponComponentv1::OnReloadFinished(USkeletalMeshComponent* MeshComponent)
@@ -169,6 +183,18 @@ void USTUWeaponComponentv1::OnReloadFinished(USkeletalMeshComponent* MeshCompone
             return;
         CanShootNow = true;
         ReloadAnimInProgress = false;
+}
+
+bool USTUWeaponComponentv1::TryToAddAmmo(TSubclassOf<ASTUBaseWeapon> WeaponType, int32 ClipsAmount)
+{
+        for (const auto Weapon : Weapons)
+        {
+            if (Weapon && Weapon->IsA(WeaponType))
+            {
+                return Weapon->TryToAddAmmo(ClipsAmount);
+            }
+        }
+        return false;
 }
 
 
@@ -240,7 +266,6 @@ void USTUWeaponComponentv1::Reload()
         UE_LOG(LogTemp, Warning, TEXT("No more clips"))
         return;
         }
-    CurrentWeapon->ChangeCurrentClip();
     ChangeClip();
    
 }
