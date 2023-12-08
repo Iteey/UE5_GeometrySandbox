@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "AUTO_LOD",
+	"Description": "Auto lod tool",
+	"Category": "Other",
+	"CreatedBy": "Denis Lesnikov",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "AUTO_LOD",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	]
+}
