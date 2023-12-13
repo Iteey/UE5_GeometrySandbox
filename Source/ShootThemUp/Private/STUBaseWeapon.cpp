@@ -112,7 +112,7 @@ bool ASTUBaseWeapon::TryToAddAmmo(int32 ClipsAmount)
         return false;
     if (IsAmmoEmpty())
     {
-        CurrentAmmo.Clips = FMath::Clamp(CurrentAmmo.Clips + ClipsAmount, 0, DefaultAmmo.Clips = 1);
+        CurrentAmmo.Clips = FMath::Clamp(CurrentAmmo.Clips + ClipsAmount, 0, DefaultAmmo.Clips);
         OnClipEmpty.Broadcast(this);
     }
     else if (CurrentAmmo.Clips<DefaultAmmo.Clips)
