@@ -30,7 +30,7 @@ ASTUBaseCharacter::ASTUBaseCharacter()
     HealthComponent = CreateDefaultSubobject<USTUHealthComponent>("HealthComponent");
     HealthTextComponent = CreateDefaultSubobject<UTextRenderComponent>("HealthTextComponent");
     HealthTextComponent->SetupAttachment(GetRootComponent());
-    HealthTextComponent->SetOwnerNoSee(false);
+    HealthTextComponent->SetOwnerNoSee(true);
     WeaponComponent = CreateDefaultSubobject<USTUWeaponComponentv1>("WeaponComponent");
     
 }

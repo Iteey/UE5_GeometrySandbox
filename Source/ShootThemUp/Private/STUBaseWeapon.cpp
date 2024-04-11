@@ -1,5 +1,3 @@
-// Shoot Them Up Game, All Rights Reserved
-
 #include "STUBaseWeapon.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Engine/World.h"
@@ -10,22 +8,21 @@
 
 ASTUBaseWeapon::ASTUBaseWeapon()
 {
-	PrimaryActorTick.bCanEverTick = true;
+    PrimaryActorTick.bCanEverTick = true;
 
-	WeaponMesh = CreateDefaultSubobject<USkeletalMeshComponent>("WeaponMesh");
+    WeaponMesh = CreateDefaultSubobject<USkeletalMeshComponent>("WeaponMesh");
     SetRootComponent(WeaponMesh);
-
 }
 
 
 void ASTUBaseWeapon::StartFire()
 {
 
-   
+
 }
 void ASTUBaseWeapon::StopFire()
 {
-    
+
 }
 void ASTUBaseWeapon::ReloadAmmo()
 {
@@ -39,14 +36,14 @@ void ASTUBaseWeapon::DecreaseAmmo()
         return;
     }
     if (!CurrentAmmo.Infinite)
-    CurrentAmmo.Bullets--;
+        CurrentAmmo.Bullets--;
     LogAmmo();
     if (IsClipEmpty() && !IsAmmoEmpty())
     {
         StopFire();
         OnClipEmpty.Broadcast(this);
     }
-    
+
 }
 void ASTUBaseWeapon::ChangeCurrentClip()
 {
@@ -58,7 +55,7 @@ bool ASTUBaseWeapon::IsAmmoEmpty() const
 }
 float ASTUBaseWeapon::GetNumBullets()
 {
-    
+
     return CurrentAmmo.Bullets;
 }
 float ASTUBaseWeapon::GetNumClips()
@@ -73,18 +70,18 @@ bool ASTUBaseWeapon::IsClipEmpty() const
 }
 void ASTUBaseWeapon::ChangeClip()
 {
-    
+
     if (!CurrentAmmo.Infinite)
     {
         if (CurrentAmmo.Clips == 0)
         {
-            
+
             UE_LOG(LogTemp, Warning, TEXT("NO MORE CLIPS"));
             return;
         }
         else
         {
-         CurrentAmmo.Clips--;
+            CurrentAmmo.Clips--;
         }
         OnClipEmpty.Broadcast(this);
     }
@@ -94,17 +91,16 @@ void ASTUBaseWeapon::LogAmmo()
 {
     FString AmmoInfo = "Ammo: " + FString::FromInt(CurrentAmmo.Bullets) + " / ";
     AmmoInfo += CurrentAmmo.Infinite ? "Infinite" : FString::FromInt(CurrentAmmo.Clips);
-    UE_LOG(LogTemp, Warning, TEXT("%s"), *AmmoInfo);
 }
 bool ASTUBaseWeapon::IsAmmoFull() const
 {
     return CurrentAmmo.Clips == DefaultAmmo.Clips &&
-    CurrentAmmo.Bullets == DefaultAmmo.Bullets;
+        CurrentAmmo.Bullets == DefaultAmmo.Bullets;
 }
 bool ASTUBaseWeapon::CanReload() const
 {
 
-    return CurrentAmmo.Bullets < DefaultAmmo.Bullets && CurrentAmmo.Clips>0;
+    return CurrentAmmo.Bullets < DefaultAmmo.Bullets && CurrentAmmo.Clips > 0;
 }
 bool ASTUBaseWeapon::TryToAddAmmo(int32 ClipsAmount)
 {
@@ -115,7 +111,7 @@ bool ASTUBaseWeapon::TryToAddAmmo(int32 ClipsAmount)
         CurrentAmmo.Clips = FMath::Clamp(CurrentAmmo.Clips + ClipsAmount, 0, DefaultAmmo.Clips);
         OnClipEmpty.Broadcast(this);
     }
-    else if (CurrentAmmo.Clips<DefaultAmmo.Clips)
+    else if (CurrentAmmo.Clips < DefaultAmmo.Clips)
     {
         const auto NextClipsAmount = CurrentAmmo.Clips + ClipsAmount;
         if (DefaultAmmo.Clips - NextClipsAmount >= 0)
@@ -170,56 +166,59 @@ void ASTUBaseWeapon::MakeShot()
 }
 APlayerController* ASTUBaseWeapon::GetPlayerController() const
 {
-            const auto Player = Cast<ACharacter>(GetOwner());
-        if (!Player)
-            return nullptr;
-        return Player->GetController<APlayerController>();
+    if (!GetOwner()) // Проверка на нулевой указатель
+        return nullptr;
+    const auto Player = Cast<ACharacter>(GetOwner());
+    if (!Player)
+        return nullptr;
+    return Player->GetController<APlayerController>();
 }
 bool ASTUBaseWeapon::GetPlayerViewPoint(FVector& ViewLocation, FRotator& ViewRotation) const
 {
-        const auto Controller = GetPlayerController();
-        if (!Controller)
-            return false;
-        Controller->GetPlayerViewPoint(ViewLocation, ViewRotation);
-        return true;
+    const auto Controller = GetPlayerController();
+    if (!Controller)
+        return false;
+    Controller->GetPlayerViewPoint(ViewLocation, ViewRotation);
+    return true;
 }
 
-// Called when the game starts or when spawned
 void ASTUBaseWeapon::BeginPlay()
 {
-	Super::BeginPlay();
-        checkf(DefaultAmmo.Bullets >= 0, TEXT("Bellets count couldn`t be less or equal zero"))
+    Super::BeginPlay();
+    checkf(DefaultAmmo.Bullets >= 0, TEXT("Bellets count couldn't be less or equal zero")); // Добавлена проверка на нулевой указатель
     CurrentAmmo.Bullets = DefaultAmmo.Bullets;
     CurrentAmmo.Clips = DefaultAmmo.Clips;
     CurrentAmmo.Infinite = DefaultAmmo.Infinite;
     check(WeaponMesh);
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
-    
-   
 }
+
 bool ASTUBaseWeapon::GetTraceData(FVector& TraceStart, FVector& TraceEnd) const
 {
     FVector ViewLocation;
     FRotator ViewRotation;
-    if(!GetPlayerViewPoint(ViewLocation, ViewRotation)) return false;
+    if (!GetPlayerViewPoint(ViewLocation, ViewRotation))
+        return false;
 
     TraceStart = ViewLocation; // SocketTransform.GetLocation();
     const FVector ShootDirection = ViewRotation.Vector(); // SocketTransform.GetRotation().GetForwardVector();
     TraceEnd = TraceStart + ShootDirection * TraceMaxDistance;
     return true;
 }
+
 FVector ASTUBaseWeapon::GetMuzzleWorldLocation() const
 {
     return WeaponMesh->GetSocketLocation(MuzzleSocketName);
 }
 void ASTUBaseWeapon::MakeHit(FHitResult& HitResult, const FVector& TraceStart, const FVector& TraceEnd)
 {
-    if (!GetWorld()) return;
+    if (!GetWorld())
+        return;
     FCollisionQueryParams CollisionParams;
     CollisionParams.AddIgnoredActor(GetOwner());
 
-    GetWorld()->LineTraceSingleByChannel(HitResult, GetMuzzleWorldLocation(), TraceEnd,
-   ECollisionChannel::ECC_Visibility, CollisionParams);
+    FHitResult LocalHitResult; // Создание локальной переменной
+    GetWorld()->LineTraceSingleByChannel(LocalHitResult, GetMuzzleWorldLocation(), TraceEnd,
+        ECollisionChannel::ECC_Visibility, CollisionParams);
+
+    HitResult = LocalHitResult; // Присваивание локальной переменной результатов
 }
-
-

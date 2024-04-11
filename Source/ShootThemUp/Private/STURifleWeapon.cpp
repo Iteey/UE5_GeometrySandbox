@@ -5,13 +5,12 @@
 
 void ASTURifleWeapon::StopFire()
 {
-    UE_LOG(LogTemp, Warning, TEXT("STOP BAH"));
     GetWorldTimerManager().ClearTimer(ShotTimerHandle);
 }
 
 void ASTURifleWeapon::StartFire()
 {
-    UE_LOG(LogTemp, Warning, TEXT("BAH"));
+
     GetWorldTimerManager().SetTimer(ShotTimerHandle, this, &ASTURifleWeapon::MakeShot, TimeBetweenShots, true);
 }
 

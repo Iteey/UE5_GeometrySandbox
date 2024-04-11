@@ -53,6 +53,8 @@ void USTUWeaponComponentv1::SpawnWeapons()
 void USTUWeaponComponentv1::AttachWeaponToSocket(ASTUBaseWeapon* Weapon, USceneComponent* SceneComponent,
                                                const FName& SocketName)
 {
+    check(Weapon)
+    check(SceneComponent)
     FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, false);
     Weapon->AttachToComponent(SceneComponent, AttachmentRules, SocketName);
 }
@@ -96,6 +98,7 @@ void USTUWeaponComponentv1::InitAnimations()
     {
         UE_LOG(LogTemp, Error, TEXT("Equip anim notify is forotten to set"));
         checkNoEntry();
+        return;
     }
     for (auto OneWeaponData : WeaponData)
     {

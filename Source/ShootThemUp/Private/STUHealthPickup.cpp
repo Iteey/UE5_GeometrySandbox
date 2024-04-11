@@ -6,6 +6,8 @@
 #include "STUHealthComponent.h"
 bool ASTUHealthPickup::GivePickupTo(APawn* PlayerPawn)
 {
+    if(!PlayerPawn)
+        return bool();
     const auto HealthComponent = STUUtils::GetSTUPlayerComponent<USTUHealthComponent>(PlayerPawn);
     if (!HealthComponent)
         return false;

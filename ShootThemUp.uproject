@@ -10,7 +10,8 @@
 			"LoadingPhase": "Default",
 			"AdditionalDependencies": [
 				"Engine",
-				"UMG"
+				"UMG",
+				"AIModule"
 			]
 		}
 	],
@@ -29,6 +30,14 @@
 		{
 			"Name": "ScriptableToolsEditorMode",
 			"Enabled": true
+		},
+		{
+			"Name": "BlenderLodTool",
+			"Enabled": false
+		},
+		{
+			"Name": "LodToolBL",
+			"Enabled": false
 		}
 	]
 }

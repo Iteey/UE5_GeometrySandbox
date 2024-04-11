@@ -43,6 +43,7 @@ void USTUHealthComponent::BeginPlay()
     AActor* ComponentOwner = GetOwner();
 	if (ComponentOwner)
 	{
+	    UE_LOG(LogTemp,Warning,TEXT("STUHEALTHCOMPONENT WORKS"))
         ComponentOwner->OnTakeAnyDamage.AddDynamic(this, &USTUHealthComponent::OnTakeAnyDamage);
         
 	}
