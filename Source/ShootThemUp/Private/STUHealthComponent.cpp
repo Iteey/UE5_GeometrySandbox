@@ -1,15 +1,15 @@
 // Shoot Them Up Game, All Rights Reserved
 
-
 #include "STUHealthComponent.h"
-#include "GameFramework/Actor.h"
+
 #include "Engine/World.h"
+#include "GameFramework/Actor.h"
 #include "TimerManager.h"
 
 void USTUHealthComponent::SetHealth(float NewHealth)
 {
-    Health = FMath::Clamp(NewHealth, 0.0f, MaxHealth);
-    UE_LOG(LogTemp, Warning, TEXT(" %f"), Health);
+	Health = FMath::Clamp(NewHealth, 0.0f, MaxHealth);
+	UE_LOG(LogTemp, Warning, TEXT(" %f"), Health);
 }
 
 // Sets default values for this component's properties
@@ -22,61 +22,59 @@ USTUHealthComponent::USTUHealthComponent()
 	// ...
 }
 
-
 bool USTUHealthComponent::IsDead()
 {
-    {
-        if (Health <= 1 && DieOnce != true)
-        {
-            return true;
-        }
-    }
-    return false;
+	{
+		if (Health <= 1 && DieOnce != true)
+		{
+			return true;
+		}
+	}
+	return false;
 }
 
 // Called when the game starts
 void USTUHealthComponent::BeginPlay()
 {
 	Super::BeginPlay();
-    
+
 	Health = MaxHealth;
-    AActor* ComponentOwner = GetOwner();
+	AActor* ComponentOwner = GetOwner();
 	if (ComponentOwner)
 	{
-	    UE_LOG(LogTemp,Warning,TEXT("STUHEALTHCOMPONENT WORKS"))
-        ComponentOwner->OnTakeAnyDamage.AddDynamic(this, &USTUHealthComponent::OnTakeAnyDamage);
-        
+		UE_LOG(LogTemp, Warning, TEXT("STUHEALTHCOMPONENT WORKS"))
+		ComponentOwner->OnTakeAnyDamage.AddDynamic(this, &USTUHealthComponent::OnTakeAnyDamage);
 	}
-	
 }
 
-void USTUHealthComponent::OnTakeAnyDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType,
-                                              AController* InstigatedBy, AActor* DamageCauser)
+void USTUHealthComponent::OnTakeAnyDamage(
+	AActor* DamagedActor, float Damage, const UDamageType* DamageType, AController* InstigatedBy, AActor* DamageCauser)
 {
-    if (Damage <= 0.0f || IsDead() || !GetWorld())
-        return;
-    GetWorld()->GetTimerManager().ClearTimer(HealTimerHandle);
-    Health -= Damage;
-    if (IsDead())
-    {
-        OnDeath.Broadcast();
-    }
-    else if (AutoHeal && GetWorld())
-    {
-        GetWorld()->GetTimerManager().SetTimer(HealTimerHandle, this, &USTUHealthComponent::HealUpdate, HealUpdateTime,true, HealDelay);
-    }
-    
-    //UE_LOG(LogTemp, Warning, TEXT("CURRENT CURRENT HEALTH %f"), Health);
+	if (Damage <= 0.0f || IsDead() || !GetWorld())
+	{
+		return;
+	}
+	GetWorld()->GetTimerManager().ClearTimer(HealTimerHandle);
+	Health -= Damage;
+	if (IsDead())
+	{
+		OnDeath.Broadcast();
+	}
+	else if (AutoHeal && GetWorld())
+	{
+		GetWorld()->GetTimerManager().SetTimer(
+			HealTimerHandle, this, &USTUHealthComponent::HealUpdate, HealUpdateTime, true, HealDelay);
+	}
+
+	// UE_LOG(LogTemp, Warning, TEXT("CURRENT CURRENT HEALTH %f"), Health);
 }
 
 void USTUHealthComponent::HealUpdate()
 {
-    Health = FMath::Min(Health + HealModifier, MaxHealth);
+	Health = FMath::Min(Health + HealModifier, MaxHealth);
 
-    if (Health == MaxHealth && GetWorld())
-    {
-        GetWorld()->GetTimerManager().ClearTimer(HealTimerHandle);
-    }
+	if (Health == MaxHealth && GetWorld())
+	{
+		GetWorld()->GetTimerManager().ClearTimer(HealTimerHandle);
+	}
 }
-
-

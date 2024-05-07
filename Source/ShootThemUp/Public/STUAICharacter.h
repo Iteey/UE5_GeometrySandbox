@@ -4,10 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "STUBaseCharacter.h"
+
 #include "STUAICharacter.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class SHOOTTHEMUP_API ASTUAICharacter : public ASTUBaseCharacter
